@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark">
+<title>Mail Factory — Generate. Automate. Keep it on your device.</title>
+<meta name="description" content="Mail Factory is a native Android app: a single and batch generator, six automation engines, a local library of everything you make, one-touch sessions and precise settings. Nothing is uploaded to a server.">
+<meta property="og:title" content="Mail Factory">
+<meta property="og:description" content="A native Android generator, engine suite and local library. Everything stays on your device.">
+<meta property="og:image" content="assets/logo-512.png">
+<link rel="icon" href="assets/logo-128.png">
+<link rel="apple-touch-icon" href="assets/logo-256.png">
+<link rel="preload" as="image" href="assets/logo-512.png">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/sections.css">
+</head>
+<body>
+
+<!-- ══════════════ PRELOADER · IGNITION ══════════════ -->
+<div class="pre" id="pre" role="status" aria-label="Loading Mail Factory">
+  <div class="pre-inner">
+    <img class="pre-logo" id="preLogo" src="assets/logo-512.png" alt="" width="104" height="104">
+    <div class="pre-bar"><i id="preBar"></i></div>
+    <div class="pre-meta"><span>MAIL FACTORY</span><span id="prePct">000</span></div>
+  </div>
+</div>
+<div class="pre-cut" id="preCut"></div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="prog" id="prog" aria-hidden="true"></div>
+<div class="cur" id="cur" aria-hidden="true"></div>
+<div class="cur-r" id="curRing" aria-hidden="true"><b>drag</b></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ══════════════ NAVIGATION ══════════════ -->
+<header class="nav" id="nav">
+  <a class="brand" href="#top" data-mag="0.2" aria-label="Mail Factory — top">
+    <img src="assets/logo-256.png" alt="Mail Factory logo" width="34" height="34">
+    <span class="brand-txt">Mail<i>Factory</i></span>
+  </a>
+  <nav class="nav-c" aria-label="Primary">
+    <a class="nav-link" href="#discovery" data-sec="discovery">Explore</a>
+    <a class="nav-link" href="#product" data-sec="product">Product</a>
+    <a class="nav-link" href="#c-dashboard" data-sec="c-dashboard">Live app</a>
+    <a class="nav-link" href="#workflow" data-sec="workflow">Workflow</a>
+    <a class="nav-link" href="#deepdive" data-sec="deepdive">Deep dive</a>
+    <a class="nav-link" href="#feedback" data-sec="feedback">Feedback</a>
+  </nav>
+  <div class="nav-r">
+    <button class="ibtn" id="navShare" aria-label="Share Mail Factory" data-mag="0.3">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+        <path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+    </button>
+    <button class="btn btn-p" id="navDl" data-mag="0.22">
+      <span class="sheen"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+      <span class="lb">Download</span>
+    </button>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <i></i><i></i>
+    </button>
+  </div>
+</header>
+
+<nav class="menu" id="menu" aria-label="Mobile">
+  <a href="#discovery"><b>01</b>Explore</a>
+  <a href="#product"><b>02</b>Product</a>
+  <a href="#c-dashboard"><b>03</b>Live app</a>
+  <a href="#c-engine"><b>04</b>Engine</a>
+  <a href="#workflow"><b>05</b>Workflow</a>
+  <a href="#system"><b>06</b>System</a>
+  <a href="#deepdive"><b>07</b>Deep dive</a>
+  <a href="#download"><b>08</b>Download</a>
+</nav>
+
+<!-- chapter rail -->
+<aside class="rail" id="rail" aria-label="Chapters">
+  <button data-go="hero"><span>Intro</span><i></i></button>
+  <button data-go="discovery"><span>Discovery</span><i></i></button>
+  <button data-go="product"><span>Product</span><i></i></button>
+  <button data-go="c-dashboard"><span>Dashboard</span><i></i></button>
+  <button data-go="c-engine"><span>Engine</span><i></i></button>
+  <button data-go="c-generator"><span>Generator</span><i></i></button>
+  <button data-go="c-library"><span>Library</span><i></i></button>
+  <button data-go="c-onetouch"><span>One Touch</span><i></i></button>
+  <button data-go="c-settings"><span>Settings</span><i></i></button>
+  <button data-go="workflow"><span>Workflow</span><i></i></button>
+  <button data-go="system"><span>System</span><i></i></button>
+  <button data-go="deepdive"><span>Deep dive</span><i></i></button>
+  <button data-go="download"><span>Download</span><i></i></button>
+  <button data-go="feedback"><span>Feedback</span><i></i></button>
+  <button data-go="brand"><span>Brand</span><i></i></button>
+</aside>
+
+<main id="top">
+
+<!-- ══════════════ 01 · HERO — cinematic 3D lattice ══════════════ -->
+<section class="hero sec" id="hero" data-chapter data-scene3d="lattice">
+  <canvas class="hero-cv" id="heroCv" aria-hidden="true"></canvas>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <span class="hero-bracket a" aria-hidden="true"></span>
+  <span class="hero-bracket b" aria-hidden="true"></span>
+  <span class="hero-bracket c" aria-hidden="true"></span>
+  <span class="hero-bracket d" aria-hidden="true"></span>
+
+  <div class="hero-meta tl">
+    <span class="tag live">System online</span>
+    <span class="l8">Ver 1.7.9</span>
+  </div>
+  <div class="hero-meta tr">
+    <span class="l8">Native Android</span>
+    <span class="l8">Local storage</span>
+  </div>
+
+  <div class="hero-in">
+    <img class="hero-logo" id="heroLogo" src="assets/logo-512.png" alt="Mail Factory" width="124" height="124">
+    <h1 class="l1 hero-title" id="heroTitle">
+      <span class="ln"><span class="t-mail">Mail</span></span>
+      <span class="ln"><span class="t-fact">Factory</span></span>
+    </h1>
+    <div class="hero-sub">
+      <div>
+        <p class="l3" style="max-width:34ch;margin-bottom:12px">Generate accounts. Run the engines. Keep every record on your own device.</p>
+        <p class="l4" style="max-width:56ch">A native Android application with a single and batch generator, six automation engines, a searchable local library, one-touch sessions and a precise settings layer. Nothing is uploaded to a server.</p>
+      </div>
+      <div class="hero-act">
+        <button class="btn btn-p btn-lg" id="heroDl" data-mag="0.24">
+          <span class="sheen"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          <span class="lb">Download</span>
+        </button>
+        <button class="btn btn-g btn-lg" id="heroShare" data-mag="0.24">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+            <path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+          <span class="lb">Share</span>
+        </button>
+        <a class="btn btn-q" href="#discovery" style="margin-left:6px">
+          Explore
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px">
+            <path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:clamp(18px,2.6vh,30px);gap:20px;flex-wrap:wrap">
+      <div class="hero-scroll"><i></i><span>Scroll to begin</span></div>
+      <span class="l8" style="text-align:right">Chapter 00 — Intro</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 02 · TICKER RAIL ══════════════ -->
+<section class="ticker sec" aria-hidden="true">
+  <div class="tick-row" data-tick="1">
+    <span class="hi">Single generator</span><span>Batch generator</span><span class="hi">Identity shift</span>
+    <span>Network cycle</span><span class="hi">System repo</span><span>Core boost</span>
+    <span class="hi">Memory purge</span><span>DNS tunnel</span><span class="hi">Check route</span>
+    <span>Log engine</span><span class="hi">Local library</span><span>One touch</span>
+  </div>
+</section>
+
+<!-- ══════════════ 03 · CHAPTER OPENER — DISCOVERY ══════════════ -->
+<section class="chap sec" id="discovery" data-chapter>
+  <div class="chap-in">
+    <div class="chap-top">
+      <span class="l5">Chapter 01</span>
+      <span class="l8">Discovery</span>
+    </div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">01</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>What it</span></span><span class="split-line"><span>actually is</span></span></h2>
+        <p class="l4 wide">Mail Factory is not a service you sign into. It is an application that runs on your phone, produces what you ask for, and files the result locally. The chapters ahead move through every surface of it — and the real app is embedded live along the way.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 04 · EDITORIAL MANIFESTO ══════════════ -->
+<section class="manifesto sec pad">
+  <div class="wrap mf-grid">
+    <div data-rv="up">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">Manifesto</span><span class="bar"></span></div>
+      <p class="mf-big">
+        Most tools ask you to <em>hand over</em> your data first and trust them second.
+        Mail Factory inverts that. Everything is generated <b>on the device</b>,
+        stored <b>on the device</b>, and searchable <em>only from the device</em>.
+        There is no account to create, and there is no server waiting for your output.
+      </p>
+    </div>
+    <aside class="mf-side" data-rv="up" data-rv-d="2">
+      <div class="blk">
+        <h4>Local by design</h4>
+        <p class="l6">“Accounts stay on this device. Generated accounts are stored locally in your Library.”</p>
+      </div>
+      <div class="blk">
+        <h4>No upload step</h4>
+        <p class="l6">Nothing is uploaded to a server. An off-device copy only exists if you connect a backup destination yourself.</p>
+      </div>
+      <div class="blk">
+        <h4>Freshly generated</h4>
+        <p class="l6">Each result is freshly generated and not reused between runs.</p>
+      </div>
+      <div class="blk">
+        <h4>Free core</h4>
+        <p class="l6">All core features are free to use.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ══════════════ 05 · NUMBERED FACT SPREAD ══════════════ -->
+<section class="facts sec pad">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:22px;flex-wrap:wrap;margin-bottom:clamp(26px,3.4vw,46px)">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Dashboard readout</span><span class="bar"></span></div>
+        <h2 class="l2">Four claims the app<br>makes about itself</h2>
+      </div>
+      <p class="l6" style="max-width:34ch" data-rv="up" data-rv-d="2">These four statements appear on the Mail Factory dashboard. They are reproduced here exactly as the application presents them.</p>
+    </div>
+    <div class="fact-grid">
+      <article class="fact" data-rv="up" data-rv-d="1">
+        <span class="fv">01</span><span class="fn">F/01</span>
+        <svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg>
+        <h3>100% Native</h3>
+        <p>Android App. Built as a native application rather than a wrapper around a remote page.</p>
+      </article>
+      <article class="fact" data-rv="up" data-rv-d="2">
+        <span class="fv">02</span><span class="fn">F/02</span>
+        <svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 2L4.5 13.5H11l-1 8.5 8.5-11.5H12z"/></svg>
+        <h3>Root Powered</h3>
+        <p>Max Performance. The dashboard reports the app's performance posture directly on the home surface.</p>
+      </article>
+      <article class="fact" data-rv="up" data-rv-d="3">
+        <span class="fv">03</span><span class="fn">F/03</span>
+        <svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
+        <h3>Network Ready</h3>
+        <p>HTTP / HTTPS • SOCKS5. The protocols the app declares as available on the network layer.</p>
+      </article>
+      <article class="fact" data-rv="up" data-rv-d="4">
+        <span class="fv">04</span><span class="fn">F/04</span>
+        <svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/>
+          <circle cx="12" cy="12" r="3.4"/></svg>
+        <h3>Smart Engine</h3>
+        <p>High Success Rate. Six automation engines sit behind this label, each independently switchable.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 06 · GRADIENT FIELD — SPOTLIGHT ══════════════ -->
+<section class="gfield sec" data-grad="spotlight">
+  <canvas aria-hidden="true"></canvas>
+  <div class="gf-in">
+    <div class="eyebrow" style="justify-content:center" data-rv="fade"><span class="dot"></span><span class="l5">The boundary</span></div>
+    <h2 class="l1" data-rv="up" style="font-size:clamp(34px,7.6vw,118px)">Nothing<br>leaves</h2>
+    <p class="l4" style="max-width:56ch" data-rv="up" data-rv-d="2">Every email and password is generated and processed locally on your device. There is no upload step in the pipeline — the only way a record reaches anywhere else is if you deliberately connect a backup destination from Settings.</p>
+  </div>
+  <div class="gf-hint">Move your pointer</div>
+</section>
+
+<!-- ══════════════ 07 · KINETIC TYPE STATEMENT ══════════════ -->
+<section class="kinetic sec" aria-label="Generate, automate, archive">
+  <div class="kin-row" data-kin="1">
+    <span class="fill">Generate</span><i></i><span class="out">Automate</span>
+    <span class="acc">Archive</span><i></i><span class="out">Control</span>
+  </div>
+  <div class="kin-row b" data-kin="-1" style="margin-top:clamp(10px,1.6vw,26px);opacity:.75">
+    <span class="out">Single</span><span class="fill">Batch</span><span class="out">Library</span>
+    <span class="acc">One touch</span><span class="out">Settings</span>
+  </div>
+</section>

@@ -1,0 +1,258 @@
+<!-- ══════════════ 34 · CHAPTER OPENER — WORKFLOW ══════════════ -->
+<section class="chap sec" id="workflow" data-chapter>
+  <div class="chap-in">
+    <div class="chap-top"><span class="l5">Chapter 09</span><span class="l8">Topology</span></div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">09</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>Workflow</span></span></h2>
+        <p class="l4 wide">Input, process, generate, store, control. Five movements that describe how a value you type becomes a record you can find again a week later.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 35 · WORKFLOW — SVG topology, animated draw ══════════════ -->
+<section class="sec pad" style="background:var(--ink-2)" data-draw-root>
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:22px;flex-wrap:wrap;margin-bottom:clamp(24px,3vw,44px)">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Five movements</span><span class="bar"></span></div>
+        <h2 class="l2">The path a value takes</h2>
+      </div>
+      <p class="l6" style="max-width:32ch" data-rv="up" data-rv-d="2">Lines draw themselves as the section enters. Hover a stage to bring it forward.</p>
+    </div>
+
+    <div style="border:1px solid var(--line);border-radius:16px;background:#07080a;padding:clamp(18px,3vw,44px);overflow:hidden" data-rv="up" data-rv-d="3">
+      <svg viewBox="0 0 1200 320" style="width:100%;height:auto;overflow:visible" role="img" aria-label="Workflow diagram: input, process, generate, store, control">
+        <defs>
+          <linearGradient id="wfl" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#e8112d" stop-opacity="0.15"/>
+            <stop offset="50%" stop-color="#e8112d" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#e8112d" stop-opacity="0.15"/>
+          </linearGradient>
+          <filter id="wglow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+
+        <path data-draw d="M120 160 C 220 160, 220 160, 360 160" stroke="url(#wfl)" stroke-width="1.4" fill="none"/>
+        <path data-draw d="M360 160 C 470 160, 470 160, 600 160" stroke="url(#wfl)" stroke-width="1.4" fill="none"/>
+        <path data-draw d="M600 160 C 710 160, 710 160, 840 160" stroke="url(#wfl)" stroke-width="1.4" fill="none"/>
+        <path data-draw d="M840 160 C 950 160, 950 160, 1080 160" stroke="url(#wfl)" stroke-width="1.4" fill="none"/>
+        <path data-draw d="M600 160 C 600 60, 900 60, 1080 110" stroke="rgba(255,255,255,.14)" stroke-width="1" fill="none" stroke-dasharray="3 5"/>
+        <path data-draw d="M360 160 C 360 262, 760 262, 1080 210" stroke="rgba(255,255,255,.14)" stroke-width="1" fill="none" stroke-dasharray="3 5"/>
+
+        <g class="wf-stage" transform="translate(120,160)">
+          <circle r="27" fill="#0d0f13" stroke="rgba(255,255,255,.2)"/>
+          <circle r="6" fill="#e8112d" filter="url(#wglow)"/>
+          <text y="56" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#f6f6f8" letter-spacing="2">INPUT</text>
+          <text y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="10.5" fill="#83868f">pattern · lengths · qty</text>
+        </g>
+        <g class="wf-stage" transform="translate(360,160)">
+          <circle r="27" fill="#0d0f13" stroke="rgba(255,255,255,.2)"/>
+          <rect x="-7" y="-7" width="14" height="14" fill="none" stroke="#e8112d" stroke-width="1.6"/>
+          <text y="56" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#f6f6f8" letter-spacing="2">PROCESS</text>
+          <text y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="10.5" fill="#83868f">engines · local only</text>
+        </g>
+        <g class="wf-stage" transform="translate(600,160)">
+          <circle r="34" fill="#12060a" stroke="rgba(232,17,45,.6)"/>
+          <circle r="13" fill="none" stroke="#ff2438" stroke-width="1.6" filter="url(#wglow)"/>
+          <circle r="4" fill="#ff2438"/>
+          <text y="62" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#ff6a78" letter-spacing="2">GENERATE</text>
+          <text y="80" text-anchor="middle" font-family="Inter,sans-serif" font-size="10.5" fill="#83868f">single or batch</text>
+        </g>
+        <g class="wf-stage" transform="translate(840,160)">
+          <circle r="27" fill="#0d0f13" stroke="rgba(255,255,255,.2)"/>
+          <path d="M-8 -6h16M-8 0h16M-8 6h16" stroke="#e8112d" stroke-width="1.6" stroke-linecap="round"/>
+          <text y="56" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#f6f6f8" letter-spacing="2">STORE</text>
+          <text y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="10.5" fill="#83868f">library · timestamped</text>
+        </g>
+        <g class="wf-stage" transform="translate(1080,160)">
+          <circle r="27" fill="#0d0f13" stroke="rgba(255,255,255,.2)"/>
+          <circle r="8" fill="none" stroke="#e8112d" stroke-width="1.6"/>
+          <path d="M0 -14v5M0 9v5M-14 0h5M9 0h5" stroke="#e8112d" stroke-width="1.6" stroke-linecap="round"/>
+          <text y="56" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#f6f6f8" letter-spacing="2">CONTROL</text>
+          <text y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="10.5" fill="#83868f">sort · star · verify</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="strip c3" style="margin-top:clamp(26px,3vw,46px);border:1px solid var(--line-2);border-radius:13px;overflow:hidden" data-rv="up" data-rv-d="4">
+      <div><b>No network hop</b><span>Between input and output</span><p>“Results appear instantly in the list below — no waiting, no network needed.”</p></div>
+      <div><b>No reuse</b><span>Between runs</span><p>“Each result is freshly generated and not reused between runs.”</p></div>
+      <div><b>No upload</b><span>After storage</span><p>“Nothing is uploaded to a server.”</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 36 · CHAPTER OPENER — SYSTEM ══════════════ -->
+<section class="chap sec" id="system" data-chapter>
+  <div class="chap-in">
+    <div class="chap-top"><span class="l5">Chapter 10</span><span class="l8">Architecture map</span></div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">10</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>System</span></span></h2>
+        <p class="l4 wide">An interactive map of the whole application. Touch or hover any node to read what that layer actually does and see its connections light up.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 37 · SYSTEM — interactive node map ══════════════ -->
+<section class="dviz sec pad" style="background:var(--ink-2)">
+  <div class="wrap">
+    <div class="dviz-frame" data-rv="up">
+      <div class="dviz-bar">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span class="tag live">Interactive map</span>
+          <span class="l5">Mail Factory — system topology</span>
+        </div>
+        <span class="l8">Hover · tap · tab to explore</span>
+      </div>
+      <div style="display:grid;gap:0" class="nm-wrap">
+        <div id="nodeMap" class="nodemap" style="padding:clamp(16px,3vw,38px)">
+          <svg viewBox="0 0 900 470" role="img" aria-label="Interactive system map">
+            <g stroke-linecap="round">
+              <path class="nm-link" data-from="input" data-to="generator" d="M150 235 C 250 235, 280 235, 400 235"/>
+              <path class="nm-link" data-from="generator" data-to="library" d="M400 235 C 520 235, 560 235, 690 160"/>
+              <path class="nm-link" data-from="engine" data-to="generator" d="M400 90 C 400 150, 400 170, 400 235"/>
+              <path class="nm-link" data-from="onetouch" data-to="engine" d="M180 90 C 280 90, 300 90, 400 90"/>
+              <path class="nm-link" data-from="settings" data-to="library" d="M690 380 C 690 300, 690 260, 690 160"/>
+              <path class="nm-link" data-from="settings" data-to="engine" d="M690 380 C 500 420, 380 300, 400 90"/>
+              <path class="nm-link" data-from="library" data-to="device" d="M690 160 C 790 160, 820 230, 800 300"/>
+              <path class="nm-link" data-from="device" data-to="settings" d="M800 300 C 780 350, 740 375, 690 380"/>
+            </g>
+
+            <g class="nm-node" data-node="input" role="button" aria-label="Input layer">
+              <circle class="hit" cx="150" cy="235" r="34" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.18)"/>
+              <circle cx="150" cy="235" r="5" fill="#e8112d"/>
+              <text x="150" y="288" text-anchor="middle">Input</text>
+            </g>
+            <g class="nm-node" data-node="generator" role="button" aria-label="Generator layer">
+              <circle class="hit" cx="400" cy="235" r="44" fill="rgba(232,17,45,.09)" stroke="rgba(232,17,45,.5)"/>
+              <circle cx="400" cy="235" r="14" fill="none" stroke="#ff2438" stroke-width="1.5"/>
+              <circle cx="400" cy="235" r="4" fill="#ff2438"/>
+              <text x="400" y="300" text-anchor="middle">Generator</text>
+            </g>
+            <g class="nm-node" data-node="engine" role="button" aria-label="Engine layer">
+              <circle class="hit" cx="400" cy="90" r="36" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.18)"/>
+              <path d="M388 90h24M400 78v24" stroke="#e8112d" stroke-width="1.6" stroke-linecap="round"/>
+              <text x="400" y="145" text-anchor="middle">Engine ×6</text>
+            </g>
+            <g class="nm-node" data-node="onetouch" role="button" aria-label="One Touch layer">
+              <circle class="hit" cx="180" cy="90" r="32" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.18)"/>
+              <circle cx="180" cy="90" r="9" fill="none" stroke="#e8112d" stroke-width="1.5"/>
+              <text x="180" y="142" text-anchor="middle">One Touch</text>
+            </g>
+            <g class="nm-node" data-node="library" role="button" aria-label="Library layer">
+              <circle class="hit" cx="690" cy="160" r="38" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.18)"/>
+              <path d="M678 152h24M678 160h24M678 168h24" stroke="#e8112d" stroke-width="1.5" stroke-linecap="round"/>
+              <text x="690" y="216" text-anchor="middle">Library</text>
+            </g>
+            <g class="nm-node" data-node="settings" role="button" aria-label="Settings layer">
+              <circle class="hit" cx="690" cy="380" r="34" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.18)"/>
+              <circle cx="690" cy="380" r="8" fill="none" stroke="#e8112d" stroke-width="1.5"/>
+              <path d="M690 366v-6M690 400v-6M676 380h-6M710 380h-6" stroke="#e8112d" stroke-width="1.5" stroke-linecap="round"/>
+              <text x="690" y="432" text-anchor="middle">Settings</text>
+            </g>
+            <g class="nm-node" data-node="device" role="button" aria-label="Device boundary">
+              <circle class="hit" cx="800" cy="300" r="30" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)" stroke-dasharray="4 4"/>
+              <rect x="793" y="291" width="14" height="18" rx="3" fill="none" stroke="#83868f" stroke-width="1.4"/>
+              <text x="800" y="350" text-anchor="middle">Device</text>
+            </g>
+          </svg>
+        </div>
+        <div style="padding:0 clamp(16px,3vw,38px) clamp(18px,3vw,34px)">
+          <div class="nm-panel">
+            <div style="display:flex;justify-content:space-between;gap:16px;align-items:baseline;margin-bottom:6px">
+              <h4 id="nmTitle">GENERATOR</h4>
+              <span class="l5" id="nmKind">Production layer</span>
+            </div>
+            <p class="l4" id="nmBody">Single builds one account. Batch builds 5, 10, 20, 50 or 100 in a single pass.</p>
+          </div>
+        </div>
+      </div>
+      <div class="dviz-legend">
+        <div><i></i>Active path</div>
+        <div><i style="background:rgba(255,255,255,.3)"></i>Idle path</div>
+        <div><i style="background:transparent;border-top:1px dashed rgba(255,255,255,.4);height:0"></i>Device boundary</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 38 · 3D TERRAIN + METRIC READOUT ══════════════ -->
+<section class="sec" style="background:var(--ink);position:relative;overflow:hidden">
+  <div style="position:relative;height:clamp(340px,46vw,560px)" data-scene3d="mesh">
+    <canvas class="cv-bg" aria-hidden="true"></canvas>
+    <div style="position:absolute;inset:0;z-index:2;display:flex;align-items:flex-end;padding:var(--gut)">
+      <div class="wrap" style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+        <div>
+          <span class="l5" data-rv="fade">Surface / topology</span>
+          <h2 class="l2" data-rv="up" data-rv-d="1" style="margin-top:10px">One device,<br>one surface</h2>
+        </div>
+        <p class="l6" style="max-width:34ch" data-rv="fade" data-rv-d="2">The system has no remote tier to draw. Everything in the map above happens inside this one boundary.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 39 · PAPER INVERSION — the written record ══════════════ -->
+<section class="paper-sec tone-paper sec pad-lg">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;margin-bottom:clamp(30px,4vw,56px)">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Documentation — in the app</span><span class="bar" style="background:linear-gradient(90deg,rgba(0,0,0,.3),transparent)"></span></div>
+        <h2 class="paper-big">Read the<br><em>fine print</em></h2>
+      </div>
+      <p class="l4" style="max-width:36ch" data-rv="up" data-rv-d="2">Mail Factory ships its own Help Centre, FAQ, feedback routes and issue tracker. Everything below is drawn from it.</p>
+    </div>
+
+    <div class="ps-grid">
+      <div data-rv="up" data-rv-d="1">
+        <span class="l5">Features — as listed</span>
+        <div class="paper-rule"></div>
+        <div style="display:grid;gap:12px">
+          <div class="paper-card"><h4>Email Generator</h4><p>“Generate unlimited unique email addresses.”</p></div>
+          <div class="paper-card"><h4>Password Generator</h4><p>“Create strong and secure passwords.”</p></div>
+          <div class="paper-card"><h4>Batch Generation</h4><p>“Generate multiple results at once.”</p></div>
+          <div class="paper-card"><h4>One-Tap Copy</h4><p>“Copy single items and all results instantly.”</p></div>
+        </div>
+      </div>
+      <div data-rv="up" data-rv-d="2">
+        <span class="l5">Tips — as written</span>
+        <div class="paper-rule"></div>
+        <ul style="display:grid;gap:14px;margin-bottom:34px">
+          <li style="display:flex;gap:12px;align-items:flex-start">
+            <span style="font-family:var(--mono);font-size:11px;color:var(--crimson);padding-top:3px">01</span>
+            <span style="font-size:15px;color:#2c2e34;line-height:1.55">“Use longer lengths for more secure passwords.”</span></li>
+          <li style="display:flex;gap:12px;align-items:flex-start">
+            <span style="font-family:var(--mono);font-size:11px;color:var(--crimson);padding-top:3px">02</span>
+            <span style="font-size:15px;color:#2c2e34;line-height:1.55">“Batch generation is faster for large lists.”</span></li>
+          <li style="display:flex;gap:12px;align-items:flex-start">
+            <span style="font-family:var(--mono);font-size:11px;color:var(--crimson);padding-top:3px">03</span>
+            <span style="font-size:15px;color:#2c2e34;line-height:1.55">“All results are generated locally on your device.”</span></li>
+        </ul>
+
+        <span class="l5">FAQ — the four questions</span>
+        <div class="paper-rule"></div>
+        <div id="faqList">
+          <div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="fq-n">Q1</span>
+            <h4 style="color:#0a0a0c">Is my data stored anywhere?</h4><span class="faq-ic" style="border-color:rgba(0,0,0,.2);color:#0a0a0c"></span></button>
+            <div class="faq-a"><p class="l4" style="color:#4a4d55">“No — every email and password is generated and processed locally on your device. Nothing is uploaded to a server.”</p></div></div>
+          <div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="fq-n">Q2</span>
+            <h4 style="color:#0a0a0c">Are the results unique?</h4><span class="faq-ic" style="border-color:rgba(0,0,0,.2);color:#0a0a0c"></span></button>
+            <div class="faq-a"><p class="l4" style="color:#4a4d55">“Yes, each result is freshly generated and not reused between runs.”</p></div></div>
+          <div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="fq-n">Q3</span>
+            <h4 style="color:#0a0a0c">Can I use these emails anywhere?</h4><span class="faq-ic" style="border-color:rgba(0,0,0,.2);color:#0a0a0c"></span></button>
+            <div class="faq-a"><p class="l4" style="color:#4a4d55">“Yes, they're standard, valid addresses usable wherever an email is accepted.”</p></div></div>
+          <div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="fq-n">Q4</span>
+            <h4 style="color:#0a0a0c">Is this app free to use?</h4><span class="faq-ic" style="border-color:rgba(0,0,0,.2);color:#0a0a0c"></span></button>
+            <div class="faq-a"><p class="l4" style="color:#4a4d55">“Yes, all core features are free to use.”</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

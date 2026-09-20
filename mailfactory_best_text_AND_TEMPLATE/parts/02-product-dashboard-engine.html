@@ -1,0 +1,324 @@
+<!-- ══════════════ 08 · CHAPTER OPENER — PRODUCT ══════════════ -->
+<section class="chap sec" id="product" data-chapter>
+  <div class="chap-in">
+    <div class="chap-top"><span class="l5">Chapter 02</span><span class="l8">Product index</span></div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">02</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>Six surfaces,</span></span><span class="split-line"><span>one device</span></span></h2>
+        <p class="l4 wide">The application is organised into six screens. Select one below and the page will travel to its chapter — and switch the live application to that exact screen at the same time.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 09 · PRODUCT INDEX — control panel ══════════════ -->
+<section class="pindex sec pad">
+  <div class="wrap">
+    <div class="pi-head">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Interactive index</span><span class="bar"></span></div>
+        <h2 class="l2">Select a surface</h2>
+      </div>
+      <p class="l6" style="max-width:32ch" data-rv="up" data-rv-d="2">Each row drives the real application. Choosing one scrolls to its chapter and calls the app's own screen navigation.</p>
+    </div>
+    <div class="pi-list">
+      <button class="pi-row" data-appnav="dashboard" data-target="app-dashboard" data-rv="up">
+        <span class="pi-n">01</span>
+        <span class="pi-main"><h3>Dashboard</h3><p>System status, the entry points into the Factory and the Library, and the four capability readouts.</p></span>
+        <span class="pi-go"><span>Open</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
+      </button>
+      <button class="pi-row" data-appnav="engine" data-target="app-engine" data-rv="up" data-rv-d="1">
+        <span class="pi-n">02</span>
+        <span class="pi-main"><h3>Engine</h3><p>Six automation engines, Check Route, the live Log Engine and per-engine System Settings.</p></span>
+        <span class="pi-go"><span>Open</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
+      </button>
+      <button class="pi-row" data-appnav="generator" data-target="app-generator" data-rv="up" data-rv-d="2">
+        <span class="pi-n">03</span>
+        <span class="pi-main"><h3>Generator</h3><p>Single and Batch modes. Name pattern, email length, password length, quantity, and instant output.</p></span>
+        <span class="pi-go"><span>Open</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
+      </button>
+      <button class="pi-row" data-appnav="library" data-target="app-library" data-rv="up" data-rv-d="3">
+        <span class="pi-n">04</span>
+        <span class="pi-main"><h3>Library</h3><p>Every generated account, timestamped. Sort, search, star, verify, rename and delete — all local.</p></span>
+        <span class="pi-go"><span>Open</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
+      </button>
+      <button class="pi-row" data-appnav="onetouch" data-target="app-onetouch" data-rv="up" data-rv-d="4">
+        <span class="pi-n">05</span>
+        <span class="pi-main"><h3>One Touch</h3><p>A single connect control with live ping, download, upload and session telemetry, plus emergency stop.</p></span>
+        <span class="pi-go"><span>Open</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
+      </button>
+      <button class="pi-row" data-appnav="settings" data-target="app-settings" data-rv="up" data-rv-d="5">
+        <span class="pi-n">06</span>
+        <span class="pi-main"><h3>Settings</h3><p>Notifications, Appearance, Language, Backup, the Help Centre, feedback routes and version checking.</p></span>
+        <span class="pi-go"><span>Open</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 10 · 3D CENTREPIECE — the core ══════════════ -->
+<section class="asplit sec pad" data-scene3d="core">
+  <div class="side-label"><span>Product core</span></div>
+  <div class="wrap as-grid">
+    <div class="as-txt" data-rv="up">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">Architecture</span><span class="bar"></span></div>
+      <h2 class="l2">One binary,<br>six surfaces</h2>
+      <p class="l4 wide">The six screens are not separate apps stitched together. They share one shell, one navigation model and one local store. Switching between them does not reload anything — the app swaps the active screen in place, which is exactly what this website does to the embedded copy as you scroll.</p>
+      <div class="as-list">
+        <div class="as-item"><b>A</b><div><h4>Shared shell</h4><p>A single application root holds every screen; only one is active at a time.</p></div></div>
+        <div class="as-item"><b>B</b><div><h4>No reload navigation</h4><p>Moving between Engine, Generator and One Touch is a client-side screen switch.</p></div></div>
+        <div class="as-item"><b>C</b><div><h4>Local store</h4><p>The Library reads from device storage, so results survive between sessions.</p></div></div>
+        <div class="as-item"><b>D</b><div><h4>Protected surfaces</h4><p>Dashboard and Settings are treated as protected screens inside the app shell.</p></div></div>
+      </div>
+    </div>
+    <div class="as-visual" data-rv="scale" data-rv-d="2">
+      <canvas aria-hidden="true"></canvas>
+      <span class="l5 vcorner">Core / 3D</span>
+      <span class="l8 vlabel">Faceted glass · orbiting surfaces</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 11 · CHAPTER OPENER — DASHBOARD ══════════════ -->
+<section class="chap sec" id="c-dashboard" data-chapter data-prep="dashboard">
+  <div class="chap-in">
+    <div class="chap-top"><span class="l5">Chapter 03</span><span class="tag live">Live application</span></div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">03</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>Dashboard</span></span></h2>
+        <p class="l4 wide">The first thing the app shows you. A status readout, two doors, and four statements about what the software is. From here everything else is one tap away.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 12 · DASHBOARD — editorial stage ══════════════ -->
+<section class="sec pad" style="background:var(--ink-2)">
+  <div class="wrap" style="display:grid;gap:clamp(24px,3vw,50px)">
+    <div style="display:grid;gap:clamp(20px,3vw,48px);align-items:end" class="dash-head">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Stage 01 — Statement</span><span class="bar"></span></div>
+        <p class="mf-big" style="font-size:clamp(23px,3.2vw,46px)">
+          A dashboard should answer one question before anything else:
+          <em>is the system ready?</em> Mail Factory answers it with a single line —
+          <b>SYSTEM STATUS: ONLINE</b> — and then gets out of the way.
+        </p>
+      </div>
+    </div>
+    <div class="strip c4" data-rv="up" data-rv-d="2">
+      <div><b data-count="1" data-pad="2">00</b><span>Status line</span><p>A live system status indicator sits at the top of the screen.</p></div>
+      <div><b data-count="2" data-pad="2">00</b><span>Primary doors</span><p>Open Factory and Open Library are the two entry points.</p></div>
+      <div><b data-count="4" data-pad="2">00</b><span>Capability tiles</span><p>Native, Root Powered, Network Ready, Smart Engine.</p></div>
+      <div><b data-count="6" data-pad="2">00</b><span>Reachable screens</span><p>Every other surface is one navigation step away.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 13 · DASHBOARD — LIVE APP (phone presentation) ══════════════ -->
+<section class="appstage sec pad" id="app-dashboard" data-app-chapter="dashboard" style="background:var(--ink)">
+  <div class="side-label"><span>Live · Dashboard</span></div>
+  <div class="wrap stage-grid c2">
+    <div class="stage-copy" data-rv="up">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">Stage 02 — The real thing</span><span class="bar"></span></div>
+      <h2 class="l2">This is the<br>actual app</h2>
+      <p class="l4 wide">Not a screenshot and not a mock-up. The panel beside this text is the real Mail Factory application running live. Scroll onward and it will switch itself to each screen as the chapter changes — or use the index above to jump directly.</p>
+      <div class="stage-steps">
+        <div class="sstep"><b>01</b><div><h4>System status</h4><p>The header reports ONLINE as soon as the app shell is ready.</p></div></div>
+        <div class="sstep"><b>02</b><div><h4>Open Factory</h4><p>The door into the generation side of the product.</p></div></div>
+        <div class="sstep"><b>03</b><div><h4>Open Library</h4><p>The door into everything you have already produced.</p></div></div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:26px;flex-wrap:wrap">
+        <span class="tag live">Interactive</span>
+        <span class="tag">Tap to use it</span>
+      </div>
+    </div>
+    <div style="position:relative" data-rv="scale" data-rv-d="2">
+      <div class="pres-phone" data-tilt="5">
+        <div class="scr app-shellbox">
+          <div class="app-slot"></div>
+          <div class="app-loading"><div class="lspin"></div></div>
+          <div class="app-touchveil">Tap to interact</div>
+        </div>
+      </div>
+      <div class="app-annots">
+        <div class="annot" style="left:-160px;top:22%"><div class="ln"></div><h5>Status</h5><p>Live system readout rendered by the app itself.</p></div>
+        <div class="annot r" style="right:-170px;top:52%"><div class="ln"></div><h5>Two doors</h5><p>Factory and Library are the primary destinations.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 14 · QUIET TRANSITION ══════════════ -->
+<section class="quiet sec">
+  <div class="q-in">
+    <span class="l5" data-rv="fade">Transition</span>
+    <h2 data-rv="up" data-rv-d="1" style="margin-top:18px">The dashboard is the calm surface.<br>Underneath it, six engines are waiting.</h2>
+    <div class="qm" data-rv="fade" data-rv-d="3">
+      <span class="l8">Next</span>
+      <span style="width:52px;height:1px;background:var(--ember);display:block"></span>
+      <span class="l5 red">Chapter 04 — Engine</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 15 · CHAPTER OPENER — ENGINE ══════════════ -->
+<section class="chap sec" id="c-engine" data-chapter data-prep="engine" style="background:var(--ink-2)">
+  <div class="chap-in">
+    <div class="chap-top"><span class="l5">Chapter 04</span><span class="l8">Automation</span></div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">04</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>Engine</span></span></h2>
+        <p class="l4 wide">“Powerful automation engines.” Six of them, each independently switchable, plus the diagnostic tools that sit alongside them. Disabled engines are skipped by Optimize System and will not run in the background.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 16 · ENGINE — 3D orbit + interactive board ══════════════ -->
+<section class="sec pad" style="background:var(--ink);position:relative;overflow:hidden">
+  <div class="wrap">
+    <div style="display:grid;gap:clamp(26px,4vw,60px);align-items:center" class="eng-grid">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Interactive — toggle the board</span><span class="bar"></span></div>
+        <h2 class="l2">Six engines.<br>You decide which run.</h2>
+        <p class="l4 wide" style="margin-top:16px">Switch any engine off below and watch the environment respond — the corresponding node powers down, its spoke dims and the hub loses intensity. This mirrors the app's own System Settings screen, where each engine has a real ON/OFF state.</p>
+        <div style="display:flex;align-items:center;gap:14px;margin-top:24px">
+          <span class="l5">Engines live</span>
+          <span class="l1" id="engineLive" style="font-size:clamp(34px,4vw,56px);line-height:1;color:var(--ember)">06</span>
+          <span class="l8">/ 06</span>
+        </div>
+      </div>
+      <div style="position:relative;aspect-ratio:1/0.82;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#07080a"
+           id="engineScene" data-scene3d="engines" data-rv="scale" data-rv-d="2">
+        <canvas aria-hidden="true"></canvas>
+        <span class="l5" style="position:absolute;left:16px;top:14px;z-index:2">Engine array / 3D</span>
+        <span class="l8" style="position:absolute;right:16px;bottom:14px;z-index:2">Metallic · orbital</span>
+      </div>
+    </div>
+
+    <div class="eboard" id="engineBoard" style="margin-top:clamp(30px,4vw,56px)" data-rv="up" data-rv-d="3">
+      <button class="ecell on" aria-pressed="true">
+        <span class="ec-x">01</span>
+        <div class="ec-top"><span class="l5">ENG/01</span><span class="esw"><i></i></span></div>
+        <h4>Identity Shift</h4>
+        <p>One of the six automation engines listed on the Engine screen. Toggleable from System Settings.</p>
+      </button>
+      <button class="ecell on" aria-pressed="true">
+        <span class="ec-x">02</span>
+        <div class="ec-top"><span class="l5">ENG/02</span><span class="esw"><i></i></span></div>
+        <h4>Network Cycle</h4>
+        <p>Runs as part of the automation set unless it has been switched off in System Settings.</p>
+      </button>
+      <button class="ecell on" aria-pressed="true">
+        <span class="ec-x">03</span>
+        <div class="ec-top"><span class="l5">ENG/03</span><span class="esw"><i></i></span></div>
+        <h4>System Repo</h4>
+        <p>Part of the optimisation set invoked by the Optimize System action on the Engine screen.</p>
+      </button>
+      <button class="ecell" aria-pressed="false">
+        <span class="ec-x">04</span>
+        <div class="ec-top"><span class="l5">ENG/04</span><span class="esw"><i></i></span></div>
+        <h4>Core Boost</h4>
+        <p>Shipped switched off by default. Disabled engines are skipped by Optimize System.</p>
+      </button>
+      <button class="ecell" aria-pressed="false">
+        <span class="ec-x">05</span>
+        <div class="ec-top"><span class="l5">ENG/05</span><span class="esw"><i></i></span></div>
+        <h4>Memory Purge</h4>
+        <p>Also off by default. Turning it on adds it to the background automation set.</p>
+      </button>
+      <button class="ecell on" aria-pressed="true">
+        <span class="ec-x">06</span>
+        <div class="ec-top"><span class="l5">ENG/06</span><span class="esw"><i></i></span></div>
+        <h4>DNS Tunnel</h4>
+        <p>The sixth engine in the array, enabled in the application's default configuration.</p>
+      </button>
+    </div>
+    <p class="l6" style="margin-top:16px;max-width:70ch" data-rv="fade" data-rv-d="4">Default states above mirror the application's own System Settings panel: Identity Shift, Network Cycle, System Repo and DNS Tunnel start ON; Core Boost and Memory Purge start OFF.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 17 · ENGINE TOOLS — horizontal rail ══════════════ -->
+<section class="hrail sec" style="height:260vh">
+  <div class="hrail-sticky" style="position:sticky;top:0">
+    <div class="hrail-head">
+      <div>
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Engine tools — horizontal</span><span class="bar"></span></div>
+        <h2 class="l2">Beyond the six</h2>
+      </div>
+      <p class="l6" style="max-width:30ch">Three more surfaces live on the Engine screen. Keep scrolling — the rail moves sideways.</p>
+    </div>
+    <div class="hrail-track">
+      <article class="hcard">
+        <span class="hc-glow"></span><span class="hc-n">TOOL / 01</span>
+        <span class="tag hc-tag" style="margin-top:14px">Diagnostic</span>
+        <h3>Check Route</h3>
+        <p>Reports Route Status, Latency, Route and Last Checked. Before a check has been run the fields read “—” and Last Checked reads “Never”.</p>
+      </article>
+      <article class="hcard">
+        <span class="hc-glow"></span><span class="hc-n">TOOL / 02</span>
+        <span class="tag hc-tag live" style="margin-top:14px">Live</span>
+        <h3>Log Engine</h3>
+        <p>A live console. It opens with “[SYSTEM] Log engine initialized”, “[SYSTEM] Console ready” and “[IDLE] Awaiting activity…”.</p>
+      </article>
+      <article class="hcard">
+        <span class="hc-glow"></span><span class="hc-n">TOOL / 03</span>
+        <span class="tag hc-tag" style="margin-top:14px">Control</span>
+        <h3>System Settings</h3>
+        <p>“Turn individual engines on or off. Disabled engines are skipped by Optimize System and won't run in the background.”</p>
+      </article>
+      <article class="hcard">
+        <span class="hc-glow"></span><span class="hc-n">ACTION / 01</span>
+        <span class="tag hc-tag" style="margin-top:14px">Primary</span>
+        <h3>Optimize System</h3>
+        <p>The main action on the Engine screen. It runs the enabled engines and skips anything switched off.</p>
+      </article>
+      <article class="hcard">
+        <span class="hc-glow"></span><span class="hc-n">ACTION / 02</span>
+        <span class="tag hc-tag" style="margin-top:14px">Primary</span>
+        <h3>Create Account</h3>
+        <p>The second action on the Engine screen — the bridge from automation straight into generation.</p>
+      </article>
+      <article class="hcard" style="border-color:rgba(232,17,45,.4)">
+        <span class="hc-glow" style="opacity:1"></span><span class="hc-n">NEXT</span>
+        <h3 style="color:var(--ember)">See it live</h3>
+        <p>The real Engine screen is directly below, with the app's own navigation intact.</p>
+        <button class="btn btn-g" style="margin-top:18px;height:44px" data-appnav="engine" data-target="app-engine">Open Engine</button>
+      </article>
+    </div>
+    <div class="hrail-prog"><i></i></div>
+  </div>
+</section>
+
+<!-- ══════════════ 18 · ENGINE — LIVE APP (embedded in scene) ══════════════ -->
+<section class="appstage sec pad" id="app-engine" data-app-chapter="engine"
+         style="background:var(--ink-2);position:relative;overflow:hidden">
+  <div class="cv-bg" data-grad="signal"><canvas aria-hidden="true"></canvas></div>
+  <div class="wrap cv-hold eng-live-grid" style="display:grid;gap:clamp(26px,4vw,58px);align-items:center">
+    <div style="position:relative;display:flex;justify-content:center" data-rv="scale">
+      <div class="pres-glass">
+        <div class="scr app-shellbox">
+          <div class="app-slot"></div>
+          <div class="app-loading"><div class="lspin"></div></div>
+          <div class="app-touchveil">Tap to interact</div>
+        </div>
+      </div>
+    </div>
+    <div class="stage-copy" data-rv="up" data-rv-d="2">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">Live · Engine screen</span><span class="bar"></span></div>
+      <h2 class="l2">Run it yourself</h2>
+      <p class="l4 wide">The Engine screen is live in the glass panel. Open System Settings inside it to flip the real engine switches, open Check Route to run a route check, or open Log Engine to watch the console. Every control belongs to the application, untouched.</p>
+      <div class="spec" style="margin-top:26px">
+        <div class="spec-row"><dt>Engines</dt><dd><span class="chip">Identity Shift</span><span class="chip">Network Cycle</span><span class="chip">System Repo</span><span class="chip">Core Boost</span><span class="chip">Memory Purge</span><span class="chip">DNS Tunnel</span></dd></div>
+        <div class="spec-row"><dt>Tools</dt><dd><span class="chip">Check Route</span><span class="chip">Log Engine</span><span class="chip">System Settings</span></dd></div>
+        <div class="spec-row"><dt>Actions</dt><dd><span class="chip">Optimize System</span><span class="chip">Create Account</span></dd></div>
+      </div>
+    </div>
+  </div>
+</section>

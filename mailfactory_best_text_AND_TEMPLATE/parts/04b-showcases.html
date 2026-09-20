@@ -1,0 +1,70 @@
+<!-- ============================================================
+     FAMILY: MARQUEE GALLERY (new) — a slow, continuously drifting
+     showcase of the six surfaces as numbered plates. Pointer
+     slows it; drag throws it. Not a card grid, not a slider UI.
+     ============================================================ -->
+<section class="gal sec" aria-label="The six surfaces, as plates">
+  <div class="gal-head wrap" data-rv="up">
+    <div class="eyebrow"><span class="dot"></span><span class="l5">Showcase — the six surfaces</span><span class="bar"></span></div>
+    <h2 class="l2">Six plates</h2>
+    <p class="l6" style="max-width:36ch">Drag the row, or let it drift. Each plate names one screen and the single thing it is for.</p>
+  </div>
+  <div class="gal-vp" data-drag="x">
+    <div class="gal-track">
+      <article class="plate"><span class="pl-n l7">01</span><div class="pl-b"><span class="l8">Surface</span><h3>Dashboard</h3><p>Status, two doors, four capability statements.</p></div></article>
+      <article class="plate"><span class="pl-n l7">02</span><div class="pl-b"><span class="l8">Surface</span><h3>Engine</h3><p>Six switchable engines and three diagnostic tools.</p></div></article>
+      <article class="plate"><span class="pl-n l7">03</span><div class="pl-b"><span class="l8">Surface</span><h3>Generator</h3><p>Single or batch. Four inputs, one button.</p></div></article>
+      <article class="plate"><span class="pl-n l7">04</span><div class="pl-b"><span class="l8">Surface</span><h3>Library</h3><p>Every record, sortable and searchable, held locally.</p></div></article>
+      <article class="plate"><span class="pl-n l7">05</span><div class="pl-b"><span class="l8">Surface</span><h3>One Touch</h3><p>A session panel in its own visual language.</p></div></article>
+      <article class="plate"><span class="pl-n l7">06</span><div class="pl-b"><span class="l8">Surface</span><h3>Settings</h3><p>Thirteen entries across App, Support and About.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAMILY: STEP SHOWCASE (new) — the Help Centre's four steps as
+     a click-through showcase with a progress spine. Different
+     interaction model from the drag gallery above it.
+     ============================================================ -->
+<section class="steps sec pad" id="steps" aria-label="Four steps from the Help Centre">
+  <div class="wrap">
+    <div class="steps-head" data-rv="up">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">Showcase — how to use, verbatim</span><span class="bar"></span></div>
+      <h2 class="l2">Four steps</h2>
+    </div>
+    <div class="steps-body">
+      <nav class="steps-rail" aria-label="Choose a step">
+        <button class="step-t is-on" data-step="0"><em>01</em><span>Open a generator</span></button>
+        <button class="step-t" data-step="1"><em>02</em><span>Enter preferences</span></button>
+        <button class="step-t" data-step="2"><em>03</em><span>Generate</span></button>
+        <button class="step-t" data-step="3"><em>04</em><span>Copy &amp; use</span></button>
+      </nav>
+      <div class="steps-stage">
+        <article class="step-p is-on" data-sp="0">
+          <span class="l8">Step one</span>
+          <h3>Go to Single or Batch Generator</h3>
+          <p>Choose the mode before anything else. Single produces one account. Batch produces a set in a single pass.</p>
+          <div class="step-tags"><span>SINGLE</span><span>BATCH</span></div>
+        </article>
+        <article class="step-p" data-sp="1">
+          <span class="l8">Step two</span>
+          <h3>Enter your preferences</h3>
+          <p>A name pattern of up to twenty characters, an email length, a password length — and a quantity when you are in batch mode.</p>
+          <div class="step-tags"><span>PATTERN</span><span>LENGTHS</span><span>QUANTITY</span></div>
+        </article>
+        <article class="step-p" data-sp="2">
+          <span class="l8">Step three</span>
+          <h3>Generate</h3>
+          <p>“Tap the generate button to create results. Results appear instantly in the list below — no waiting, no network needed.”</p>
+          <div class="step-tags"><span>INSTANT</span><span>OFFLINE</span></div>
+        </article>
+        <article class="step-p" data-sp="3">
+          <span class="l8">Step four</span>
+          <h3>Copy &amp; use</h3>
+          <p>“Copy the results and use them anywhere.” Tap one result to copy it, or use Copy All for the whole batch.</p>
+          <div class="step-tags"><span>COPY</span><span>COPY ALL</span></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

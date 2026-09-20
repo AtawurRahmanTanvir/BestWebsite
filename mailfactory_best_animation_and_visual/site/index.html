@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#050505">
+<title>Mail Factory — System Architecture &amp; Automation</title>
+<meta name="description" content="Mail Factory: a native Android automation workspace — Engine, Generator, Library, One Touch and Settings — presented as one continuous interactive experience.">
+<meta property="og:title" content="Mail Factory — the interactive experience">
+<meta property="og:description" content="Engines, a generator, a local library, one-touch control. Explore the live application inside a cinematic product world.">
+<meta property="og:image" content="assets/logo-1024.png">
+<link rel="icon" type="image/png" href="assets/logo-128.png">
+<link rel="preload" href="fonts/Archivo-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Inter-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/JetBrainsMono-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/intro.css">
+<link rel="stylesheet" href="css/chapters-a.css">
+<link rel="stylesheet" href="css/chapters-b.css">
+<link rel="stylesheet" href="css/chapters-c.css">
+<script>
+  // Site configuration. Never invents a download URL: leave downloadUrl empty until the real build link exists.
+  window.MF_CONFIG = {
+    downloadUrl: '',
+    downloadLabel: 'Download',
+    repoUrl: 'https://github.com/MailFactoryLabs/MailFactoryLabs.github.io',
+    issuesUrl: 'https://github.com/MailFactoryLabs/MailFactoryLabs.github.io/issues',
+    siteUrl: 'https://mailfactorylabs.github.io',
+    feedbackEndpoint: ''
+  };
+</script>
+<script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ===================== NAVIGATION ===================== -->
+<header class="nav" id="nav">
+  <a class="nav-brand" href="#top" data-scroll-to="#s-hero" aria-label="Mail Factory — back to top">
+    <img src="assets/logo-128.webp" alt="" width="34" height="34">
+    <span class="wm">Mail <b>Factory</b></span>
+  </a>
+  <div class="nav-center" aria-hidden="true">
+    <div class="nav-chapter"><span class="num">00</span><span class="label"><span>Intro</span></span></div>
+    <div class="nav-progress"><i></i></div>
+  </div>
+  <div class="nav-actions">
+    <button class="btn btn-ghost btn-icon btn-share" type="button" data-share aria-label="Share Mail Factory" data-magnetic=".2">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+    </button>
+    <a class="btn btn-primary" href="#download" data-download data-magnetic=".18" data-scroll-to="#s-final-download">
+      <span>Download</span>
+      <span class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v13M6 11l6 6 6-6"/><path d="M5 20h14"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v13M6 11l6 6 6-6"/><path d="M5 20h14"/></svg>
+      </span>
+      <i class="ring"></i>
+    </a>
+    <button class="nav-menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+  </div>
+</header>
+<nav class="menu" id="menu" aria-label="Chapters">
+  <div class="menu-list"></div>
+  <div class="menu-side">
+    <div>
+      <p class="t-l5">Product surfaces</p>
+      <div class="grid" style="margin-top:14px">
+        <a href="#s-dash-live" data-index-link="dashboard">Dashboard</a><a href="#s-engine-live" data-index-link="engine">Engine</a>
+        <a href="#s-gen-live" data-index-link="generator">Generator</a><a href="#s-lib-live" data-index-link="library">Library</a>
+        <a href="#s-ot-live" data-index-link="onetouch">One Touch</a><a href="#s-set-live" data-index-link="settings">Settings</a>
+      </div>
+    </div>
+    <div class="t-l8">Mail Factory v1.0.0 · System Architecture &amp; Automation<br>An experimental, educational project by Atawur Rahman.</div>
+  </div>
+</nav>
+<div class="rail" aria-label="Chapter navigation"></div>
+
+<!-- ===================== APP STAGE (the single live application) ===================== -->
+<div class="app-stage" id="app-stage" data-frame="phone" aria-label="Mail Factory live application">
+  <div class="stage-frame">
+    <iframe id="app-frame" title="Mail Factory — live application" loading="eager" allow="clipboard-write"></iframe>
+    <div class="stage-loading" aria-hidden="true"><div>Loading application<i></i></div></div>
+    <div class="stage-chrome" aria-hidden="true"></div>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ======================================================================
+     CHAPTER 00 — INTRO
+     ====================================================================== -->
+<section class="sec hero" id="s-hero" data-chapter="intro" data-chapter-label="Intro" data-theme="dark">
+  <div class="scene-host hero-scene" data-scene="signal" data-reduced-keep="true"></div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-inner wrap">
+    <div class="hero-top">
+      <p class="eyebrow hero-eyebrow"><span class="n">v1.0.0</span> System Architecture &amp; Automation</p>
+      <p class="t-l8 hero-meta">Native Android · Root powered · Local library</p>
+    </div>
+    <div class="hero-mid">
+      <div class="hero-mark" aria-hidden="true"><img src="assets/logo-1024.webp" alt="" width="520" height="436" fetchpriority="high"></div>
+      <h1 class="hero-title t-l1"><span class="hero-line"><span>Mail</span></span><span class="hero-line"><span>Factory</span></span></h1>
+    </div>
+    <div class="hero-bottom">
+      <p class="hero-sub t-l3">Engines, a generator, a local library and one-touch control — <em>one native workspace,</em> presented as a single continuous experience.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-big" href="#download" data-download data-magnetic=".15" data-scroll-to="#s-final-download">
+          <span>Download</span>
+          <span class="arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v13M6 11l6 6 6-6"/><path d="M5 20h14"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v13M6 11l6 6 6-6"/><path d="M5 20h14"/></svg>
+          </span><i class="ring"></i>
+        </a>
+        <button class="btn btn-ghost btn-big" type="button" data-share data-magnetic=".15">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg><span>Share</span>
+        </button>
+        <button class="btn btn-text hero-explore" type="button" data-scroll-to="#s-index"><span>Explore the product</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true"><span></span><p>Scroll</p></div>
+    <div class="hero-side t-l8" aria-hidden="true">
+      <span>Chapter 00 / Intro</span><span>Dashboard · Engine · Generator · Library · One Touch · Settings</span>
+    </div>
+  </div>
+</section>
+
+<!-- S02 label strip -->
+<section class="sec strip" id="s-strip" aria-label="Product labels">
+  <div class="marquee" data-marquee data-speed="55"><div class="mq-track">
+    <span>100% Native</span><i></i><span>Android App</span><i></i><span>Root Powered</span><i></i><span>Max Performance</span><i></i><span>Network Ready</span><i></i><span>HTTP/HTTPS · SOCKS5</span><i></i><span>Smart Engine</span><i></i><span>High Success Rate</span><i></i><span>System Status: Online</span><i></i>
+  </div></div>
+  <div class="marquee marquee-2" data-marquee data-dir="rtl" data-speed="34"><div class="mq-track">
+    <span>Identity Shift</span><em>·</em><span>Network Cycle</span><em>·</em><span>System Repo</span><em>·</em><span>Core Boost</span><em>·</em><span>Memory Purge</span><em>·</em><span>DNS Tunnel</span><em>·</em><span>Check Route</span><em>·</em><span>Log Engine</span><em>·</em><span>System Settings</span><em>·</em>
+  </div></div>
+</section>
+
+<!-- S03 manifesto -->
+<section class="sec manifesto" id="s-manifesto" data-theme="dark">
+  <div class="grad-host" data-grad="ember"></div>
+  <div class="wrap manifesto-inner">
+    <p class="chapter-mark"><b>00</b> Manifesto</p>
+    <p class="manifesto-lead t-l3" data-reveal="lines">Most product websites show you a picture of the product.<br>This one lets you walk through it.</p>
+    <div class="manifesto-cols">
+      <p class="t-l4" data-reveal="lines">Mail Factory is an automation project exploring system architecture, automation engineering, software testing and system integration. It ships as a native Android application with six surfaces — a <strong>Dashboard</strong>, an <strong>Engine</strong> of switchable automation modules, a <strong>Generator</strong> for single and batch output, a local <strong>Library</strong>, a <strong>One Touch</strong> connection surface and a precise <strong>Settings</strong> tree.</p>
+      <p class="t-l4" data-reveal="lines" data-reveal-delay=".15">Everything you will meet below is the real application, running live inside this page. The world around it — the typography, the 3D, the gradients, the sequences — exists to explain it. The app is the product. The website is the world that presents it.</p>
+    </div>
+    <div class="manifesto-foot t-l8" data-reveal="fade"><span>Experimental · Educational · v1.0.0 Stable</span><span>Designed as one continuous journey</span></div>
+  </div>
+</section>
+
+<!-- S04 get the build -->
+<section class="sec getbuild" id="s-getbuild" data-theme="dark">
+  <div class="wrap getbuild-grid">
+    <div class="getbuild-left">
+      <p class="eyebrow"><span class="n">01</span> Get the build</p>
+      <h2 class="t-l2" data-reveal="lines">Take the product <em class="serif">first,</em><br>explore the world after.</h2>
+      <p class="t-l4" data-reveal="lines">The Download control lives at the top of this page and again at the very end. The build target is Android; the application reports itself as <strong>v1.0.0 Stable</strong> and checks the Mail Factory GitHub repository for newer releases from inside Settings → Version.</p>
+      <div class="getbuild-actions" data-reveal="stagger">
+        <a class="btn btn-primary btn-big" href="#download" data-download data-magnetic=".15" data-scroll-to="#s-final-download"><span>Download</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v13M6 11l6 6 6-6"/><path d="M5 20h14"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v13M6 11l6 6 6-6"/><path d="M5 20h14"/></svg></span><i class="ring"></i></a>
+        <button class="btn btn-ghost btn-big" type="button" data-share><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg><span>Share</span></button>
+      </div>
+    </div>
+    <div class="getbuild-ledger" data-reveal="stagger" data-reveal-stagger=".06">
+      <div class="lrow"><span class="k">Product</span><span class="v">Mail Factory</span><span class="note">Wordmark set in the app as MAIL <b>FACTORY</b></span></div>
+      <div class="lrow"><span class="k">Version</span><span class="v">v1.0.0 · Stable</span><span class="note">Reported in Settings → Version</span></div>
+      <div class="lrow"><span class="k">Platform</span><span class="v">Android · 100% native</span><span class="note">Dashboard tile: “100% NATIVE — Android App”</span></div>
+      <div class="lrow"><span class="k">Privileges</span><span class="v">Root powered</span><span class="note">Dashboard tile: “ROOT POWERED — Max Performance”</span></div>
+      <div class="lrow"><span class="k">Network</span><span class="v">HTTP / HTTPS · SOCKS5</span><span class="note">Dashboard tile: “NETWORK READY”</span></div>
+      <div class="lrow"><span class="k">Storage</span><span class="v">On device</span><span class="note">“Generated accounts are stored locally in your Library.”</span></div>
+      <div class="lrow"><span class="k">Source</span><span class="v"><a href="https://github.com/MailFactoryLabs/MailFactoryLabs.github.io" target="_blank" rel="noopener">MailFactoryLabs on GitHub ↗</a></span><span class="note">Releases, issues and versions</span></div>
+      <div class="lrow"><span class="k">Author</span><span class="v">Atawur Rahman</span><span class="note">System Architect &amp; Automation Developer</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     CHAPTER 01 — DISCOVERY
+     ====================================================================== -->
+<section class="sec pindex" id="s-index" data-chapter="discovery" data-chapter-label="Discovery" data-theme="dark">
+  <div class="wrap">
+    <div class="pindex-head">
+      <p class="eyebrow"><span class="n">02</span> Product index</p>
+      <p class="t-l6">Select a surface. The page travels there and the live application switches to that screen.</p>
+    </div>
+    <ol class="pindex-list" data-index>
+      <li><button type="button" data-index-item="dashboard" data-target="#s-dash-live" data-cursor="OPEN"><span class="num">01</span><span class="name">Dashboard</span><span class="desc">System status, entry points, four capability tiles.</span><span class="meta">Screen · protected visual language</span><i class="bar"></i></button></li>
+      <li><button type="button" data-index-item="engine" data-target="#s-engine-live" data-cursor="OPEN"><span class="num">02</span><span class="name">Engine</span><span class="desc">Six switchable automation modules, three utility pages.</span><span class="meta">Identity Shift → DNS Tunnel</span><i class="bar"></i></button></li>
+      <li><button type="button" data-index-item="generator" data-target="#s-gen-live" data-cursor="OPEN"><span class="num">03</span><span class="name">Generator</span><span class="desc">Single or batch email + password generation, on device.</span><span class="meta">Single · Batch · Copy all</span><i class="bar"></i></button></li>
+      <li><button type="button" data-index-item="library" data-target="#s-lib-live" data-cursor="OPEN"><span class="num">04</span><span class="name">Library</span><span class="desc">Every generated account, stored locally, sortable, searchable.</span><span class="meta">Star · Verify · Rename · Delete</span><i class="bar"></i></button></li>
+      <li><button type="button" data-index-item="onetouch" data-target="#s-ot-live" data-cursor="OPEN"><span class="num">05</span><span class="name">One Touch</span><span class="desc">A one-tap connection surface with telemetry and 22 demo servers.</span><span class="meta">Connect · Auto-launch · Emergency stop</span><i class="bar"></i></button></li>
+      <li><button type="button" data-index-item="settings" data-target="#s-set-live" data-cursor="OPEN"><span class="num">06</span><span class="name">Settings</span><span class="desc">App, Support and About — fourteen precise sub-pages.</span><span class="meta">Themes · Backup · Version</span><i class="bar"></i></button></li>
+    </ol>
+    <div class="pindex-preview" aria-hidden="true">
+      <div class="pv-word" data-pv="dashboard">Status</div><div class="pv-word" data-pv="engine">Modules</div><div class="pv-word" data-pv="generator">Output</div>
+      <div class="pv-word" data-pv="library">Records</div><div class="pv-word" data-pv="onetouch">Connect</div><div class="pv-word" data-pv="settings">Control</div>
+    </div>
+  </div>
+</section>
+
+<!-- S06 three verbs -->
+<section class="sec verbs" id="s-verbs" data-theme="dark">
+  <div class="grad-host" data-grad="beam"></div>
+  <div class="verbs-inner">
+    <div class="verb" data-reveal="chars" data-reveal-stagger=".12"><span>Generate</span></div>
+    <div class="verb verb-mid" data-reveal="chars" data-reveal-stagger=".12" data-reveal-delay=".2"><span>Store</span></div>
+    <div class="verb" data-reveal="chars" data-reveal-stagger=".12" data-reveal-delay=".4"><span>Control</span></div>
+  </div>
+  <p class="verbs-caption t-l6" data-reveal="fade">Three verbs run through the whole product: the Generator makes, the Library keeps, the Engine and One Touch control. Move your pointer — the light follows.</p>
+  <span class="corner bl">Discovery · 02</span><span class="corner br">Pointer-reactive gradient · WebGL</span>
+</section>
+
+<!-- S07 wire mark -->
+<section class="sec wiremark" id="s-wiremark" data-theme="dark" data-pin data-pin-length="2.2">
+  <div class="pin-inner">
+    <div class="scene-host" data-scene="wiremark"></div>
+    <div class="wiremark-copy">
+      <p class="eyebrow"><span class="n">03</span> The mark</p>
+      <h2 class="t-l2">One mark.<br><em class="serif">Six surfaces.</em></h2>
+      <p class="t-l4">The Mail Factory emblem is a chevron over two angled panels. Read it as the product reads itself: an engine on top, a record and a control panel at either side, a new account at the centre.</p>
+    </div>
+    <div class="wm-notes">
+      <div class="wm-note" data-stage="0.15-0.45"><span class="t-l5">Chevron</span><p>Engine — six automation modules under one switchboard.</p></div>
+      <div class="wm-note" data-stage="0.4-0.7"><span class="t-l5">Left panel</span><p>Library — every generated account, kept on the device.</p></div>
+      <div class="wm-note" data-stage="0.65-1"><span class="t-l5">Right panel</span><p>Settings and One Touch — the controls around the core.</p></div>
+    </div>
+    <div class="wm-progress" aria-hidden="true"><i></i></div>
+  </div>
+</section>
+
+<!-- S08 100% native spread -->
+<section class="sec native" id="s-native" data-theme="dark">
+  <div class="wrap native-grid">
+    <div class="native-num" aria-hidden="true"><span class="t-l7"><span data-count="100" data-suffix="%">0%</span></span></div>
+    <div class="native-copy">
+      <p class="eyebrow"><span class="n">04</span> Feature story</p>
+      <h2 class="t-l2" data-reveal="lines">Native, <em class="serif">not wrapped.</em></h2>
+      <p class="t-l4" data-reveal="lines">The Dashboard states it in its first tile: <strong>100% NATIVE — Android App</strong>. The second tile explains the posture: <strong>ROOT POWERED — Max Performance</strong>. Mail Factory is built to sit close to the system, which is why its Engine can host modules named Identity Shift, Network Cycle, System Repo, Core Boost, Memory Purge and DNS Tunnel.</p>
+      <ul class="native-list" data-reveal="stagger">
+        <li><span class="t-l5">Tile 01</span><b>100% Native</b><small>Android App</small></li>
+        <li><span class="t-l5">Tile 02</span><b>Root Powered</b><small>Max Performance</small></li>
+        <li><span class="t-l5">Tile 03</span><b>Network Ready</b><small>HTTP/HTTPS · SOCKS5</small></li>
+        <li><span class="t-l5">Tile 04</span><b>Smart Engine</b><small>High Success Rate</small></li>
+      </ul>
+    </div>
+    <svg class="native-lines" viewBox="0 0 400 600" fill="none" stroke="currentColor" stroke-width="1" data-draw aria-hidden="true">
+      <path d="M20 80 H180 L240 140"/><path d="M20 300 H120 L200 380 H300"/><path d="M60 520 H220 L280 460 H380"/>
+      <circle cx="240" cy="140" r="3"/><circle cx="300" cy="380" r="3"/><circle cx="380" cy="460" r="3"/>
+    </svg>
+  </div>
+</section>
+
+<!-- S09 spec ledger -->
+<section class="sec ledger" id="s-ledger" data-theme="dark">
+  <div class="wrap">
+    <div class="ledger-head">
+      <p class="eyebrow"><span class="n">05</span> Specification ledger</p>
+      <h2 class="t-l2" data-reveal="lines">Counted, <em class="serif">not claimed.</em></h2>
+      <p class="t-l6">Every figure below is read directly from the application. Hover or tap a row for its source.</p>
+    </div>
+    <div class="ledger-grid" data-reveal="stagger" data-reveal-stagger=".04">
+      <button class="lg" type="button"><span class="n" data-count="6">0</span><span class="l">Screens</span><span class="s">Dashboard · Engine · Generator · Library · One Touch · Settings</span></button>
+      <button class="lg" type="button"><span class="n" data-count="6">0</span><span class="l">Switchable engines</span><span class="s">Identity Shift, Network Cycle, System Repo, Core Boost, Memory Purge, DNS Tunnel — toggled in System Settings</span></button>
+      <button class="lg" type="button"><span class="n" data-count="3">0</span><span class="l">Engine utility pages</span><span class="s">Check Route · Log Engine · System Settings</span></button>
+      <button class="lg" type="button"><span class="n" data-count="2">0</span><span class="l">Generator modes</span><span class="s">Single (one email + password) and Batch (5 to 100 items)</span></button>
+      <button class="lg" type="button"><span class="n" data-count="5">0</span><span class="l">Quantity presets</span><span class="s">5 · 10 · 20 · 50 · 100 in Batch mode</span></button>
+      <button class="lg" type="button"><span class="n" data-count="6">0</span><span class="l">Library sort modes</span><span class="s">Newest, Oldest, Singles first, Batches first, Starred first, Verified first</span></button>
+      <button class="lg" type="button"><span class="n" data-count="4">0</span><span class="l">Record actions</span><span class="s">Add to Starred · Verify · Rename · Delete — plus Copy and Search</span></button>
+      <button class="lg" type="button"><span class="n" data-count="22">0</span><span class="l">Demo servers</span><span class="s">One Touch lists 22 countries, labelled “DEMO SERVERS” by the app itself</span></button>
+      <button class="lg" type="button"><span class="n" data-count="14">0</span><span class="l">Settings sub-pages</span><span class="s">Notification, Appearance, Language, Backup, Help &amp; Support, Send Feedback, Report a Problem, Contact Us, Rate, Share, Privacy, Terms, About, Version</span></button>
+      <button class="lg" type="button"><span class="n" data-count="6">0</span><span class="l">Themes</span><span class="s">Dark Red active; Cyber Blue, Neon Purple, Matrix Green, Arctic White, Stealth Gray locked</span></button>
+      <button class="lg" type="button"><span class="n" data-count="6">0</span><span class="l">Backup destinations</span><span class="s">Google Drive, Google Docs, GitHub, Dropbox, OneDrive, Phone Storage — shown as a UI demo</span></button>
+      <button class="lg" type="button"><span class="n">1.0.0</span><span class="l">Version</span><span class="s">Stable — update check reads the latest GitHub release</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     CHAPTER 02 — PRODUCT
+     ====================================================================== -->
+<section class="sec ondevice" id="s-ondevice" data-chapter="product" data-chapter-label="Product" data-theme="dark">
+  <div class="grad-host" data-grad="ink"></div>
+  <div class="ondevice-inner wrap">
+    <p class="eyebrow"><span class="n">06</span> Principle</p>
+    <h2 class="ondevice-title" data-reveal="words">Nothing is uploaded to a server.</h2>
+    <p class="t-l4 ondevice-copy" data-reveal="lines">The application answers its own FAQ plainly: <strong>“every email and password is generated and processed locally on your device.”</strong> The Library keeps accounts on the phone; the Notification centre repeats it — “Accounts stay on this device.” Off-device copies are a stated future: a Backup destination “once backend support is available.”</p>
+  </div>
+  <span class="corner tr">Ink · pointer-reactive</span>
+</section>
+
+<!-- S11 workflow horizontal -->
+<section class="sec workflow" id="s-workflow" data-theme="dark" data-hscroll>
+  <div class="hseq-pin">
+    <div class="workflow-head wrap">
+      <p class="eyebrow"><span class="n">07</span> Product workflow</p>
+      <p class="t-l6">Scroll — the sequence moves sideways.</p>
+    </div>
+    <svg class="workflow-line" viewBox="0 0 3200 400" preserveAspectRatio="none" fill="none" aria-hidden="true">
+      <path class="wl-base" d="M0 200 C300 200 300 120 640 120 S1000 280 1280 280 S1600 120 1920 120 S2300 280 2560 280 S2900 200 3200 200"/>
+      <path class="wl-glow" d="M0 200 C300 200 300 120 640 120 S1000 280 1280 280 S1600 120 1920 120 S2300 280 2560 280 S2900 200 3200 200"/>
+    </svg>
+    <div class="hseq-track workflow-track">
+      <article class="wf-step" data-step="1"><span class="wf-num">01</span><h3>Input</h3><p class="t-l4">A name pattern of up to 20 characters, an email length, a password length. In Batch mode, a quantity. These are the only inputs the Generator asks for.</p><span class="t-l5">Generator · parameters</span></article>
+      <article class="wf-step" data-step="2"><span class="wf-num">02</span><h3>Process</h3><p class="t-l4">The Engine holds the automation modules — six switchable engines plus Check Route, Log Engine and System Settings — with Optimize System skipping whatever you have disabled.</p><span class="t-l5">Engine · modules</span></article>
+      <article class="wf-step" data-step="3"><span class="wf-num">03</span><h3>Generate</h3><p class="t-l4">Tap Generate. “Results appear instantly in the list below — no waiting, no network needed.” Single mode returns one email and password; Batch returns the quantity you set.</p><span class="t-l5">Generator · output</span></article>
+      <article class="wf-step" data-step="4"><span class="wf-num">04</span><h3>Store</h3><p class="t-l4">Every result lands in the Library as a SINGLE or BATCH record with its timestamp. Star it, verify it, rename it, delete it, copy either half of it.</p><span class="t-l5">Library · records</span></article>
+      <article class="wf-step" data-step="5"><span class="wf-num">05</span><h3>Control</h3><p class="t-l4">Settings governs appearance, language, backup targets and support. One Touch adds a one-tap connection surface with auto-launch and an emergency stop.</p><span class="t-l5">Settings · One Touch</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- S12 single vs batch comparison -->
+<section class="sec compare" id="s-compare" data-theme="dark">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> Comparison</p>
+    <h2 class="t-l2" data-reveal="lines">Single <em class="serif">or</em> Batch.</h2>
+    <p class="t-l6">Drag the divider. Both modes share a name pattern and two lengths; Batch adds a quantity and a Copy All.</p>
+  </div>
+  <div class="cmp wrap" data-compare>
+    <div class="cmp-side cmp-a">
+      <span class="cmp-tag">Single</span>
+      <p class="cmp-lead">Generate a single email and password</p>
+      <ul><li><span>Name Pattern</span><b>0 / 20</b></li><li><span>Email Length</span><b>characters</b></li><li><span>Password Length</span><b>characters</b></li><li><span>Action</span><b>GENERATE</b></li><li><span>Output</span><b>Email · Password</b></li><li><span>Copy</span><b>One per field</b></li></ul>
+    </div>
+    <div class="cmp-side cmp-b">
+      <span class="cmp-tag">Batch</span>
+      <p class="cmp-lead">Generate many at once</p>
+      <ul><li><span>Name Pattern</span><b>0 / 20</b></li><li><span>Email Length</span><b>8 · 10 · 12 · 16 · 20</b></li><li><span>Password Length</span><b>8 · 12 · 16 · 20 · 24</b></li><li><span>Quantity</span><b>5 · 10 · 20 · 50 · 100</b></li><li><span>Action</span><b>GENERATE BATCH</b></li><li><span>Copy</span><b>COPY ALL</b></li></ul>
+    </div>
+    <div class="cmp-handle" role="slider" aria-label="Compare Single and Batch" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0" data-cursor="DRAG"><i></i><span></span><i></i></div>
+  </div>
+</section>
+
+<!-- S13 quiet interlude -->
+<section class="sec quiet" id="s-quiet-1" data-theme="dark">
+  <div class="quiet-inner">
+    <i class="dot"></i>
+    <p class="t-l5">Chapter 03</p>
+    <p class="quiet-word">Dashboard</p>
+    <p class="t-l8">The first live surface begins below.</p>
+  </div>
+</section>
+
+<!-- ======================================================================
+     CHAPTER 03 — DASHBOARD
+     ====================================================================== -->
+<section class="sec dash-state" id="s-dash-state" data-chapter="dashboard" data-chapter-label="Dashboard" data-theme="dark">
+  <div class="wrap dash-state-grid">
+    <div>
+      <p class="eyebrow"><span class="n">09</span> Dashboard · stage 1</p>
+      <h2 class="t-l2" data-reveal="lines">The first screen is a <em class="serif">status board.</em></h2>
+    </div>
+    <div class="dash-state-copy">
+      <p class="t-l4" data-reveal="lines">The Dashboard opens with the wordmark, an animated core and a single line of state: <strong>SYSTEM STATUS — ONLINE</strong>. Two entry points follow — <strong>OPEN FACTORY</strong>, which leads to the Engine, and <strong>OPEN LIBRARY</strong>. Beneath them sit the four capability tiles.</p>
+      <p class="t-l4" data-reveal="lines" data-reveal-delay=".1">It is the only screen with the warp-streak canvas — light rushing past the emblem — and the app treats its visual language as protected: unchanged from source.</p>
+    </div>
+  </div>
+</section>
+
+<!-- S15 aperture tunnel -->
+<section class="sec aperture" id="s-aperture" data-theme="dark" data-pin data-pin-length="2">
+  <div class="pin-inner">
+    <div class="scene-host" data-scene="aperture"></div>
+    <div class="aperture-copy">
+      <p class="t-l5" data-stage="0-0.35">Stage 2 · approach</p>
+      <p class="aperture-word" data-stage="0.1-0.5">Online</p>
+      <p class="aperture-word alt" data-stage="0.5-0.9">Open Factory</p>
+      <p class="t-l6 aperture-note" data-stage="0.55-1">The rings are the Dashboard’s own metaphor — an aperture the rest of the product opens through.</p>
+    </div>
+  </div>
+</section>
+
+<!-- S16 live dashboard, annotated -->
+<section class="sec dash-live" id="s-dash-live" data-theme="dark" data-slot-trigger data-pin data-pin-length="2.4">
+  <div class="pin-inner">
+    <div class="grad-host" data-grad="caustic"></div>
+    <div class="dash-live-grid wrap">
+      <div class="dash-live-copy">
+        <p class="eyebrow"><span class="n">10</span> Live · Dashboard</p>
+        <h2 class="t-l2">This is the <em class="serif">real</em> application.</h2>
+        <p class="t-l4">Not a mock-up, not a screenshot. Scroll to walk through the annotations, then use it — tap OPEN FACTORY and the app itself moves to the Engine.</p>
+        <div class="dash-annos">
+          <div class="anno" data-stage="0.12-0.4"><span class="t-l5">A · System status</span><p>ONLINE, with a live dot. The state line every session starts on.</p></div>
+          <div class="anno" data-stage="0.38-0.66"><span class="t-l5">B · Entry points</span><p>OPEN FACTORY is the primary action; OPEN LIBRARY the secondary. Both switch screens in place, without a reload.</p></div>
+          <div class="anno" data-stage="0.64-1"><span class="t-l5">C · Capability tiles</span><p>Four short claims the product makes about itself — native, root powered, network ready, smart engine.</p></div>
+        </div>
+      </div>
+      <div class="dash-live-stage">
+        <div class="app-slot" data-slot="dashboard" data-frame="phone" data-screen="dashboard"><span class="slot-hint">Live application</span></div>
+        <svg class="anno-lines" viewBox="0 0 200 800" fill="none" stroke="currentColor" aria-hidden="true">
+          <path data-stage="0.12-0.4" d="M0 190 H60 L90 230 H140"/><path data-stage="0.38-0.66" d="M0 380 H50 L80 340 H140"/><path data-stage="0.64-1" d="M0 600 H70 L100 640 H140"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S17 four tiles accordion -->
+<section class="sec tiles" id="s-tiles" data-theme="dark">
+  <div class="wrap tiles-head">
+    <p class="eyebrow"><span class="n">11</span> Dashboard · tiles</p>
+    <h2 class="t-l2" data-reveal="lines">Four claims, <em class="serif">expanded.</em></h2>
+  </div>
+  <div class="colonnade" data-colonnade>
+    <button class="col is-active" type="button" data-cursor="OPEN"><span class="col-num">01</span><span class="col-title">100% Native</span><span class="col-sub">Android App</span><div class="col-body"><p>Mail Factory is not a web view wrapped in a shell. The Dashboard’s first tile announces a native Android build, and the rest of the application behaves like one — instant screen switches, local generation, on-device storage.</p></div><i class="col-fill"></i></button>
+    <button class="col" type="button" data-cursor="OPEN"><span class="col-num">02</span><span class="col-title">Root Powered</span><span class="col-sub">Max Performance</span><div class="col-body"><p>The second tile states the posture: root powered. It is what allows Engine modules such as System Repo, Core Boost, Memory Purge and DNS Tunnel to exist as first-class switches rather than suggestions.</p></div><i class="col-fill"></i></button>
+    <button class="col" type="button" data-cursor="OPEN"><span class="col-num">03</span><span class="col-title">Network Ready</span><span class="col-sub">HTTP/HTTPS · SOCKS5</span><div class="col-body"><p>Two protocol families named on the tile. Check Route, in the Engine, is the visible end of this: it measures whether a route is reachable and how long it took, then records when it was last checked.</p></div><i class="col-fill"></i></button>
+    <button class="col" type="button" data-cursor="OPEN"><span class="col-num">04</span><span class="col-title">Smart Engine</span><span class="col-sub">High Success Rate</span><div class="col-body"><p>The Dashboard’s own words for the Engine tab. Six engines can be enabled or disabled individually; Optimize System honours those switches and skips whatever is off.</p></div><i class="col-fill"></i></button>
+  </div>
+</section>
+
+<!-- S18 open factory transition -->
+<section class="sec openfactory" id="s-openfactory" data-theme="dark" data-pin data-pin-length="1.6">
+  <div class="pin-inner">
+    <p class="of-word" data-kinetic><span>Open</span><span>Factory</span><span class="of-arrow">→</span></p>
+    <p class="t-l5 of-note" data-stage="0.5-1">Primary action · leads to the Engine</p>
+  </div>
+</section>
+
+<!-- ======================================================================
+     CHAPTER 04 — ENGINE
+     ====================================================================== -->
+<section class="sec engine-open" id="s-engine-open" data-chapter="engine" data-chapter-label="Engine" data-theme="red">
+  <div class="engine-open-inner">
+    <p class="t-l5 eo-eyebrow">Chapter 04 · Powerful automation engines</p>
+    <h2 class="eo-title" aria-label="Engine"><span>E</span><span>N</span><span>G</span><span>I</span><span>N</span><span>E</span></h2>
+    <div class="eo-scan" aria-hidden="true"></div>
+    <div class="eo-foot"><span class="t-l8">Identity Shift · Network Cycle · System Repo · Core Boost · Memory Purge · DNS Tunnel</span><span class="t-l8">Check Route · Log Engine · System Settings</span></div>
+  </div>
+</section>
+
+<!-- S20 reactor -->
+<section class="sec reactor" id="s-reactor" data-theme="dark" data-pin data-pin-length="3">
+  <div class="pin-inner">
+    <div class="scene-host" data-scene="reactor"></div>
+    <div class="reactor-hud">
+      <p class="eyebrow"><span class="n">12</span> Engine · reactor view</p>
+      <p class="t-l6">Scroll to orbit. Tap a node to read it.</p>
+    </div>
+    <div class="reactor-panel" data-reactor-panel>
+      <span class="t-l5 rp-idx">01 / 06</span>
+      <h3 class="rp-name">Identity Shift</h3>
+      <p class="rp-state"><i></i><span>Default ON</span></p>
+      <p class="rp-copy t-l4">Listed first on the Engine grid and enabled by default in System Settings. Disabled engines are skipped by Optimize System and won’t run in the background.</p>
+    </div>
+    <div class="reactor-legend" aria-hidden="true">
+      <span data-node="0">Identity Shift</span><span data-node="1">Network Cycle</span><span data-node="2">System Repo</span><span data-node="3">Core Boost</span><span data-node="4">Memory Purge</span><span data-node="5">DNS Tunnel</span>
+    </div>
+  </div>
+</section>
+
+<!-- S21 six engines horizontal -->
+<section class="sec engines" id="s-engines" data-theme="dark" data-hscroll>
+  <div class="hseq-pin">
+    <div class="engines-head wrap"><p class="eyebrow"><span class="n">13</span> Six engines</p><p class="t-l6">Default states read from System Settings.</p></div>
+    <div class="hseq-track engines-track">
+      <article class="eng" data-on="true"><div class="eng-glyph"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.2"><ellipse cx="60" cy="62" rx="36" ry="40" transform="rotate(-8 60 62)"/><ellipse cx="60" cy="62" rx="26" ry="30" transform="rotate(-8 60 62)"/><ellipse cx="60" cy="62" rx="16" ry="20" transform="rotate(-8 60 62)"/></svg></div><span class="eng-num">01</span><h3>Identity Shift</h3><p class="eng-state">Default <b>ON</b></p><p class="t-l4">The first switch in the grid. Its rings are the app’s own icon — concentric identities, one inside the next.</p></article>
+      <article class="eng" data-on="true"><div class="eng-glyph"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M60 22a38 38 0 1 1-27 11"/><path d="M28 20v14h14"/><circle cx="60" cy="60" r="6"/></svg></div><span class="eng-num">02</span><h3>Network Cycle</h3><p class="eng-state">Default <b>ON</b></p><p class="t-l4">A cycle, drawn as a loop that returns to its start. Enabled out of the box.</p></article>
+      <article class="eng" data-on="true"><div class="eng-glyph"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="28" y="28" width="64" height="16" rx="3"/><rect x="28" y="52" width="64" height="16" rx="3"/><rect x="28" y="76" width="64" height="16" rx="3"/><circle cx="82" cy="36" r="2" fill="currentColor"/><circle cx="82" cy="60" r="2" fill="currentColor"/><circle cx="82" cy="84" r="2" fill="currentColor"/></svg></div><span class="eng-num">03</span><h3>System Repo</h3><p class="eng-state">Default <b>ON</b></p><p class="t-l4">A stacked repository. Third in the grid, on by default.</p></article>
+      <article class="eng" data-on="false"><div class="eng-glyph"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M22 80a38 38 0 0 1 76 0"/><path d="M60 80l20-26"/><circle cx="60" cy="80" r="4"/><path d="M30 84h60"/></svg></div><span class="eng-num">04</span><h3>Core Boost</h3><p class="eng-state">Default <b>OFF</b></p><p class="t-l4">A gauge, needle raised. Shipped off — you choose when to enable it.</p></article>
+      <article class="eng" data-on="false"><div class="eng-glyph"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="60" cy="60" r="36"/><path d="M60 24v36l24 14"/><path d="M36 96l48-72" stroke-dasharray="3 5"/></svg></div><span class="eng-num">05</span><h3>Memory Purge</h3><p class="eng-state">Default <b>OFF</b></p><p class="t-l4">A sweep across the dial. Also off by default, also one switch away.</p></article>
+      <article class="eng" data-on="true"><div class="eng-glyph"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.2"><ellipse cx="60" cy="60" rx="40" ry="16"/><ellipse cx="60" cy="60" rx="28" ry="11"/><ellipse cx="60" cy="60" rx="16" ry="6"/><path d="M20 60h80"/></svg></div><span class="eng-num">06</span><h3>DNS Tunnel</h3><p class="eng-state">Default <b>ON</b></p><p class="t-l4">Nested rings receding into depth — a tunnel. On by default, last in the row.</p></article>
+      <article class="eng eng-end"><span class="eng-num">→</span><h3>Optimize System</h3><p class="t-l4">The primary button under the grid. In this build it answers with a toast: <em>“System optimization is not implemented in this build yet.”</em> The product tells you where it stands.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- S22 utility pages -->
+<section class="sec utility" id="s-utility" data-theme="dark">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">14</span> Utility pages</p>
+    <h2 class="t-l2" data-reveal="lines">Three pages that <em class="serif">report.</em></h2>
+  </div>
+  <div class="wrap utility-grid">
+    <div class="ut ut-route" data-reveal="up">
+      <div class="ut-head"><span class="t-l5">Check Route</span><span class="ut-live"><i></i>Online</span></div>
+      <svg class="route-viz" viewBox="0 0 320 120" fill="none" aria-hidden="true">
+        <circle cx="30" cy="60" r="6" class="rv-node"/><circle cx="290" cy="60" r="6" class="rv-node"/>
+        <path class="rv-path" d="M36 60 C100 20 220 100 284 60"/>
+        <circle class="rv-packet" r="3.5"/>
+      </svg>
+      <dl class="ut-fields"><div><dt>Route Status</dt><dd data-route-status>—</dd></div><div><dt>Latency</dt><dd data-route-latency>—</dd></div><div><dt>Route</dt><dd>—</dd></div><div><dt>Last Checked</dt><dd data-route-last>Never</dd></div></dl>
+      <button class="btn btn-ghost ut-btn" type="button" data-route-demo>Preview a check</button>
+      <p class="t-l8">In the app, CHECK ROUTE requests a trace endpoint with a six-second timeout and reports CONNECTED with the measured milliseconds — or a failure. This preview only animates the same fields.</p>
+    </div>
+    <div class="ut ut-log" data-reveal="up" data-reveal-delay=".1">
+      <div class="ut-head"><span class="t-l5">Log Engine</span><span class="ut-live"><i></i>Live</span></div>
+      <pre class="ut-console" data-console aria-live="off"></pre>
+      <p class="t-l8">The console opens with three lines — <b>[SYSTEM]</b> Log engine initialized, <b>[SYSTEM]</b> Console ready, <b>[IDLE]</b> Awaiting activity… — and a prompt.</p>
+    </div>
+    <div class="ut ut-settings" data-reveal="up" data-reveal-delay=".2">
+      <div class="ut-head"><span class="t-l5">System Settings</span><span class="t-l8">Turn individual engines on or off</span></div>
+      <ul class="ut-toggles">
+        <li><span>Identity Shift</span><i class="tg on"></i></li><li><span>Network Cycle</span><i class="tg on"></i></li><li><span>System Repo</span><i class="tg on"></i></li>
+        <li><span>Core Boost</span><i class="tg"></i></li><li><span>Memory Purge</span><i class="tg"></i></li><li><span>DNS Tunnel</span><i class="tg on"></i></li>
+      </ul>
+      <p class="t-l8">“Disabled engines are skipped by Optimize System and won’t run in the background.” The real switches are inside the live app below.</p>
+    </div>
+  </div>
+</section>
+
+<!-- S23 live engine -->
+<section class="sec engine-live" id="s-engine-live" data-theme="dark" data-slot-trigger>
+  <div class="engine-live-grid wrap">
+    <div class="engine-live-copy">
+      <p class="eyebrow"><span class="n">15</span> Live · Engine</p>
+      <h2 class="t-l2" data-reveal="lines">Open the <em class="serif">switchboard.</em></h2>
+      <p class="t-l4" data-reveal="lines">The Engine screen, live. Tap <strong>CHECK ROUTE</strong> to run a real reachability check from your own connection. Open <strong>LOG ENGINE</strong> to watch the console. Open <strong>SYSTEM SETTINGS</strong> and flip the six switches — the states are the app’s, not ours.</p>
+      <ul class="try-list" data-reveal="stagger">
+        <li><span>Try</span>Check Route → CHECK ROUTE</li><li><span>Try</span>Log Engine → type into the prompt</li><li><span>Try</span>System Settings → toggle Core Boost</li><li><span>Note</span>Optimize System → honest toast</li>
+      </ul>
+    </div>
+    <div class="engine-live-stage">
+      <div class="app-slot" data-slot="engine" data-frame="glass" data-screen="engine"><span class="slot-hint">Live application</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- S24 switchboard table with metal gradient -->
+<section class="sec switchboard" id="s-switchboard" data-theme="dark">
+  <div class="grad-host" data-grad="metal"></div>
+  <div class="wrap switchboard-inner">
+    <div class="sb-head"><p class="eyebrow"><span class="n">16</span> Switchboard</p><h2 class="t-l2" data-reveal="lines">Six engines,<br>one <em class="serif">rule.</em></h2><p class="t-l4" data-reveal="lines">Engines you disable are skipped by Optimize System and stay out of the background. The table lists the defaults the build ships with.</p></div>
+    <table class="sb-table" data-reveal="stagger" data-reveal-stagger=".05">
+      <thead><tr><th>#</th><th>Engine</th><th>Icon</th><th>Default</th><th>Background</th></tr></thead>
+      <tbody>
+        <tr><td>01</td><td>Identity Shift</td><td>Rings</td><td><b class="on">ON</b></td><td>Runs</td></tr>
+        <tr><td>02</td><td>Network Cycle</td><td>Loop</td><td><b class="on">ON</b></td><td>Runs</td></tr>
+        <tr><td>03</td><td>System Repo</td><td>Stack</td><td><b class="on">ON</b></td><td>Runs</td></tr>
+        <tr><td>04</td><td>Core Boost</td><td>Gauge</td><td><b>OFF</b></td><td>Skipped</td></tr>
+        <tr><td>05</td><td>Memory Purge</td><td>Sweep</td><td><b>OFF</b></td><td>Skipped</td></tr>
+        <tr><td>06</td><td>DNS Tunnel</td><td>Tunnel</td><td><b class="on">ON</b></td><td>Runs</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- S25 path handoff -->
+<section class="sec handoff" id="s-handoff" data-theme="dark" aria-hidden="true">
+  <svg viewBox="0 0 1440 520" preserveAspectRatio="none" fill="none" data-draw="scrub">
+    <path d="M720 0 V120 C720 220 380 220 380 320 S720 420 720 520"/>
+    <path d="M720 0 V120 C720 220 1060 220 1060 320 S720 420 720 520"/>
+  </svg>
+  <p class="handoff-label t-l5">Engine → Generator</p>
+</section>
+
+<!-- ======================================================================
+     CHAPTER 05 — GENERATOR
+     ====================================================================== -->
+<section class="sec gen-open" id="s-gen-open" data-chapter="generator" data-chapter-label="Generator" data-theme="dark">
+  <div class="gen-open-inner" data-gen-toggle>
+    <p class="eyebrow"><span class="n">17</span> Generator · two modes</p>
+    <div class="gen-words">
+      <button class="gen-word is-active" type="button" data-mode="single" data-cursor="TAP"><span>Single.</span></button>
+      <button class="gen-word" type="button" data-mode="batch" data-cursor="TAP"><span>Batch.</span></button>
+    </div>
+    <div class="gen-desc">
+      <p data-mode-desc="single" class="is-active">Generate a single email and password. Name pattern, email length, password length — then GENERATE. Copy each field on its own.</p>
+      <p data-mode-desc="batch">Generate many at once. The same pattern and lengths, plus a quantity from 5 to 100 — then GENERATE BATCH and COPY ALL.</p>
+    </div>
+    <p class="t-l8 gen-hint">Tap a word to switch. The live app below has the same two tabs.</p>
+  </div>
+</section>
+
+<!-- S27 production line 3D -->
+<section class="sec prodline" id="s-prodline" data-theme="dark" data-pin data-pin-length="3">
+  <div class="pin-inner">
+    <div class="scene-host" data-scene="prodline"></div>
+    <div class="prod-captions">
+      <div class="pc" data-stage="0-0.2"><span class="t-l5">01 · Name pattern</span><p>Up to twenty characters shape every address.</p></div>
+      <div class="pc" data-stage="0.18-0.38"><span class="t-l5">02 · Email length</span><p>8, 10, 12, 16 or 20 characters.</p></div>
+      <div class="pc" data-stage="0.36-0.56"><span class="t-l5">03 · Password length</span><p>8, 12, 16, 20 or 24 characters.</p></div>
+      <div class="pc" data-stage="0.54-0.74"><span class="t-l5">04 · Generate</span><p>Instant. Local. No network required.</p></div>
+      <div class="pc" data-stage="0.72-0.9"><span class="t-l5">05 · Output</span><p>Email and password, or a numbered batch.</p></div>
+      <div class="pc" data-stage="0.88-1"><span class="t-l5">06 · Copy</span><p>One field, or COPY ALL.</p></div>
+    </div>
+    <div class="prod-hud t-l8"><span>Production line · instanced WebGL</span><span data-prod-counter>0000</span></div>
+  </div>
+</section>
+
+<!-- S28 four steps arc carousel -->
+<section class="sec steps" id="s-steps" data-theme="dark">
+  <div class="wrap steps-head">
+    <p class="eyebrow"><span class="n">18</span> How to use · from the app’s Help</p>
+    <h2 class="t-l2" data-reveal="lines">Four steps, <em class="serif">in an arc.</em></h2>
+  </div>
+  <div class="arc" data-arc data-cursor="DRAG">
+    <div class="arc-stage">
+      <article class="arc-card"><span class="ac-num">1</span><h3>Go to Single or Batch Generator</h3><p>Choose the generator you want to use.</p><small>Find both modes from the Engine tab at the bottom of the app.</small></article>
+      <article class="arc-card"><span class="ac-num">2</span><h3>Enter your preferences</h3><p>Fill in the required fields and set options.</p><small>Set length, character types, or domain — whatever this generator needs.</small></article>
+      <article class="arc-card"><span class="ac-num">3</span><h3>Generate</h3><p>Tap the generate button to create results.</p><small>Results appear instantly in the list below — no waiting, no network needed.</small></article>
+      <article class="arc-card"><span class="ac-num">4</span><h3>Copy &amp; Use</h3><p>Copy the results and use them anywhere.</p><small>Tap one result to copy it, or use Copy All for the whole batch.</small></article>
+    </div>
+    <div class="arc-ui">
+      <button class="arc-btn" type="button" data-arc-prev aria-label="Previous step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <div class="arc-dots" role="tablist"></div>
+      <button class="arc-btn" type="button" data-arc-next aria-label="Next step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+    <p class="arc-title t-l3" data-arc-title>Go to Single or Batch Generator</p>
+  </div>
+</section>
+
+<!-- S29 parameter board -->
+<section class="sec params" id="s-params" data-theme="dark">
+  <div class="wrap params-grid">
+    <div class="params-copy">
+      <p class="eyebrow"><span class="n">19</span> Parameter board</p>
+      <h2 class="t-l2" data-reveal="lines">Compose a <em class="serif">batch.</em></h2>
+      <p class="t-l4" data-reveal="lines">These are the presets the Batch tab exposes. Tap to compose a request; the readout mirrors what the app would be asked to make.</p>
+      <div class="readout" data-readout><span class="t-l5">Readout</span><code>BATCH · QTY 10 · EMAIL 12 · PASS 16</code></div>
+    </div>
+    <div class="params-board" data-params>
+      <div class="pgroup" data-group="email"><span class="t-l5">Email length</span><div class="chips"><button type="button" data-v="8">8</button><button type="button" data-v="10">10</button><button type="button" data-v="12" class="is-on">12</button><button type="button" data-v="16">16</button><button type="button" data-v="20">20</button></div></div>
+      <div class="pgroup" data-group="pass"><span class="t-l5">Password length</span><div class="chips"><button type="button" data-v="8">8</button><button type="button" data-v="12">12</button><button type="button" data-v="16" class="is-on">16</button><button type="button" data-v="20">20</button><button type="button" data-v="24">24</button></div></div>
+      <div class="pgroup" data-group="qty"><span class="t-l5">Quantity</span><div class="chips"><button type="button" data-v="5">5</button><button type="button" data-v="10" class="is-on">10</button><button type="button" data-v="20">20</button><button type="button" data-v="50">50</button><button type="button" data-v="100">100</button></div></div>
+      <div class="pgroup pgroup-out"><span class="t-l5">Generated output</span><div class="pout"><b data-out-count>10</b><span>items</span><em>COPY ALL</em></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- S30 live generator -->
+<section class="sec gen-live" id="s-gen-live" data-theme="dark" data-slot-trigger>
+  <div class="gen-live-inner">
+    <div class="gen-live-side left">
+      <p class="eyebrow"><span class="n">20</span> Live · Generator</p>
+      <h2 class="t-l2" data-reveal="lines">Make <em class="serif">something.</em></h2>
+      <p class="t-l4" data-reveal="lines">Type a name pattern, set the lengths, press GENERATE. Switch to BATCH, pick a quantity, press GENERATE BATCH. Every result you make here is stored in the app’s Library — the next chapter.</p>
+    </div>
+    <div class="gen-live-stage"><div class="app-slot" data-slot="generator" data-frame="spot" data-screen="generator"><span class="slot-hint">Live application</span></div></div>
+    <div class="gen-live-side right">
+      <ul class="gen-facts" data-reveal="stagger">
+        <li><span class="t-l5">Instant</span><p>“Results appear instantly in the list below — no waiting, no network needed.”</p></li>
+        <li><span class="t-l5">Unique</span><p>“Each result is freshly generated and not reused between runs.”</p></li>
+        <li><span class="t-l5">Usable</span><p>“Standard, valid addresses usable wherever an email is accepted.”</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- S31 one-tap copy spread -->
+<section class="sec copyspread" id="s-copy" data-theme="dark">
+  <div class="wrap copy-grid">
+    <div class="copy-demo" data-copy-demo data-cursor="TAP" role="button" tabindex="0" aria-label="Copy demonstration">
+      <div class="cd-field"><span class="t-l5">Email</span><code data-cd-text>name.pattern@example.com</code><span class="cd-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>COPY</span></div>
+      <div class="cd-flash" aria-hidden="true">Copied</div>
+    </div>
+    <div class="copy-copy">
+      <p class="eyebrow"><span class="n">21</span> Feature story</p>
+      <h2 class="t-l2" data-reveal="lines">One tap, <em class="serif">one field.</em></h2>
+      <p class="t-l4" data-reveal="lines">The Help page lists four features — <strong>Email Generator</strong>, <strong>Password Generator</strong>, <strong>Batch Generation</strong>, <strong>One-Tap Copy</strong>. The last is the one you feel most: every email and every password in the Generator and the Library carries its own COPY, and batches carry COPY ALL.</p>
+      <div class="copy-features" data-reveal="stagger">
+        <div><b>Email Generator</b><span>Generate unlimited unique email addresses.</span></div>
+        <div><b>Password Generator</b><span>Create strong and secure passwords.</span></div>
+        <div><b>Batch Generation</b><span>Generate multiple results at once.</span></div>
+        <div><b>One-Tap Copy</b><span>Copy single items and all results instantly.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S32 tips ticker -->
+<section class="sec tips" id="s-tips" aria-label="Tips from the app">
+  <div class="marquee tips-mq" data-marquee data-speed="40"><div class="mq-track">
+    <span><b>Tip</b> Use longer lengths for more secure passwords.</span><span><b>Tip</b> Batch generation is faster for large lists.</span><span><b>Tip</b> All results are generated locally on your device.</span>
+  </div></div>
+</section>
+
+<!-- ======================================================================
+     CHAPTER 06 — LIBRARY (paper)
+     ====================================================================== -->
+<section class="sec lib-open" id="s-lib-open" data-chapter="library" data-chapter-label="Library" data-theme="paper">
+  <div class="grad-host" data-grad="paper"></div>
+  <div class="wrap lib-open-inner">
+    <p class="chapter-mark"><b>06</b> Library</p>
+    <h2 class="lib-title" data-reveal="lines">Everything you generate <em class="serif">stays here.</em></h2>
+    <div class="lib-open-cols">
+      <p class="t-l4" data-reveal="lines">The Library is the archive of the product: <strong>All Generated Accounts</strong>, marked LIVE, with a running total. Each entry is a SINGLE record or a BATCH, stamped with date and time, carrying its own copy controls for the email and the password.</p>
+      <p class="t-l4" data-reveal="lines" data-reveal-delay=".1">It is deliberately quiet. No cloud, no sync indicator, no account. A record is a thing on your device, and the app says so: “Nothing is uploaded to a server.”</p>
+    </div>
+  </div>
+</section>
+
+<!-- S34 archive grid -->
+<section class="sec archive" id="s-archive" data-theme="paper">
+  <div class="wrap">
+    <div class="archive-head"><p class="eyebrow"><span class="n">22</span> Archive · sample records shipped in this build</p><p class="t-l6">Hover to lift a card. Tap to turn it over.</p></div>
+    <div class="cards" data-archive>
+      <button class="card" type="button" data-cursor="FLIP"><div class="card-in"><div class="card-f"><span class="ct">Single</span><span class="ce">darkwave…@…</span><span class="cd">18 Aug 2026 · 09:42 PM</span><span class="cx">Copy · Copy</span></div><div class="card-b"><span class="t-l5">Record</span><p>A single generation: one email, one password, one timestamp. Star it, verify it, rename it, or delete it from the sheet.</p></div></div></button>
+      <button class="card" type="button" data-cursor="FLIP"><div class="card-in"><div class="card-f"><span class="ct">Single</span><span class="ce">…@…</span><span class="cd">18 Aug 2026 · 09:28 PM</span><span class="cx">Copy · Copy</span></div><div class="card-b"><span class="t-l5">Record</span><p>Singles sort together under “Singles first”. Verified and starred records get their own sort modes too.</p></div></div></button>
+      <button class="card card-batch" type="button" data-cursor="FLIP"><div class="card-in"><div class="card-f"><span class="ct">Batch</span><span class="ce">Batch · 250 Accounts</span><span class="cd">18 Aug 2026 · 09:15 PM</span><span class="cx">#01 #02 #03 · +247 more</span></div><div class="card-b"><span class="t-l5">Batch</span><p>A batch shows its first three accounts and a “+N more accounts — Tap to view all” row. Copy All lives on the batch itself.</p></div></div></button>
+      <button class="card card-batch" type="button" data-cursor="FLIP"><div class="card-in"><div class="card-f"><span class="ct">Batch</span><span class="ce">Batch · 120 Accounts</span><span class="cd">17 Aug 2026 · 11:37 PM</span><span class="cx">#01 #02 #03 · +117 more</span></div><div class="card-b"><span class="t-l5">Batch</span><p>Every account inside a batch keeps its own two copy buttons — email and password — exactly like a single.</p></div></div></button>
+      <button class="card" type="button" data-cursor="FLIP"><div class="card-in"><div class="card-f"><span class="ct">Single</span><span class="ce">…@…</span><span class="cd">17 Aug 2026 · 10:03 PM</span><span class="cx">Copy · Copy</span></div><div class="card-b"><span class="t-l5">End of list</span><p>Scroll to the bottom of the real Library and it says, plainly: “That’s all for now.”</p></div></div></button>
+      <div class="card card-total"><span class="t-l5">Total in this build</span><b data-count="258">0</b><span class="t-l8">Sample records the shipped application opens with</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- S35 sorting index -->
+<section class="sec sorting" id="s-sorting" data-theme="paper">
+  <div class="wrap sorting-grid">
+    <div class="sorting-copy">
+      <p class="eyebrow"><span class="n">23</span> Sort by</p>
+      <h2 class="t-l2" data-reveal="lines">Six ways to <em class="serif">order</em> a shelf.</h2>
+      <p class="t-l4" data-reveal="lines">The Library’s sort sheet offers six modes. Pick one — the miniature shelf re-orders with the same rules the app applies.</p>
+      <div class="sort-modes" data-sort-modes role="tablist">
+        <button type="button" class="is-on" data-sort="newest" role="tab">Newest first</button><button type="button" data-sort="oldest" role="tab">Oldest first</button><button type="button" data-sort="singles" role="tab">Singles first</button><button type="button" data-sort="batches" role="tab">Batches first</button><button type="button" data-sort="starred" role="tab">Starred first</button><button type="button" data-sort="verified" role="tab">Verified first</button>
+      </div>
+    </div>
+    <ol class="shelf" data-shelf>
+      <li data-type="single" data-time="5" data-star="1" data-ver="0"><span class="sh-type">Single</span><span class="sh-name">Record · 09:42 PM</span><span class="sh-flags">★</span></li>
+      <li data-type="single" data-time="4" data-star="0" data-ver="1"><span class="sh-type">Single</span><span class="sh-name">Record · 09:28 PM</span><span class="sh-flags">✓</span></li>
+      <li data-type="batch" data-time="3" data-star="0" data-ver="0"><span class="sh-type">Batch</span><span class="sh-name">250 accounts · 09:15 PM</span><span class="sh-flags"></span></li>
+      <li data-type="batch" data-time="2" data-star="1" data-ver="1"><span class="sh-type">Batch</span><span class="sh-name">120 accounts · 11:37 PM</span><span class="sh-flags">★ ✓</span></li>
+      <li data-type="single" data-time="1" data-star="0" data-ver="0"><span class="sh-type">Single</span><span class="sh-name">Record · 10:03 PM</span><span class="sh-flags"></span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- S36 actions deck -->
+<section class="sec deck" id="s-deck" data-theme="paper" data-pin data-pin-length="2.4">
+  <div class="pin-inner">
+    <div class="wrap deck-head"><p class="eyebrow"><span class="n">24</span> Record actions</p><h2 class="t-l2">What you can do <em class="serif">to a record.</em></h2><p class="t-l6">Scroll — the deck fans, crests and falls.</p></div>
+    <div class="deck-cards" data-deck>
+      <div class="dk"><span class="t-l5">01</span><b>Copy</b><p>Email or password, one tap each.</p></div>
+      <div class="dk"><span class="t-l5">02</span><b>Add to Starred</b><p>Flag it; “Starred first” brings it up.</p></div>
+      <div class="dk"><span class="t-l5">03</span><b>Verify</b><p>Mark it verified; “Verified first” sorts by it.</p></div>
+      <div class="dk"><span class="t-l5">04</span><b>Rename</b><p>Give the record a name you will recognise.</p></div>
+      <div class="dk"><span class="t-l5">05</span><b>Delete</b><p>Remove it from the device.</p></div>
+      <div class="dk"><span class="t-l5">06</span><b>Search Library</b><p>Find it again, by text.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- S37 live library -->
+<section class="sec lib-live" id="s-lib-live" data-theme="paper" data-slot-trigger>
+  <div class="wrap lib-live-grid">
+    <div class="lib-live-stage"><div class="app-slot" data-slot="library" data-frame="paper" data-screen="library"><span class="slot-hint">Live application</span></div></div>
+    <div class="lib-live-copy">
+      <p class="eyebrow"><span class="n">25</span> Live · Library</p>
+      <h2 class="t-l2" data-reveal="lines">Dark archive, <em class="serif">light room.</em></h2>
+      <p class="t-l4" data-reveal="lines">The real Library, framed on paper. Open the sort sheet, search, tap a record to reach Add to Starred, Verify, Rename and Delete. Anything you generated a chapter ago is already here.</p>
+      <p class="t-l6" data-reveal="fade">Scroll inside the app freely — when it reaches its end, the page continues.</p>
+    </div>
+  </div>
+</section>
+
+<!-- S38 paper wipe -->
+<section class="sec wipe" id="s-wipe" data-theme="paper" data-pin data-pin-length="1.2" aria-hidden="true">
+  <div class="pin-inner"><div class="wipe-paper"><p class="wipe-word">Kept.</p></div><div class="wipe-black"><p class="wipe-word">Connected.</p></div></div>
+</section>
+
+<!-- ======================================================================
+     CHAPTER 07 — ONE TOUCH
+     ====================================================================== -->
+<section class="sec pulse" id="s-pulse" data-chapter="onetouch" data-chapter-label="One Touch" data-theme="dark" data-pin data-pin-length="1.8">
+  <div class="pin-inner">
+    <div class="scene-host" data-scene="pulse" data-cursor="TAP"></div>
+    <div class="pulse-copy">
+      <p class="t-l5">Chapter 07</p>
+      <h2 class="pulse-title">One <em>Touch</em></h2>
+      <p class="pulse-state" data-pulse-state><i></i><span>You’re disconnected</span></p>
+      <p class="t-l6">Tap the sphere. The app’s own state names are used: disconnected, connecting, connected.</p>
+    </div>
+    <p class="pulse-honest t-l8">A simulated connection surface — the app labels its list “22 DEMO SERVERS” and its automation “demo only — no automation backend connected”.</p>
+  </div>
+</section>
+
+<!-- S40 telemetry dial -->
+<section class="sec telemetry" id="s-telemetry" data-theme="dark">
+  <div class="grad-host" data-grad="water"></div>
+  <div class="wrap telemetry-grid">
+    <div class="dial" data-dial>
+      <svg viewBox="0 0 400 400" fill="none" aria-hidden="true">
+        <circle cx="200" cy="200" r="170" class="d-ring"/><circle cx="200" cy="200" r="130" class="d-ring d-ring-2"/><circle cx="200" cy="200" r="90" class="d-ring d-ring-3"/>
+        <g class="d-ticks"></g>
+        <path class="d-arc" d="M200 30 A170 170 0 0 1 370 200"/>
+      </svg>
+      <div class="d-label d-l1"><span class="t-l5">Ping</span><b>--</b><small>ms</small></div>
+      <div class="d-label d-l2"><span class="t-l5">Down</span><b>--</b><small>MB/s</small></div>
+      <div class="d-label d-l3"><span class="t-l5">Up</span><b>--</b><small>MB/s</small></div>
+      <div class="d-label d-l4"><span class="t-l5">Session</span><b>00:00</b></div>
+      <div class="d-center"><span class="t-l5">United States</span><small>default server</small></div>
+    </div>
+    <div class="telemetry-copy">
+      <p class="eyebrow"><span class="n">26</span> Telemetry</p>
+      <h2 class="t-l2" data-reveal="lines">Four numbers <em class="serif">around a core.</em></h2>
+      <p class="t-l4" data-reveal="lines">One Touch shows PING in milliseconds, DOWN and UP in megabytes per second, and a SESSION clock. Before you connect they read “--” and 00:00. The default country is the United States; a country sheet lists the rest.</p>
+      <p class="t-l4" data-reveal="lines" data-reveal-delay=".1">Every explicit navigation into One Touch opens a fresh, disconnected view — the app resets the simulated session on entry and on exit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- S41 server ring -->
+<section class="sec ring" id="s-ring" data-theme="dark">
+  <div class="wrap ring-head"><p class="eyebrow"><span class="n">27</span> Select country · 22 demo servers</p><h2 class="t-l2" data-reveal="lines">A ring of <em class="serif">places.</em></h2><p class="t-l6">Drag to spin. Arrow keys work too.</p></div>
+  <div class="ring3d" data-ring data-cursor="DRAG" tabindex="0" aria-label="Server ring carousel">
+    <div class="ring-track">
+      <div class="rc" data-cc="us">United States</div><div class="rc" data-cc="gb">United Kingdom</div><div class="rc" data-cc="ca">Canada</div><div class="rc" data-cc="de">Germany</div><div class="rc" data-cc="fr">France</div><div class="rc" data-cc="nl">Netherlands</div><div class="rc" data-cc="ch">Switzerland</div><div class="rc" data-cc="se">Sweden</div><div class="rc" data-cc="no">Norway</div><div class="rc" data-cc="fi">Finland</div><div class="rc" data-cc="jp">Japan</div><div class="rc" data-cc="sg">Singapore</div><div class="rc" data-cc="kr">South Korea</div><div class="rc" data-cc="au">Australia</div><div class="rc" data-cc="nz">New Zealand</div><div class="rc" data-cc="in">India</div><div class="rc" data-cc="br">Brazil</div><div class="rc" data-cc="es">Spain</div><div class="rc" data-cc="it">Italy</div><div class="rc" data-cc="pl">Poland</div><div class="rc" data-cc="tr">Turkey</div><div class="rc" data-cc="ae">United Arab Emirates</div>
+    </div>
+    <div class="ring-floor" aria-hidden="true"></div>
+    <p class="ring-current t-l3" data-ring-current>United States</p>
+  </div>
+</section>
+
+<!-- S42 live one touch -->
+<section class="sec ot-live" id="s-ot-live" data-theme="dark" data-slot-trigger>
+  <div class="ot-live-inner wrap">
+    <div class="ot-live-copy">
+      <p class="eyebrow"><span class="n">28</span> Live · One Touch</p>
+      <h2 class="t-l2" data-reveal="lines">Connect, <em class="serif">in one tap.</em></h2>
+      <p class="t-l4" data-reveal="lines">The live One Touch surface. Press CONNECT VPN and watch the simulated session build: the state changes, telemetry fills, the session clock starts. Open the country sheet, toggle AUTO-LAUNCH, try EMERGENCY STOP.</p>
+      <p class="t-l6" data-reveal="fade">Move the pointer across this section — the display tilts with you.</p>
+    </div>
+    <div class="ot-live-stage"><div class="app-slot" data-slot="onetouch" data-frame="tilt" data-screen="onetouch"><span class="slot-hint">Live application</span></div></div>
+  </div>
+</section>
+
+<!-- S43 controls spread -->
+<section class="sec controls" id="s-controls" data-theme="dark">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">29</span> Controls</p>
+    <div class="ctl-list" data-reveal="stagger" data-reveal-stagger=".1">
+      <div class="ctl"><b>Connect VPN</b><span>Tap to establish a secure connection.</span></div>
+      <div class="ctl"><b>Auto-launch</b><span>Saved only — no automation backend connected yet.</span></div>
+      <div class="ctl"><b>Start automation</b><span>Demo only — no automation backend connected.</span></div>
+      <div class="ctl ctl-stop"><b>Emergency stop</b><span>“Immediately end the simulated session?” — Cancel, or stop.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     CHAPTER 08 — SETTINGS
+     ====================================================================== -->
+<section class="sec tree" id="s-tree" data-chapter="settings" data-chapter-label="Settings" data-theme="dark">
+  <div class="wrap tree-grid">
+    <div class="tree-copy">
+      <p class="eyebrow"><span class="n">30</span> Settings</p>
+      <h2 class="t-l2" data-reveal="lines">Three groups, <em class="serif">fourteen pages.</em></h2>
+      <p class="t-l4" data-reveal="lines">Settings is the most structured surface in the product. Each row opens a dedicated sub-page; the tree below is drawn from the app’s own menu.</p>
+    </div>
+    <div class="tree-diagram" data-tree>
+      <svg viewBox="0 0 600 560" fill="none" stroke="currentColor" stroke-width="1" data-draw data-draw-stagger=".04" aria-hidden="true">
+        <path d="M40 40 V520"/><path d="M40 60 H90"/><path d="M40 230 H90"/><path d="M40 400 H90"/>
+        <path d="M110 80 V190 M110 100 H140 M110 130 H140 M110 160 H140 M110 190 H140"/>
+        <path d="M110 250 V360 M110 270 H140 M110 300 H140 M110 330 H140 M110 360 H140"/>
+        <path d="M110 420 V540 M110 440 H140 M110 460 H140 M110 480 H140 M110 500 H140 M110 520 H140 M110 540 H140"/>
+      </svg>
+      <div class="tree-labels">
+        <span class="tl root" style="--x:20;--y:22">Settings</span>
+        <span class="tl grp" style="--x:96;--y:52">App</span>
+        <span class="tl" style="--x:150;--y:92">Notification</span><span class="tl" style="--x:150;--y:122">Appearance</span><span class="tl" style="--x:150;--y:152">Language</span><span class="tl" style="--x:150;--y:182">Backup</span>
+        <span class="tl grp" style="--x:96;--y:222">Support</span>
+        <span class="tl" style="--x:150;--y:262">Help &amp; Support <small>Community &amp; Support</small></span><span class="tl" style="--x:150;--y:292">Send Feedback <small>Share your ideas</small></span><span class="tl" style="--x:150;--y:322">Report a Problem <small>Report issues</small></span><span class="tl" style="--x:150;--y:352">Contact Us <small>Get in touch</small></span>
+        <span class="tl grp" style="--x:96;--y:392">About</span>
+        <span class="tl" style="--x:150;--y:432">Rate the App</span><span class="tl" style="--x:150;--y:452">Share the App</span><span class="tl" style="--x:150;--y:472">Privacy Policy</span><span class="tl" style="--x:150;--y:492">Terms of Service</span><span class="tl" style="--x:150;--y:512">About MAIL FACTORY</span><span class="tl" style="--x:150;--y:532">Version</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S45 themes -->
+<section class="sec themes" id="s-themes" data-theme="dark">
+  <div class="wrap themes-head"><p class="eyebrow"><span class="n">31</span> Appearance · Theme</p><h2 class="t-l2" data-reveal="lines">One live, <em class="serif">five waiting.</em></h2><p class="t-l6">Drag the strip. Only Dark Red is active in this build; the others are marked Locked by the app.</p></div>
+  <div class="swatches" data-swatches data-cursor="DRAG">
+    <div class="sw-track">
+      <div class="sw is-active" style="--c:#ea0c20"><i></i><b>Dark Red</b><span>Active</span></div>
+      <div class="sw" style="--c:#1ea7ff"><i></i><b>Cyber Blue</b><span>Locked</span></div>
+      <div class="sw" style="--c:#9b4dff"><i></i><b>Neon Purple</b><span>Locked</span></div>
+      <div class="sw" style="--c:#28d86a"><i></i><b>Matrix Green</b><span>Locked</span></div>
+      <div class="sw" style="--c:#eef2f6"><i></i><b>Arctic White</b><span>Locked</span></div>
+      <div class="sw" style="--c:#7a7f88"><i></i><b>Stealth Gray</b><span>Locked</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- S46 backup destinations horizontal -->
+<section class="sec backup" id="s-backup" data-theme="dark" data-hscroll>
+  <div class="hseq-pin">
+    <div class="backup-head wrap"><p class="eyebrow"><span class="n">32</span> Backup · destinations</p><p class="t-l6">“Connect a destination to automatically back up your data.” Shown by the app as a UI demo until backend support is wired.</p></div>
+    <div class="hseq-track backup-track">
+      <div class="bk bk-src"><span class="t-l5">Source</span><b>This device</b><p>Library records live here.</p></div>
+      <div class="bk"><span class="t-l5">01</span><b>Google Drive</b><em>Connect</em></div>
+      <div class="bk"><span class="t-l5">02</span><b>Google Docs</b><em>Connect</em></div>
+      <div class="bk"><span class="t-l5">03</span><b>GitHub</b><em>Connect</em></div>
+      <div class="bk"><span class="t-l5">04</span><b>Dropbox</b><em>Connect</em></div>
+      <div class="bk"><span class="t-l5">05</span><b>OneDrive</b><em>Connect</em></div>
+      <div class="bk"><span class="t-l5">06</span><b>Phone Storage</b><em>Connect</em></div>
+      <div class="bk bk-note"><span class="t-l5">Status</span><p>“This is a UI demo — wire each provider’s real OAuth flow on your backend to make connections live.”</p></div>
+    </div>
+    <svg class="backup-wire" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="5" x2="100" y2="5"/></svg>
+  </div>
+</section>
+
+<!-- S47 live settings -->
+<section class="sec set-live" id="s-set-live" data-theme="dark" data-slot-trigger>
+  <div class="wrap set-live-head"><p class="eyebrow"><span class="n">33</span> Live · Settings</p><h2 class="t-l2" data-reveal="lines">The whole tree, <em class="serif">live.</em></h2><p class="t-l4" data-reveal="lines">Open Appearance to see the six themes. Open Backup for the six destinations. Open Version and press Check for Updates — the app queries the GitHub releases of the Mail Factory repository from your device.</p></div>
+  <div class="wrap set-live-stage"><div class="app-slot" data-slot="settings" data-frame="wide" data-screen="settings"><span class="slot-hint">Live application</span></div></div>
+  <div class="wrap set-hud t-l8"><span>Settings → App · Support · About</span><span>Wide presentation · full-width showcase</span><span>Screen 06 / 06</span></div>
+</section>
+
+<!-- S48 support links -->
+<section class="sec support" id="s-support" data-theme="dark">
+  <div class="wrap support-grid">
+    <div><p class="eyebrow"><span class="n">34</span> Support</p><h2 class="t-l2" data-reveal="lines">Where the project <em class="serif">lives.</em></h2><p class="t-l4" data-reveal="lines">The app routes problems to the GitHub Issue Tracker — “the app won’t create a GitHub Issue automatically; you submit the report yourself.” Community links are marked coming soon inside the app, so only the verified destinations are listed here.</p></div>
+    <ul class="support-list" data-reveal="stagger">
+      <li><a href="https://github.com/MailFactoryLabs/MailFactoryLabs.github.io" target="_blank" rel="noopener"><span class="t-l5">Repository</span><b>MailFactoryLabs / MailFactoryLabs.github.io</b><i>↗</i></a></li>
+      <li><a href="https://github.com/MailFactoryLabs/MailFactoryLabs.github.io/issues" target="_blank" rel="noopener"><span class="t-l5">Report a problem</span><b>GitHub Issue Tracker</b><i>↗</i></a></li>
+      <li><a href="https://mailfactorylabs.github.io" target="_blank" rel="noopener"><span class="t-l5">Project website</span><b>mailfactorylabs.github.io</b><i>↗</i></a></li>
+      <li><span class="soon"><span class="t-l5">Community</span><b>Telegram · Facebook</b><i>Coming soon</i></span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================================================================
+     CHAPTER 09 — WORKFLOW / SYSTEM
+     ====================================================================== -->
+<section class="sec topology" id="s-topology" data-chapter="workflow" data-chapter-label="Workflow" data-theme="dark">
+  <div class="wrap topo-head"><p class="eyebrow"><span class="n">35</span> Topology</p><h2 class="t-l2" data-reveal="lines">How the application is <em class="serif">put together.</em></h2><p class="t-l6">Read from the source: one shell, six screens, their sub-pages. Hover or tap a node to light its path.</p></div>
+  <div class="topo wrap" data-topo>
+    <svg class="topo-lines" viewBox="0 0 1200 620" fill="none" aria-hidden="true"></svg>
+    <div class="tn tn-root" data-node="root" style="--x:50%;--y:8%"><b>App shell</b><span>one screen visible at a time · no reload</span></div>
+    <div class="tn" data-node="dashboard" data-parent="root" style="--x:9%;--y:38%"><b>Dashboard</b><span>protected</span></div>
+    <div class="tn" data-node="engine" data-parent="root" style="--x:26%;--y:38%"><b>Engine</b><span>9 tiles</span></div>
+    <div class="tn" data-node="generator" data-parent="root" style="--x:42%;--y:38%"><b>Generator</b><span>Single · Batch</span></div>
+    <div class="tn" data-node="library" data-parent="root" style="--x:58%;--y:38%"><b>Library</b><span>records</span></div>
+    <div class="tn" data-node="onetouch" data-parent="root" style="--x:74%;--y:38%"><b>One Touch</b><span>mounted on entry</span></div>
+    <div class="tn" data-node="settings" data-parent="root" style="--x:91%;--y:38%"><b>Settings</b><span>protected</span></div>
+    <div class="tn tn-sub" data-node="checkroute" data-parent="engine" style="--x:16%;--y:70%"><b>Check Route</b></div>
+    <div class="tn tn-sub" data-node="logengine" data-parent="engine" style="--x:26%;--y:82%"><b>Log Engine</b></div>
+    <div class="tn tn-sub" data-node="systemsettings" data-parent="engine" style="--x:36%;--y:70%"><b>System Settings</b></div>
+    <div class="tn tn-sub" data-node="sheet" data-parent="library" style="--x:58%;--y:72%"><b>Sort · Search · Sheet</b></div>
+    <div class="tn tn-sub" data-node="vpn" data-parent="onetouch" style="--x:74%;--y:84%"><b>Country sheet · Stop dialog</b></div>
+    <div class="tn tn-sub" data-node="subpages" data-parent="settings" style="--x:91%;--y:72%"><b>14 sub-pages</b></div>
+    <div class="tn tn-sub" data-node="help" data-parent="settings" style="--x:91%;--y:90%"><b>Help → helpcenter</b></div>
+  </div>
+</section>
+
+<!-- S50 story sync -->
+<section class="sec story" id="s-story" data-theme="dark" data-slot-trigger>
+  <div class="story-grid wrap">
+    <div class="story-beats">
+      <div class="beat" data-screen-beat="dashboard"><span class="t-l5">Beat 01 · Dashboard</span><h3>A session begins on the status board.</h3><p class="t-l4">ONLINE. You press OPEN FACTORY.</p></div>
+      <div class="beat" data-screen-beat="engine"><span class="t-l5">Beat 02 · Engine</span><h3>You check the route.</h3><p class="t-l4">CONNECTED, a latency in milliseconds, a timestamp. You leave DNS Tunnel on and Core Boost off.</p></div>
+      <div class="beat" data-screen-beat="generator"><span class="t-l5">Beat 03 · Generator</span><h3>You make a batch of twenty.</h3><p class="t-l4">Email length 12, password length 16. GENERATE BATCH. COPY ALL.</p></div>
+      <div class="beat" data-screen-beat="library"><span class="t-l5">Beat 04 · Library</span><h3>The batch is already on the shelf.</h3><p class="t-l4">You star it, verify two, rename the batch.</p></div>
+      <div class="beat" data-screen-beat="onetouch"><span class="t-l5">Beat 05 · One Touch</span><h3>One tap to connect.</h3><p class="t-l4">The session clock starts. Telemetry fills. Emergency stop is a thumb away.</p></div>
+      <div class="beat" data-screen-beat="settings"><span class="t-l5">Beat 06 · Settings</span><h3>You check for updates.</h3><p class="t-l4">Version → Check for Updates. The app asks GitHub for the latest release.</p></div>
+    </div>
+    <div class="story-stage"><div class="story-sticky"><p class="eyebrow"><span class="n">36</span> Story · the app follows the text</p><div class="app-slot" data-slot="story" data-frame="story" data-screen="dashboard"><span class="slot-hint">Live application</span></div><p class="t-l8 story-screen">Screen: <b data-story-screen>dashboard</b></p></div></div>
+  </div>
+</section>
+
+<!-- S51 lattice -->
+<section class="sec lattice" id="s-lattice" data-theme="dark" data-pin data-pin-length="2.4">
+  <div class="pin-inner">
+    <div class="scene-host" data-scene="lattice"></div>
+    <div class="lattice-copy">
+      <p class="eyebrow"><span class="n">37</span> System</p>
+      <h2 class="t-l2" data-stage="0-0.5">Local-first, <em class="serif">by construction.</em></h2>
+      <h2 class="t-l2 alt" data-stage="0.5-1">Every record is a cell <em class="serif">on your device.</em></h2>
+      <p class="t-l4">Move the pointer through the field — it reacts. The lattice stands for what the product keeps close: generated accounts, engine switches, your preferences. None of it leaves the phone unless a Backup destination is wired.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     CHAPTER 10 — DEEP DIVE
+     ====================================================================== -->
+<section class="sec terrain" id="s-terrain" data-chapter="deep" data-chapter-label="Deep dive" data-theme="dark" data-pin data-pin-length="2.4">
+  <div class="pin-inner">
+    <div class="scene-host" data-scene="terrain"></div>
+    <div class="terrain-copy">
+      <p class="eyebrow"><span class="n">38</span> Deep dive · positioning</p>
+      <h2 class="terrain-title" data-stage="0-0.55">Experimental.<br><em class="serif">Educational.</em></h2>
+      <h2 class="terrain-title alt" data-stage="0.55-1">Built to be <em class="serif">studied.</em></h2>
+      <p class="t-l4" data-stage="0.2-1">“Mail Factory is an experimental and educational software project created for testing, learning, research and development purposes.” The terrain below is the honest ground the product stands on: architecture, features and integrations may change.</p>
+    </div>
+  </div>
+</section>
+
+<!-- S53 privacy & terms ledger -->
+<section class="sec legal" id="s-legal" data-theme="dark">
+  <div class="grad-host" data-grad="smoke"></div>
+  <div class="wrap legal-grid">
+    <div class="legal-col">
+      <div class="legal-sticky"><p class="eyebrow"><span class="n">39</span> Privacy Policy</p><h2 class="t-l2">Data &amp; <em class="serif">privacy.</em></h2><p class="t-l6">The policy inside the app covers eight areas.</p></div>
+      <ol class="legal-list" data-reveal="stagger" data-reveal-stagger=".05">
+        <li>What kind of data the app can access</li><li>What data is collected, and what isn’t</li><li>How local data is handled on your device</li><li>How external / third-party services are used</li><li>How credentials and sensitive information are handled</li><li>How diagnostic and log data is used</li><li>Third-party privacy policies that may apply</li><li>The developer’s limitations on accessing your data</li>
+      </ol>
+      <p class="legal-important"><b>Important</b> Mail Factory is primarily intended for experimental, educational, testing and research purposes. Avoid entering sensitive, confidential, financial, or production-critical information unless the relevant functionality has been explicitly verified as suitable for such use.</p>
+    </div>
+    <div class="legal-col">
+      <div class="legal-sticky"><p class="eyebrow"><span class="n">40</span> Terms of Service</p><h2 class="t-l2">Six <em class="serif">terms.</em></h2><p class="t-l6">Developed for educational, testing, research and automation-development purposes.</p></div>
+      <dl class="legal-terms" data-reveal="stagger" data-reveal-stagger=".06">
+        <div><dt>Experimental Software</dt><dd>Some features may be experimental, incomplete, or under active development.</dd></div>
+        <div><dt>User Responsibility</dt><dd>You are responsible for your own device, accounts, credentials and data usage.</dd></div>
+        <div><dt>Third-Party Services</dt><dd>GitHub, Google, Facebook, Telegram, WhatsApp and other third-party services carry their own Terms &amp; Policies, which may apply.</dd></div>
+        <div><dt>No Guarantee</dt><dd>Continuous availability, compatibility or reliability of the application or third-party services is not guaranteed.</dd></div>
+        <div><dt>Acceptable Use</dt><dd>The app must only be used for lawful, authorized and legitimate purposes.</dd></div>
+        <div><dt>Project Evolution</dt><dd>Architecture, features, integrations and functionality may change in the future.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- S54 FAQ -->
+<section class="sec faq" id="s-faq" data-theme="dark">
+  <div class="wrap faq-grid">
+    <div class="faq-head"><p class="eyebrow"><span class="n">41</span> FAQ · from the app</p><h2 class="t-l2" data-reveal="lines">Four <em class="serif">questions.</em></h2></div>
+    <div class="faq-list" data-faq>
+      <div class="fq"><button type="button" aria-expanded="false"><span class="q">Q</span><span class="qt">Is my data stored anywhere?</span><i></i></button><div class="fa"><p>No — every email and password is generated and processed locally on your device. Nothing is uploaded to a server.</p></div></div>
+      <div class="fq"><button type="button" aria-expanded="false"><span class="q">Q</span><span class="qt">Are the results unique?</span><i></i></button><div class="fa"><p>Yes, each result is freshly generated and not reused between runs.</p></div></div>
+      <div class="fq"><button type="button" aria-expanded="false"><span class="q">Q</span><span class="qt">Can I use these emails anywhere?</span><i></i></button><div class="fa"><p>Yes, they’re standard, valid addresses usable wherever an email is accepted.</p></div></div>
+      <div class="fq"><button type="button" aria-expanded="false"><span class="q">Q</span><span class="qt">Is this app free to use?</span><i></i></button><div class="fa"><p>Yes, all core features are free to use.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- S55 maker + word ring -->
+<section class="sec maker" id="s-maker" data-theme="dark">
+  <div class="grad-host" data-grad="haze"></div>
+  <div class="wrap maker-grid">
+    <div class="wordring" data-wordring data-cursor="DRAG" aria-label="Areas the project explores">
+      <div class="wr-track">
+        <span>System Architecture</span><span>Automation Engineering</span><span>Software Testing</span><span>System Integration</span><span>Automation Research</span><span>Educational Development</span>
+      </div>
+    </div>
+    <div class="maker-copy">
+      <p class="eyebrow"><span class="n">42</span> About</p>
+      <h2 class="t-l2" data-reveal="lines">An automation project <em class="serif">exploring.</em></h2>
+      <p class="t-l4" data-reveal="lines">“Mail Factory is developed as an educational project to explore system architecture, automation workflows, software engineering and technology integration. Its features, architecture and automation capabilities may change alongside ongoing development.”</p>
+      <div class="maker-card" data-reveal="up"><span class="mk-a">A</span><div><b>Atawur Rahman</b><span>System Architect &amp; Automation Developer</span></div><a href="https://mailfactorylabs.github.io" target="_blank" rel="noopener" class="t-l5">mailfactorylabs.github.io ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- S56 version & stated roadmap -->
+<section class="sec version" id="s-version" data-theme="dark">
+  <div class="wrap version-grid">
+    <div class="version-copy">
+      <p class="eyebrow"><span class="n">43</span> Version</p>
+      <div class="flap" data-flap aria-label="Version 1.0.0"><span data-flap-char="v">v</span><span data-flap-char="1">0</span><span class="dot">.</span><span data-flap-char="0">0</span><span class="dot">.</span><span data-flap-char="0">0</span></div>
+      <p class="version-tag"><i></i>Stable</p>
+      <p class="t-l4" data-reveal="lines">Settings → Version offers <strong>Check for Updates</strong> and <strong>View Versions</strong>. “The update check reads the latest release published for the Mail Factory GitHub repository and compares it with the version installed on this device.”</p>
+    </div>
+    <div class="roadmap" data-reveal="stagger" data-reveal-stagger=".08">
+      <p class="t-l5">Stated by the app · what is coming</p>
+      <div class="rm"><span class="rm-dot"></span><b>Full app translation</b><span>Language — “coming in a future update — for now this sets your selection only.”</span></div>
+      <div class="rm"><span class="rm-dot"></span><b>Live backup connections</b><span>Backup — “once backend support is available.”</span></div>
+      <div class="rm"><span class="rm-dot"></span><b>Five more themes</b><span>Appearance — Cyber Blue, Neon Purple, Matrix Green, Arctic White, Stealth Gray are Locked.</span></div>
+      <div class="rm"><span class="rm-dot"></span><b>System optimization</b><span>Engine — “not implemented in this build yet.”</span></div>
+      <div class="rm"><span class="rm-dot"></span><b>Automation backend</b><span>One Touch — “no automation backend connected yet.”</span></div>
+      <div class="rm"><span class="rm-dot"></span><b>Community links</b><span>Help &amp; Support — “coming soon.”</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     CHAPTER 11 — DOWNLOAD
+     ====================================================================== -->
+<section class="sec spark" id="s-spark" data-chapter="download" data-chapter-label="Download" data-theme="dark">
+  <div class="grad-host" data-grad="spark"></div>
+  <div class="spark-inner">
+    <p class="t-l5" data-reveal="fade">Chapter 11</p>
+    <p class="spark-line t-l3" data-reveal="lines">You have walked through the world.<br>Now take the product.</p>
+  </div>
+</section>
+
+<section class="sec final-dl" id="s-final-download" data-theme="dark" data-pin data-pin-length="1.6">
+  <div class="pin-inner">
+    <div class="scene-host" data-scene="core"></div>
+    <div class="final-dl-inner">
+      <p class="eyebrow"><span class="n">44</span> Download Mail Factory</p>
+      <h2 class="final-title t-l1"><span>Get the</span><span>build.</span></h2>
+      <div class="final-actions">
+        <a class="btn btn-primary btn-big btn-final" href="#download" data-download data-magnetic=".12"><span>Download for Android</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v13M6 11l6 6 6-6"/><path d="M5 20h14"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v13M6 11l6 6 6-6"/><path d="M5 20h14"/></svg></span><i class="ring"></i></a>
+        <button class="btn btn-ghost btn-big" type="button" data-share><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg><span>Share</span></button>
+        <a class="btn btn-text" href="https://github.com/MailFactoryLabs/MailFactoryLabs.github.io" target="_blank" rel="noopener"><span>Source on GitHub</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+      <div class="final-notes t-l8"><span>Android · native</span><span>v1.0.0 · Stable</span><span>Root powered</span><span>Local library</span></div>
+      <p class="final-config t-l8" data-download-note>The build link is configured by the site owner (MF_CONFIG.downloadUrl). Until then the button explains itself instead of inventing a URL.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     CHAPTER 12 — FEEDBACK
+     ====================================================================== -->
+<section class="sec rating" id="s-rating" data-chapter="feedback" data-chapter-label="Feedback" data-theme="dark">
+  <div class="rating-inner wrap">
+    <p class="eyebrow"><span class="n">45</span> Feedback</p>
+    <h2 class="rating-title" data-reveal="words">How was your experience?</h2>
+    <div class="stars" data-rating role="radiogroup" aria-label="Rate your experience">
+      <button type="button" role="radio" aria-checked="false" aria-label="1 star" data-v="1"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.7l-6.1 3.4 1.4-6.8L2.2 9.6l6.9-.8z"/></svg></button>
+      <button type="button" role="radio" aria-checked="false" aria-label="2 stars" data-v="2"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.7l-6.1 3.4 1.4-6.8L2.2 9.6l6.9-.8z"/></svg></button>
+      <button type="button" role="radio" aria-checked="false" aria-label="3 stars" data-v="3"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.7l-6.1 3.4 1.4-6.8L2.2 9.6l6.9-.8z"/></svg></button>
+      <button type="button" role="radio" aria-checked="false" aria-label="4 stars" data-v="4"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.7l-6.1 3.4 1.4-6.8L2.2 9.6l6.9-.8z"/></svg></button>
+      <button type="button" role="radio" aria-checked="false" aria-label="5 stars" data-v="5"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.7l-6.1 3.4 1.4-6.8L2.2 9.6l6.9-.8z"/></svg></button>
+    </div>
+    <p class="rating-word t-l3" data-rating-word aria-live="polite">Choose a rating</p>
+    <form class="rating-form" data-rating-form>
+      <label class="sr-only" for="fb">Optional feedback</label>
+      <textarea id="fb" rows="3" placeholder="Optional — what stood out, what should change?" maxlength="600"></textarea>
+      <div class="rating-actions"><button class="btn btn-primary" type="submit"><span>Send feedback</span></button><span class="t-l8">Stored on this device · sent to a configured endpoint if one is set</span></div>
+    </form>
+    <p class="rating-thanks t-l3" data-rating-thanks hidden>Thank you. Noted, <em>kept locally.</em></p>
+  </div>
+</section>
+
+<!-- ======================================================================
+     CHAPTER 13 — BRAND
+     ====================================================================== -->
+<section class="sec emergence" id="s-emergence" data-chapter="brand" data-chapter-label="Brand" data-theme="dark" data-pin data-pin-length="2.6">
+  <div class="pin-inner">
+    <div class="scene-host" data-scene="emergence"></div>
+    <div class="emergence-copy">
+      <p class="t-l5" data-stage="0-0.4">From the particles of the product</p>
+      <p class="t-l5" data-stage="0.55-1">the mark</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec brand" id="s-brand" data-theme="dark">
+  <div class="brand-inner">
+    <img class="brand-logo" src="assets/logo-1024.webp" alt="Mail Factory emblem" width="420" height="352" data-reveal="scale">
+    <h2 class="brand-word" data-reveal="chars" data-reveal-stagger=".1">Mail Factory</h2>
+    <p class="t-l3 brand-tag" data-reveal="fade">System Architecture <em>&amp;</em> Automation</p>
+    <div class="credits" data-reveal="stagger" data-reveal-stagger=".06">
+      <div><span>Dashboard</span><span>Engine</span><span>Generator</span></div>
+      <div><span>Library</span><span>One Touch</span><span>Settings</span></div>
+      <div><span>v1.0.0 Stable</span><span>Atawur Rahman</span><span>MailFactoryLabs</span></div>
+    </div>
+  </div>
+</section>
+
+<footer class="sec footer" id="s-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand"><img src="assets/logo-128.webp" alt="" width="28" height="28"><span>Mail <b>Factory</b></span></div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="https://github.com/MailFactoryLabs/MailFactoryLabs.github.io" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/MailFactoryLabs/MailFactoryLabs.github.io/issues" target="_blank" rel="noopener">Issues</a>
+      <a href="https://mailfactorylabs.github.io" target="_blank" rel="noopener">Project website</a>
+      <a href="#s-hero" data-scroll-to="#s-hero">Back to top</a>
+    </nav>
+    <p class="t-l8 footer-note">v1.0.0 · An experimental, educational project. Use only for lawful, authorized and legitimate purposes.</p>
+  </div>
+</footer>
+
+</main>
+
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="vendor/lenis.min.js" defer></script>
+<script type="module" src="js/core/app.js"></script>
+</body>
+</html>

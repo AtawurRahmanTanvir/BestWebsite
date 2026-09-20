@@ -1,0 +1,172 @@
+<!-- ══════════════ 28 · CHAPTER OPENER — ONE TOUCH ══════════════ -->
+<section class="chap sec" id="c-onetouch" data-chapter data-prep="onetouch">
+  <div class="chap-in">
+    <div class="chap-top"><span class="l5">Chapter 07</span><span class="l8">Session</span></div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">07</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>One Touch</span></span></h2>
+        <p class="l4 wide">A different kind of screen. Not a form and not a list — a single control surrounded by live telemetry, with one decisive action and one emergency exit.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 29 · ONE TOUCH — radial composition + live app ══════════════ -->
+<section class="appstage sec pad" id="app-onetouch" data-app-chapter="onetouch"
+         style="background:radial-gradient(90% 70% at 50% 40%,#0d0407,#050506 70%);position:relative;overflow:hidden">
+  <div class="cv-bg" data-scene3d="pulse"><canvas aria-hidden="true"></canvas></div>
+  <div class="wrap cv-hold">
+    <div style="text-align:center;max-width:720px;margin:0 auto clamp(34px,4.5vw,64px)">
+      <div class="eyebrow" style="justify-content:center" data-rv="fade"><span class="dot"></span><span class="l5">Live · One Touch screen</span></div>
+      <h2 class="l2" data-rv="up" data-rv-d="1">One control,<br>total clarity</h2>
+      <p class="l4" data-rv="up" data-rv-d="2" style="margin-top:14px">The screen opens in a disconnected state and waits. Around the control sit four live readouts — ping, download, upload and session time — which stay at their resting values until a session begins.</p>
+    </div>
+    <div style="display:flex;justify-content:center;position:relative" data-rv="scale" data-rv-d="3">
+      <div class="pres-radial">
+        <span class="ring" style="width:118%;height:118%"></span>
+        <span class="ring" style="width:140%;height:140%;opacity:.6"></span>
+        <span class="ring" style="width:166%;height:166%;opacity:.35"></span>
+        <div class="scr app-shellbox">
+          <div class="app-slot"></div>
+          <div class="app-loading"><div class="lspin"></div></div>
+          <div class="app-touchveil">Tap to interact</div>
+        </div>
+      </div>
+      <div class="app-annots">
+        <div class="annot" style="left:-30px;top:14%;transform:translateX(-100%)"><div class="ln"></div><h5>Telemetry</h5><p>Ping, download, upload and session time, all rendered live by the app.</p></div>
+        <div class="annot r" style="right:-30px;top:44%;transform:translateX(100%)"><div class="ln"></div><h5>Country</h5><p>A selector backed by the app's demo server list.</p></div>
+        <div class="annot" style="left:-30px;bottom:16%;transform:translateX(-100%)"><div class="ln"></div><h5>Emergency stop</h5><p>An immediate exit that confirms before ending the session.</p></div>
+      </div>
+    </div>
+    <div class="strip c4" style="margin-top:clamp(34px,4vw,60px);border:1px solid var(--line-2);border-radius:14px;overflow:hidden" data-rv="up" data-rv-d="4">
+      <div><b>Ping</b><span>Latency readout</span><p>Rests at “--” until a session is running.</p></div>
+      <div><b>Down</b><span>Throughput</span><p>Reported in MB/s alongside the upload figure.</p></div>
+      <div><b>Up</b><span>Throughput</span><p>The matching upstream measurement.</p></div>
+      <div><b>Session</b><span>Elapsed</span><p>A running clock from the moment a session starts.</p></div>
+    </div>
+    <p class="l6" style="text-align:center;margin-top:20px;max-width:64ch;margin-inline:auto" data-rv="fade" data-rv-d="5">
+      The app labels the automation side of this screen honestly: Auto-launch is “saved only — no automation backend connected yet”, and Start Automation is marked “demo only”. We repeat those labels rather than claiming more than the product does.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════ 30 · SPOTLIGHT CAROUSEL — session states ══════════════ -->
+<section class="spot sec pad" id="spot1" tabindex="0" aria-label="Session state carousel">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:22px;flex-wrap:wrap;margin-bottom:clamp(20px,2.6vw,38px)">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Carousel — session states</span><span class="bar"></span></div>
+        <h2 class="l2">Four states</h2>
+      </div>
+      <p class="l6" style="max-width:30ch" data-rv="up" data-rv-d="2">Drag, use the arrows, or press the left and right arrow keys.</p>
+    </div>
+    <div class="spot-stage">
+      <article class="spot-item"><span class="si-n">STATE / 01</span>
+        <h3>Disconnected</h3><p>The resting state. The screen announces it plainly and every telemetry field shows its placeholder.</p>
+        <div class="si-tele st-idle"><div class="sit-row"><span>PING</span><b>—</b></div><div class="sit-row"><span>DOWN</span><b>—</b></div><div class="sit-row"><span>UP</span><b>—</b></div><div class="sit-row"><span>SESSION</span><b>—</b></div></div>
+        <div class="si-bar"><i></i></div></article>
+      <article class="spot-item"><span class="si-n">STATE / 02</span>
+        <h3>Connecting</h3><p>The transition state after the connect control is pressed, with the interface energy rising.</p>
+        <div class="si-tele st-wait"><div class="sit-row"><span>PING</span><b>···</b></div><div class="sit-row"><span>DOWN</span><b>···</b></div><div class="sit-row"><span>UP</span><b>···</b></div><div class="sit-row"><span>SESSION</span><b>00:00</b></div></div>
+        <div class="si-bar"><i></i></div></article>
+      <article class="spot-item"><span class="si-n">STATE / 03</span>
+        <h3>Connected</h3><p>The session is live: telemetry populates and the session clock begins counting.</p>
+        <div class="si-tele st-live"><div class="sit-row"><span>PING</span><b>live</b></div><div class="sit-row"><span>DOWN</span><b>live</b></div><div class="sit-row"><span>UP</span><b>live</b></div><div class="sit-row"><span>SESSION</span><b>running</b></div></div>
+        <div class="si-bar"><i></i></div></article>
+      <article class="spot-item"><span class="si-n">STATE / 04</span>
+        <h3>Emergency stop</h3><p>“Immediately end the simulated session?” — a confirmation step guards the hard exit.</p>
+        <div class="si-tele st-stop"><div class="sit-row"><span>PING</span><b>—</b></div><div class="sit-row"><span>DOWN</span><b>—</b></div><div class="sit-row"><span>UP</span><b>—</b></div><div class="sit-row"><span>SESSION</span><b>ended</b></div></div>
+        <div class="si-bar"><i></i></div></article>
+    </div>
+    <div class="spot-nav">
+      <div class="spot-dots"></div>
+      <div class="spot-arrows">
+        <button class="ibtn" data-spot="prev" aria-label="Previous state"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="ibtn" data-spot="next" aria-label="Next state"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 31 · CHAPTER OPENER — SETTINGS ══════════════ -->
+<section class="chap sec" id="c-settings" data-chapter data-prep="settings" style="background:var(--ink-2)">
+  <div class="chap-in">
+    <div class="chap-top"><span class="l5">Chapter 08</span><span class="l8">Control</span></div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">08</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>Settings</span></span></h2>
+        <p class="l4 wide">Three groups — App, Support and About — holding thirteen surfaces between them. This is where the product tells you what it is, what it is not yet, and how to reach the people building it.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 32 · SETTINGS — technical grid + live app ══════════════ -->
+<section class="appstage sec pad" id="app-settings" data-app-chapter="settings" style="background:var(--ink)">
+  <div class="wrap set-grid" style="display:grid;gap:clamp(28px,4vw,60px);align-items:start">
+    <div data-rv="up">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">Live · Settings screen</span><span class="bar"></span></div>
+      <h2 class="l2">Precise,<br>and honest</h2>
+      <p class="l4 wide" style="margin-top:14px">Settings is the most technical surface in the product, and the most candid. Locked themes are shown as locked. Language selection says translation is coming later. Backup destinations state plainly that they are a UI demo until a backend is wired. We present it the same way.</p>
+
+      <div class="spec" style="margin-top:28px">
+        <div class="spec-row"><dt>App group</dt><dd><span class="chip">Notification</span><span class="chip">Appearance</span><span class="chip">Language</span><span class="chip">Backup</span></dd></div>
+        <div class="spec-row"><dt>Support group</dt><dd><span class="chip">Help &amp; Support</span><span class="chip">Send Feedback</span><span class="chip">Report a Problem</span><span class="chip">Contact Us</span></dd></div>
+        <div class="spec-row"><dt>About group</dt><dd><span class="chip">Rate the App</span><span class="chip">Share the App</span><span class="chip">Privacy Policy</span><span class="chip">Terms of Service</span><span class="chip">About</span><span class="chip">Version</span></dd></div>
+        <div class="spec-row"><dt>Active theme</dt><dd>Dark Red</dd></div>
+        <div class="spec-row"><dt>Locked themes</dt><dd><span class="chip">Cyber Blue</span><span class="chip">Neon Purple</span><span class="chip">Matrix Green</span><span class="chip">Arctic White</span><span class="chip">Stealth Gray</span></dd></div>
+        <div class="spec-row"><dt>Version</dt><dd>1.7.9 — checked against the latest published release</dd></div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;position:relative" data-rv="scale" data-rv-d="2">
+      <div class="pres-tech">
+        <div class="scr app-shellbox">
+          <div class="app-slot"></div>
+          <div class="app-loading"><div class="lspin"></div></div>
+          <div class="app-touchveil">Tap to interact</div>
+        </div>
+        <div class="tech-marks" aria-hidden="true">
+          <span style="left:8px;top:8px">SET / LIVE</span>
+          <span style="right:8px;top:8px">01</span>
+          <span style="left:8px;bottom:8px">MF 1.7.9</span>
+          <span style="right:8px;bottom:8px">LOCAL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 33 · BACKUP — comparison split ══════════════ -->
+<section class="cmp sec pad">
+  <div class="wrap-n">
+    <div style="margin-bottom:clamp(24px,3vw,44px)" data-rv="up">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">Backup — what is and is not true today</span><span class="bar"></span></div>
+      <h2 class="l2">Six destinations,<br>one honest caveat</h2>
+    </div>
+    <div class="cmp-grid" data-rv="up" data-rv-d="2">
+      <div class="cmp-col hi">
+        <span class="l5">Present in the app</span>
+        <h3>The destinations</h3>
+        <div class="cmp-li y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><p>Google Drive</p></div>
+        <div class="cmp-li y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><p>Google Docs</p></div>
+        <div class="cmp-li y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><p>GitHub</p></div>
+        <div class="cmp-li y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><p>Dropbox</p></div>
+        <div class="cmp-li y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><p>OneDrive</p></div>
+        <div class="cmp-li y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><p>Phone Storage</p></div>
+      </div>
+      <div class="cmp-col">
+        <span class="l5">Stated by the app</span>
+        <h3>The caveat</h3>
+        <div class="cmp-li n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><p>“This is a UI demo — wire each provider's real OAuth flow on your backend to make connections live.”</p></div>
+        <div class="cmp-li n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><p>Until then, an off-device copy only exists if you make one yourself.</p></div>
+        <div class="cmp-li n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><p>Full app translation is described as coming in a future update; language selection currently sets your choice only.</p></div>
+        <div class="cmp-li n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><p>Five of the six themes are locked; Dark Red is the active one.</p></div>
+      </div>
+    </div>
+    <p class="l6" style="margin-top:20px;max-width:74ch" data-rv="fade" data-rv-d="3">Quoting a product's own limitations is unusual on a marketing page. It is here because the alternative — implying the backups already work — would be a fabrication.</p>
+  </div>
+</section>

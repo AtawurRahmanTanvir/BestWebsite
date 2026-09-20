@@ -1,0 +1,1986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark">
+<title>Mail Factory — Generate. Automate. Keep it on your device.</title>
+<meta name="description" content="Mail Factory is a native Android app: a single and batch generator, six automation engines, a local library of everything you make, one-touch sessions and precise settings. Nothing is uploaded to a server.">
+<meta property="og:title" content="Mail Factory">
+<meta property="og:description" content="A native Android generator, engine suite and local library. Everything stays on your device.">
+<meta property="og:image" content="assets/logo-512.png">
+<link rel="icon" href="assets/logo-128.png">
+<link rel="apple-touch-icon" href="assets/logo-256.png">
+<link rel="preload" as="image" href="assets/logo-512.png">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/sections.css">
+</head>
+<body>
+
+<!-- ══════════════ PRELOADER · IGNITION ══════════════ -->
+<div class="pre" id="pre" role="status" aria-label="Loading Mail Factory">
+  <div class="pre-inner">
+    <img class="pre-logo" id="preLogo" src="assets/logo-512.png" alt="" width="104" height="104">
+    <div class="pre-bar"><i id="preBar"></i></div>
+    <div class="pre-meta"><span>MAIL FACTORY</span><span id="prePct">000</span></div>
+  </div>
+</div>
+<div class="pre-cut" id="preCut"></div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="prog" id="prog" aria-hidden="true"></div>
+<div class="cur" id="cur" aria-hidden="true"></div>
+<div class="cur-r" id="curRing" aria-hidden="true"><b>drag</b></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ══════════════ NAVIGATION ══════════════ -->
+<header class="nav" id="nav">
+  <a class="brand" href="#top" data-mag="0.2" aria-label="Mail Factory — top">
+    <img src="assets/logo-256.png" alt="Mail Factory logo" width="34" height="34">
+    <span class="brand-txt">Mail<i>Factory</i></span>
+  </a>
+  <nav class="nav-c" aria-label="Primary">
+    <a class="nav-link" href="#discovery" data-sec="discovery">Explore</a>
+    <a class="nav-link" href="#product" data-sec="product">Product</a>
+    <a class="nav-link" href="#c-dashboard" data-sec="c-dashboard">Live app</a>
+    <a class="nav-link" href="#workflow" data-sec="workflow">Workflow</a>
+    <a class="nav-link" href="#deepdive" data-sec="deepdive">Deep dive</a>
+    <a class="nav-link" href="#feedback" data-sec="feedback">Feedback</a>
+  </nav>
+  <div class="nav-r">
+    <button class="ibtn" id="navShare" aria-label="Share Mail Factory" data-mag="0.3">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+        <path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+    </button>
+    <button class="btn btn-p" id="navDl" data-mag="0.22">
+      <span class="sheen"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+      <span class="lb">Download</span>
+    </button>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <i></i><i></i>
+    </button>
+  </div>
+</header>
+
+<nav class="menu" id="menu" aria-label="Mobile">
+  <a href="#discovery"><b>01</b>Explore</a>
+  <a href="#product"><b>02</b>Product</a>
+  <a href="#c-dashboard"><b>03</b>Live app</a>
+  <a href="#c-engine"><b>04</b>Engine</a>
+  <a href="#workflow"><b>05</b>Workflow</a>
+  <a href="#system"><b>06</b>System</a>
+  <a href="#deepdive"><b>07</b>Deep dive</a>
+  <a href="#download"><b>08</b>Download</a>
+</nav>
+
+<!-- chapter rail -->
+<aside class="rail" id="rail" aria-label="Chapters">
+  <button data-go="hero"><span>Intro</span><i></i></button>
+  <button data-go="discovery"><span>Discovery</span><i></i></button>
+  <button data-go="product"><span>Product</span><i></i></button>
+  <button data-go="c-dashboard"><span>Dashboard</span><i></i></button>
+  <button data-go="c-engine"><span>Engine</span><i></i></button>
+  <button data-go="c-generator"><span>Generator</span><i></i></button>
+  <button data-go="c-library"><span>Library</span><i></i></button>
+  <button data-go="c-onetouch"><span>One Touch</span><i></i></button>
+  <button data-go="c-settings"><span>Settings</span><i></i></button>
+  <button data-go="workflow"><span>Workflow</span><i></i></button>
+  <button data-go="system"><span>System</span><i></i></button>
+  <button data-go="deepdive"><span>Deep dive</span><i></i></button>
+  <button data-go="download"><span>Download</span><i></i></button>
+  <button data-go="feedback"><span>Feedback</span><i></i></button>
+  <button data-go="brand"><span>Brand</span><i></i></button>
+</aside>
+
+<main id="top">
+
+<!-- ══════════════ 01 · HERO — cinematic 3D lattice ══════════════ -->
+<section class="hero sec" id="hero" data-chapter data-scene3d="lattice">
+  <canvas class="hero-cv" id="heroCv" aria-hidden="true"></canvas>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <span class="hero-bracket a" aria-hidden="true"></span>
+  <span class="hero-bracket b" aria-hidden="true"></span>
+  <span class="hero-bracket c" aria-hidden="true"></span>
+  <span class="hero-bracket d" aria-hidden="true"></span>
+
+  <div class="hero-meta tl">
+    <span class="tag live">System online</span>
+    <span class="l8">Ver 1.7.9</span>
+  </div>
+  <div class="hero-meta tr">
+    <span class="l8">Native Android</span>
+    <span class="l8">Local storage</span>
+  </div>
+
+  <div class="hero-in">
+    <img class="hero-logo" id="heroLogo" src="assets/logo-512.png" alt="Mail Factory" width="124" height="124">
+    <h1 class="l1 hero-title" id="heroTitle">
+      <span class="ln"><span class="t-mail">Mail</span></span>
+      <span class="ln"><span class="t-fact">Factory</span></span>
+    </h1>
+    <div class="hero-sub">
+      <div>
+        <p class="l3" style="max-width:34ch;margin-bottom:12px">Generate accounts. Run the engines. Keep every record on your own device.</p>
+        <p class="l4" style="max-width:56ch">A native Android application with a single and batch generator, six automation engines, a searchable local library, one-touch sessions and a precise settings layer. Nothing is uploaded to a server.</p>
+      </div>
+      <div class="hero-act">
+        <button class="btn btn-p btn-lg" id="heroDl" data-mag="0.24">
+          <span class="sheen"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          <span class="lb">Download</span>
+        </button>
+        <button class="btn btn-g btn-lg" id="heroShare" data-mag="0.24">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+            <path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+          <span class="lb">Share</span>
+        </button>
+        <a class="btn btn-q" href="#discovery" style="margin-left:6px">
+          Explore
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px">
+            <path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:clamp(18px,2.6vh,30px);gap:20px;flex-wrap:wrap">
+      <div class="hero-scroll"><i></i><span>Scroll to begin</span></div>
+      <span class="l8" style="text-align:right">Chapter 00 — Intro</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 02 · TICKER RAIL ══════════════ -->
+<section class="ticker sec" aria-hidden="true">
+  <div class="tick-row" data-tick="1">
+    <span class="hi">Single generator</span><span>Batch generator</span><span class="hi">Identity shift</span>
+    <span>Network cycle</span><span class="hi">System repo</span><span>Core boost</span>
+    <span class="hi">Memory purge</span><span>DNS tunnel</span><span class="hi">Check route</span>
+    <span>Log engine</span><span class="hi">Local library</span><span>One touch</span>
+  </div>
+</section>
+
+<!-- ══════════════ 03 · CHAPTER OPENER — DISCOVERY ══════════════ -->
+<section class="chap sec" id="discovery" data-chapter>
+  <div class="chap-in">
+    <div class="chap-top">
+      <span class="l5">Chapter 01</span>
+      <span class="l8">Discovery</span>
+    </div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">01</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>What it</span></span><span class="split-line"><span>actually is</span></span></h2>
+        <p class="l4 wide">Mail Factory is not a service you sign into. It is an application that runs on your phone, produces what you ask for, and files the result locally. The chapters ahead move through every surface of it — and the real app is embedded live along the way.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 04 · EDITORIAL MANIFESTO ══════════════ -->
+<section class="manifesto sec pad">
+  <div class="wrap mf-grid">
+    <div data-rv="up">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">Manifesto</span><span class="bar"></span></div>
+      <p class="mf-big">
+        Most tools ask you to <em>hand over</em> your data first and trust them second.
+        Mail Factory inverts that. Everything is generated <b>on the device</b>,
+        stored <b>on the device</b>, and searchable <em>only from the device</em>.
+        There is no account to create, and there is no server waiting for your output.
+      </p>
+    </div>
+    <aside class="mf-side" data-rv="up" data-rv-d="2">
+      <div class="blk">
+        <h4>Local by design</h4>
+        <p class="l6">“Accounts stay on this device. Generated accounts are stored locally in your Library.”</p>
+      </div>
+      <div class="blk">
+        <h4>No upload step</h4>
+        <p class="l6">Nothing is uploaded to a server. An off-device copy only exists if you connect a backup destination yourself.</p>
+      </div>
+      <div class="blk">
+        <h4>Freshly generated</h4>
+        <p class="l6">Each result is freshly generated and not reused between runs.</p>
+      </div>
+      <div class="blk">
+        <h4>Free core</h4>
+        <p class="l6">All core features are free to use.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ══════════════ 05 · NUMBERED FACT SPREAD ══════════════ -->
+<section class="facts sec pad">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:22px;flex-wrap:wrap;margin-bottom:clamp(26px,3.4vw,46px)">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Dashboard readout</span><span class="bar"></span></div>
+        <h2 class="l2">Four claims the app<br>makes about itself</h2>
+      </div>
+      <p class="l6" style="max-width:34ch" data-rv="up" data-rv-d="2">These four statements appear on the Mail Factory dashboard. They are reproduced here exactly as the application presents them.</p>
+    </div>
+    <div class="fact-grid">
+      <article class="fact" data-rv="up" data-rv-d="1">
+        <span class="fv">01</span><span class="fn">F/01</span>
+        <svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg>
+        <h3>100% Native</h3>
+        <p>Android App. Built as a native application rather than a wrapper around a remote page.</p>
+      </article>
+      <article class="fact" data-rv="up" data-rv-d="2">
+        <span class="fv">02</span><span class="fn">F/02</span>
+        <svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 2L4.5 13.5H11l-1 8.5 8.5-11.5H12z"/></svg>
+        <h3>Root Powered</h3>
+        <p>Max Performance. The dashboard reports the app's performance posture directly on the home surface.</p>
+      </article>
+      <article class="fact" data-rv="up" data-rv-d="3">
+        <span class="fv">03</span><span class="fn">F/03</span>
+        <svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
+        <h3>Network Ready</h3>
+        <p>HTTP / HTTPS • SOCKS5. The protocols the app declares as available on the network layer.</p>
+      </article>
+      <article class="fact" data-rv="up" data-rv-d="4">
+        <span class="fv">04</span><span class="fn">F/04</span>
+        <svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/>
+          <circle cx="12" cy="12" r="3.4"/></svg>
+        <h3>Smart Engine</h3>
+        <p>High Success Rate. Six automation engines sit behind this label, each independently switchable.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 06 · GRADIENT FIELD — SPOTLIGHT ══════════════ -->
+<section class="gfield sec" data-grad="spotlight">
+  <canvas aria-hidden="true"></canvas>
+  <div class="gf-in">
+    <div class="eyebrow" style="justify-content:center" data-rv="fade"><span class="dot"></span><span class="l5">The boundary</span></div>
+    <h2 class="l1" data-rv="up" style="font-size:clamp(34px,7.6vw,118px)">Nothing<br>leaves</h2>
+    <p class="l4" style="max-width:56ch" data-rv="up" data-rv-d="2">Every email and password is generated and processed locally on your device. There is no upload step in the pipeline — the only way a record reaches anywhere else is if you deliberately connect a backup destination from Settings.</p>
+  </div>
+  <div class="gf-hint">Move your pointer</div>
+</section>
+
+<!-- ══════════════ 07 · KINETIC TYPE STATEMENT ══════════════ -->
+<section class="kinetic sec" aria-label="Generate, automate, archive">
+  <div class="kin-row" data-kin="1">
+    <span class="fill">Generate</span><i></i><span class="out">Automate</span>
+    <span class="acc">Archive</span><i></i><span class="out">Control</span>
+  </div>
+  <div class="kin-row b" data-kin="-1" style="margin-top:clamp(10px,1.6vw,26px);opacity:.75">
+    <span class="out">Single</span><span class="fill">Batch</span><span class="out">Library</span>
+    <span class="acc">One touch</span><span class="out">Settings</span>
+  </div>
+</section>
+<!-- ============================================================
+     FAMILY: SPLIT LEDGER (new) — a two-column reckoning of what
+     the product is and is not. Typography-led, no 3D, no cards.
+     Sits early, right after the manifesto, as a hard statement.
+     ============================================================ -->
+<section class="reckon sec pad" aria-label="What it is and what it is not">
+  <div class="wrap">
+    <div class="reckon-head" data-rv="up">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">Definitions — drawn from the product</span><span class="bar"></span></div>
+      <h2 class="l2">Plainly stated</h2>
+    </div>
+    <div class="reckon-grid">
+      <div class="reckon-side is" data-rv="up" data-rv-d="2">
+        <span class="rk-k l5">What it is</span>
+        <ul class="rk-list">
+          <li><b>A native Android application.</b><span>The Dashboard states “100% NATIVE / Android App”.</span></li>
+          <li><b>An account generator.</b><span>Single and batch, with pattern and length controls.</span></li>
+          <li><b>A local library.</b><span>Every record is kept on the device and searchable.</span></li>
+          <li><b>An engine array.</b><span>Six switchable engines and three diagnostic tools.</span></li>
+        </ul>
+      </div>
+      <div class="reckon-side isnt" data-rv="up" data-rv-d="3">
+        <span class="rk-k l5">What it is not</span>
+        <ul class="rk-list">
+          <li><b>Not a web service.</b><span>There is no account to create and nothing to sign into.</span></li>
+          <li><b>Not a sync product.</b><span>“Nothing is uploaded to a server.”</span></li>
+          <li><b>Not finished pretending to be finished.</b><span>Locked themes, the translation note and the automation caveat are all shown as-is.</span></li>
+          <li><b>Not a demo of itself.</b><span>The application embedded in this page is the real build, version 1.7.9.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAMILY: COUNTER STRIP (new) — the only numeric moment on the
+     site. Every figure is countable from the product itself, so
+     nothing is invented. Animated count-up on reveal.
+     ============================================================ -->
+<section class="tally sec pad" aria-label="The product, counted">
+  <div class="wrap">
+    <p class="l5 tally-k" data-rv="fade">Counted, not claimed</p>
+    <div class="tally-row">
+      <div class="tally-i" data-rv="up" data-rv-d="1"><b data-count="6" data-pad="2">00</b><span class="l8">Screens</span><i>Dashboard · Engine · Generator · Library · One Touch · Settings</i></div>
+      <div class="tally-i" data-rv="up" data-rv-d="2"><b data-count="6" data-pad="2">00</b><span class="l8">Engines</span><i>Four on by default, two off</i></div>
+      <div class="tally-i" data-rv="up" data-rv-d="3"><b data-count="13" data-pad="2">00</b><span class="l8">Settings entries</span><i>Across App, Support and About</i></div>
+      <div class="tally-i" data-rv="up" data-rv-d="4"><b data-count="100" data-pad="3">000</b><span class="l8">Max batch</span><i>The largest quantity the Generator offers</i></div>
+    </div>
+    <p class="l6 tally-foot" data-rv="up" data-rv-d="5">Each figure is a count of things visible inside the application. No usage, download or customer numbers appear anywhere on this page, because the product does not publish any.</p>
+  </div>
+</section>
+<!-- ══════════════ 08 · CHAPTER OPENER — PRODUCT ══════════════ -->
+<section class="chap sec" id="product" data-chapter>
+  <div class="chap-in">
+    <div class="chap-top"><span class="l5">Chapter 02</span><span class="l8">Product index</span></div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">02</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>Six surfaces,</span></span><span class="split-line"><span>one device</span></span></h2>
+        <p class="l4 wide">The application is organised into six screens. Select one below and the page will travel to its chapter — and switch the live application to that exact screen at the same time.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 09 · PRODUCT INDEX — control panel ══════════════ -->
+<section class="pindex sec pad">
+  <div class="wrap">
+    <div class="pi-head">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Interactive index</span><span class="bar"></span></div>
+        <h2 class="l2">Select a surface</h2>
+      </div>
+      <p class="l6" style="max-width:32ch" data-rv="up" data-rv-d="2">Each row drives the real application. Choosing one scrolls to its chapter and calls the app's own screen navigation.</p>
+    </div>
+    <div class="pi-list">
+      <button class="pi-row" data-appnav="dashboard" data-target="app-dashboard" data-rv="up">
+        <span class="pi-n">01</span>
+        <span class="pi-main"><h3>Dashboard</h3><p>System status, the entry points into the Factory and the Library, and the four capability readouts.</p></span>
+        <span class="pi-go"><span>Open</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
+      </button>
+      <button class="pi-row" data-appnav="engine" data-target="app-engine" data-rv="up" data-rv-d="1">
+        <span class="pi-n">02</span>
+        <span class="pi-main"><h3>Engine</h3><p>Six automation engines, Check Route, the live Log Engine and per-engine System Settings.</p></span>
+        <span class="pi-go"><span>Open</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
+      </button>
+      <button class="pi-row" data-appnav="generator" data-target="app-generator" data-rv="up" data-rv-d="2">
+        <span class="pi-n">03</span>
+        <span class="pi-main"><h3>Generator</h3><p>Single and Batch modes. Name pattern, email length, password length, quantity, and instant output.</p></span>
+        <span class="pi-go"><span>Open</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
+      </button>
+      <button class="pi-row" data-appnav="library" data-target="app-library" data-rv="up" data-rv-d="3">
+        <span class="pi-n">04</span>
+        <span class="pi-main"><h3>Library</h3><p>Every generated account, timestamped. Sort, search, star, verify, rename and delete — all local.</p></span>
+        <span class="pi-go"><span>Open</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
+      </button>
+      <button class="pi-row" data-appnav="onetouch" data-target="app-onetouch" data-rv="up" data-rv-d="4">
+        <span class="pi-n">05</span>
+        <span class="pi-main"><h3>One Touch</h3><p>A single connect control with live ping, download, upload and session telemetry, plus emergency stop.</p></span>
+        <span class="pi-go"><span>Open</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
+      </button>
+      <button class="pi-row" data-appnav="settings" data-target="app-settings" data-rv="up" data-rv-d="5">
+        <span class="pi-n">06</span>
+        <span class="pi-main"><h3>Settings</h3><p>Notifications, Appearance, Language, Backup, the Help Centre, feedback routes and version checking.</p></span>
+        <span class="pi-go"><span>Open</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 10 · 3D CENTREPIECE — the core ══════════════ -->
+<section class="asplit sec pad" data-scene3d="core">
+  <div class="side-label"><span>Product core</span></div>
+  <div class="wrap as-grid">
+    <div class="as-txt" data-rv="up">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">Architecture</span><span class="bar"></span></div>
+      <h2 class="l2">One binary,<br>six surfaces</h2>
+      <p class="l4 wide">The six screens are not separate apps stitched together. They share one shell, one navigation model and one local store. Switching between them does not reload anything — the app swaps the active screen in place, which is exactly what this website does to the embedded copy as you scroll.</p>
+      <div class="as-list">
+        <div class="as-item"><b>A</b><div><h4>Shared shell</h4><p>A single application root holds every screen; only one is active at a time.</p></div></div>
+        <div class="as-item"><b>B</b><div><h4>No reload navigation</h4><p>Moving between Engine, Generator and One Touch is a client-side screen switch.</p></div></div>
+        <div class="as-item"><b>C</b><div><h4>Local store</h4><p>The Library reads from device storage, so results survive between sessions.</p></div></div>
+        <div class="as-item"><b>D</b><div><h4>Protected surfaces</h4><p>Dashboard and Settings are treated as protected screens inside the app shell.</p></div></div>
+      </div>
+    </div>
+    <div class="as-visual" data-rv="scale" data-rv-d="2">
+      <canvas aria-hidden="true"></canvas>
+      <span class="l5 vcorner">Core / 3D</span>
+      <span class="l8 vlabel">Faceted glass · orbiting surfaces</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 11 · CHAPTER OPENER — DASHBOARD ══════════════ -->
+<section class="chap sec" id="c-dashboard" data-chapter data-prep="dashboard">
+  <div class="chap-in">
+    <div class="chap-top"><span class="l5">Chapter 03</span><span class="tag live">Live application</span></div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">03</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>Dashboard</span></span></h2>
+        <p class="l4 wide">The first thing the app shows you. A status readout, two doors, and four statements about what the software is. From here everything else is one tap away.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 12 · DASHBOARD — editorial stage ══════════════ -->
+<section class="sec pad" style="background:var(--ink-2)">
+  <div class="wrap" style="display:grid;gap:clamp(24px,3vw,50px)">
+    <div style="display:grid;gap:clamp(20px,3vw,48px);align-items:end" class="dash-head">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Stage 01 — Statement</span><span class="bar"></span></div>
+        <p class="mf-big" style="font-size:clamp(23px,3.2vw,46px)">
+          A dashboard should answer one question before anything else:
+          <em>is the system ready?</em> Mail Factory answers it with a single line —
+          <b>SYSTEM STATUS: ONLINE</b> — and then gets out of the way.
+        </p>
+      </div>
+    </div>
+    <div class="strip c4" data-rv="up" data-rv-d="2">
+      <div><b data-count="1" data-pad="2">00</b><span>Status line</span><p>A live system status indicator sits at the top of the screen.</p></div>
+      <div><b data-count="2" data-pad="2">00</b><span>Primary doors</span><p>Open Factory and Open Library are the two entry points.</p></div>
+      <div><b data-count="4" data-pad="2">00</b><span>Capability tiles</span><p>Native, Root Powered, Network Ready, Smart Engine.</p></div>
+      <div><b data-count="6" data-pad="2">00</b><span>Reachable screens</span><p>Every other surface is one navigation step away.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 13 · DASHBOARD — LIVE APP (phone presentation) ══════════════ -->
+<section class="appstage sec pad" id="app-dashboard" data-app-chapter="dashboard" style="background:var(--ink)">
+  <div class="side-label"><span>Live · Dashboard</span></div>
+  <div class="wrap stage-grid c2">
+    <div class="stage-copy" data-rv="up">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">Stage 02 — The real thing</span><span class="bar"></span></div>
+      <h2 class="l2">This is the<br>actual app</h2>
+      <p class="l4 wide">Not a screenshot and not a mock-up. The panel beside this text is the real Mail Factory application running live. Scroll onward and it will switch itself to each screen as the chapter changes — or use the index above to jump directly.</p>
+      <div class="stage-steps">
+        <div class="sstep"><b>01</b><div><h4>System status</h4><p>The header reports ONLINE as soon as the app shell is ready.</p></div></div>
+        <div class="sstep"><b>02</b><div><h4>Open Factory</h4><p>The door into the generation side of the product.</p></div></div>
+        <div class="sstep"><b>03</b><div><h4>Open Library</h4><p>The door into everything you have already produced.</p></div></div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:26px;flex-wrap:wrap">
+        <span class="tag live">Interactive</span>
+        <span class="tag">Tap to use it</span>
+      </div>
+    </div>
+    <div style="position:relative" data-rv="scale" data-rv-d="2">
+      <div class="pres-phone" data-tilt="5">
+        <div class="scr app-shellbox">
+          <div class="app-slot"></div>
+          <div class="app-loading"><div class="lspin"></div></div>
+          <div class="app-touchveil">Tap to interact</div>
+        </div>
+      </div>
+      <div class="app-annots">
+        <div class="annot" style="left:-160px;top:22%"><div class="ln"></div><h5>Status</h5><p>Live system readout rendered by the app itself.</p></div>
+        <div class="annot r" style="right:-170px;top:52%"><div class="ln"></div><h5>Two doors</h5><p>Factory and Library are the primary destinations.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 14 · QUIET TRANSITION ══════════════ -->
+<section class="quiet sec">
+  <div class="q-in">
+    <span class="l5" data-rv="fade">Transition</span>
+    <h2 data-rv="up" data-rv-d="1" style="margin-top:18px">The dashboard is the calm surface.<br>Underneath it, six engines are waiting.</h2>
+    <div class="qm" data-rv="fade" data-rv-d="3">
+      <span class="l8">Next</span>
+      <span style="width:52px;height:1px;background:var(--ember);display:block"></span>
+      <span class="l5 red">Chapter 04 — Engine</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 15 · CHAPTER OPENER — ENGINE ══════════════ -->
+<section class="chap sec" id="c-engine" data-chapter data-prep="engine" style="background:var(--ink-2)">
+  <div class="chap-in">
+    <div class="chap-top"><span class="l5">Chapter 04</span><span class="l8">Automation</span></div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">04</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>Engine</span></span></h2>
+        <p class="l4 wide">“Powerful automation engines.” Six of them, each independently switchable, plus the diagnostic tools that sit alongside them. Disabled engines are skipped by Optimize System and will not run in the background.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 16 · ENGINE — 3D orbit + interactive board ══════════════ -->
+<section class="sec pad" style="background:var(--ink);position:relative;overflow:hidden">
+  <div class="wrap">
+    <div style="display:grid;gap:clamp(26px,4vw,60px);align-items:center" class="eng-grid">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Interactive — toggle the board</span><span class="bar"></span></div>
+        <h2 class="l2">Six engines.<br>You decide which run.</h2>
+        <p class="l4 wide" style="margin-top:16px">Switch any engine off below and watch the environment respond — the corresponding node powers down, its spoke dims and the hub loses intensity. This mirrors the app's own System Settings screen, where each engine has a real ON/OFF state.</p>
+        <div style="display:flex;align-items:center;gap:14px;margin-top:24px">
+          <span class="l5">Engines live</span>
+          <span class="l1" id="engineLive" style="font-size:clamp(34px,4vw,56px);line-height:1;color:var(--ember)">06</span>
+          <span class="l8">/ 06</span>
+        </div>
+      </div>
+      <div style="position:relative;aspect-ratio:1/0.82;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#07080a"
+           id="engineScene" data-scene3d="engines" data-rv="scale" data-rv-d="2">
+        <canvas aria-hidden="true"></canvas>
+        <span class="l5" style="position:absolute;left:16px;top:14px;z-index:2">Engine array / 3D</span>
+        <span class="l8" style="position:absolute;right:16px;bottom:14px;z-index:2">Metallic · orbital</span>
+      </div>
+    </div>
+
+    <div class="eboard" id="engineBoard" style="margin-top:clamp(30px,4vw,56px)" data-rv="up" data-rv-d="3">
+      <button class="ecell on" aria-pressed="true">
+        <span class="ec-x">01</span>
+        <div class="ec-top"><span class="l5">ENG/01</span><span class="esw"><i></i></span></div>
+        <h4>Identity Shift</h4>
+        <p>One of the six automation engines listed on the Engine screen. Toggleable from System Settings.</p>
+      </button>
+      <button class="ecell on" aria-pressed="true">
+        <span class="ec-x">02</span>
+        <div class="ec-top"><span class="l5">ENG/02</span><span class="esw"><i></i></span></div>
+        <h4>Network Cycle</h4>
+        <p>Runs as part of the automation set unless it has been switched off in System Settings.</p>
+      </button>
+      <button class="ecell on" aria-pressed="true">
+        <span class="ec-x">03</span>
+        <div class="ec-top"><span class="l5">ENG/03</span><span class="esw"><i></i></span></div>
+        <h4>System Repo</h4>
+        <p>Part of the optimisation set invoked by the Optimize System action on the Engine screen.</p>
+      </button>
+      <button class="ecell" aria-pressed="false">
+        <span class="ec-x">04</span>
+        <div class="ec-top"><span class="l5">ENG/04</span><span class="esw"><i></i></span></div>
+        <h4>Core Boost</h4>
+        <p>Shipped switched off by default. Disabled engines are skipped by Optimize System.</p>
+      </button>
+      <button class="ecell" aria-pressed="false">
+        <span class="ec-x">05</span>
+        <div class="ec-top"><span class="l5">ENG/05</span><span class="esw"><i></i></span></div>
+        <h4>Memory Purge</h4>
+        <p>Also off by default. Turning it on adds it to the background automation set.</p>
+      </button>
+      <button class="ecell on" aria-pressed="true">
+        <span class="ec-x">06</span>
+        <div class="ec-top"><span class="l5">ENG/06</span><span class="esw"><i></i></span></div>
+        <h4>DNS Tunnel</h4>
+        <p>The sixth engine in the array, enabled in the application's default configuration.</p>
+      </button>
+    </div>
+    <p class="l6" style="margin-top:16px;max-width:70ch" data-rv="fade" data-rv-d="4">Default states above mirror the application's own System Settings panel: Identity Shift, Network Cycle, System Repo and DNS Tunnel start ON; Core Boost and Memory Purge start OFF.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 17 · ENGINE TOOLS — horizontal rail ══════════════ -->
+<section class="hrail sec" style="height:260vh">
+  <div class="hrail-sticky" style="position:sticky;top:0">
+    <div class="hrail-head">
+      <div>
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Engine tools — horizontal</span><span class="bar"></span></div>
+        <h2 class="l2">Beyond the six</h2>
+      </div>
+      <p class="l6" style="max-width:30ch">Three more surfaces live on the Engine screen. Keep scrolling — the rail moves sideways.</p>
+    </div>
+    <div class="hrail-track">
+      <article class="hcard">
+        <span class="hc-glow"></span><span class="hc-n">TOOL / 01</span>
+        <span class="tag hc-tag" style="margin-top:14px">Diagnostic</span>
+        <h3>Check Route</h3>
+        <p>Reports Route Status, Latency, Route and Last Checked. Before a check has been run the fields read “—” and Last Checked reads “Never”.</p>
+      </article>
+      <article class="hcard">
+        <span class="hc-glow"></span><span class="hc-n">TOOL / 02</span>
+        <span class="tag hc-tag live" style="margin-top:14px">Live</span>
+        <h3>Log Engine</h3>
+        <p>A live console. It opens with “[SYSTEM] Log engine initialized”, “[SYSTEM] Console ready” and “[IDLE] Awaiting activity…”.</p>
+      </article>
+      <article class="hcard">
+        <span class="hc-glow"></span><span class="hc-n">TOOL / 03</span>
+        <span class="tag hc-tag" style="margin-top:14px">Control</span>
+        <h3>System Settings</h3>
+        <p>“Turn individual engines on or off. Disabled engines are skipped by Optimize System and won't run in the background.”</p>
+      </article>
+      <article class="hcard">
+        <span class="hc-glow"></span><span class="hc-n">ACTION / 01</span>
+        <span class="tag hc-tag" style="margin-top:14px">Primary</span>
+        <h3>Optimize System</h3>
+        <p>The main action on the Engine screen. It runs the enabled engines and skips anything switched off.</p>
+      </article>
+      <article class="hcard">
+        <span class="hc-glow"></span><span class="hc-n">ACTION / 02</span>
+        <span class="tag hc-tag" style="margin-top:14px">Primary</span>
+        <h3>Create Account</h3>
+        <p>The second action on the Engine screen — the bridge from automation straight into generation.</p>
+      </article>
+      <article class="hcard" style="border-color:rgba(232,17,45,.4)">
+        <span class="hc-glow" style="opacity:1"></span><span class="hc-n">NEXT</span>
+        <h3 style="color:var(--ember)">See it live</h3>
+        <p>The real Engine screen is directly below, with the app's own navigation intact.</p>
+        <button class="btn btn-g" style="margin-top:18px;height:44px" data-appnav="engine" data-target="app-engine">Open Engine</button>
+      </article>
+    </div>
+    <div class="hrail-prog"><i></i></div>
+  </div>
+</section>
+
+<!-- ══════════════ 18 · ENGINE — LIVE APP (embedded in scene) ══════════════ -->
+<section class="appstage sec pad" id="app-engine" data-app-chapter="engine"
+         style="background:var(--ink-2);position:relative;overflow:hidden">
+  <div class="cv-bg" data-grad="signal"><canvas aria-hidden="true"></canvas></div>
+  <div class="wrap cv-hold eng-live-grid" style="display:grid;gap:clamp(26px,4vw,58px);align-items:center">
+    <div style="position:relative;display:flex;justify-content:center" data-rv="scale">
+      <div class="pres-glass">
+        <div class="scr app-shellbox">
+          <div class="app-slot"></div>
+          <div class="app-loading"><div class="lspin"></div></div>
+          <div class="app-touchveil">Tap to interact</div>
+        </div>
+      </div>
+    </div>
+    <div class="stage-copy" data-rv="up" data-rv-d="2">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">Live · Engine screen</span><span class="bar"></span></div>
+      <h2 class="l2">Run it yourself</h2>
+      <p class="l4 wide">The Engine screen is live in the glass panel. Open System Settings inside it to flip the real engine switches, open Check Route to run a route check, or open Log Engine to watch the console. Every control belongs to the application, untouched.</p>
+      <div class="spec" style="margin-top:26px">
+        <div class="spec-row"><dt>Engines</dt><dd><span class="chip">Identity Shift</span><span class="chip">Network Cycle</span><span class="chip">System Repo</span><span class="chip">Core Boost</span><span class="chip">Memory Purge</span><span class="chip">DNS Tunnel</span></dd></div>
+        <div class="spec-row"><dt>Tools</dt><dd><span class="chip">Check Route</span><span class="chip">Log Engine</span><span class="chip">System Settings</span></dd></div>
+        <div class="spec-row"><dt>Actions</dt><dd><span class="chip">Optimize System</span><span class="chip">Create Account</span></dd></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============================================================
+     FAMILY: NOTICE BOARD (new) — the app's own notification copy,
+     set as a pair of system messages on a warm shader field.
+     GRADIENT: heat  |  chapter: DASHBOARD → ENGINE bridge
+     ============================================================ -->
+<section class="notice sec pad" data-grad="heat" aria-label="What the app tells you first">
+  <canvas aria-hidden="true"></canvas>
+  <div class="wrap-n notice-in">
+    <div class="notice-head" data-rv="up">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">First run — the two messages</span><span class="bar"></span></div>
+      <h2 class="l2">What it says<br>before you ask</h2>
+      <p class="l4" style="max-width:52ch">Two notifications exist in the product. Both are reproduced here exactly as the application writes them — nothing added, nothing softened.</p>
+    </div>
+    <div class="notice-stack">
+      <article class="nmsg" data-rv="up" data-rv-d="2" data-mag="0.12">
+        <div class="nmsg-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+        </div>
+        <div class="nmsg-b">
+          <span class="l8">Notification / 01</span>
+          <h3>Welcome to Mail Factory</h3>
+          <p>Your workspace is ready to go.</p>
+        </div>
+        <span class="nmsg-n l5" aria-hidden="true">01</span>
+      </article>
+      <article class="nmsg" data-rv="up" data-rv-d="3" data-mag="0.12">
+        <div class="nmsg-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div class="nmsg-b">
+          <span class="l8">Notification / 02</span>
+          <h3>Accounts stay on this device</h3>
+          <p>Generated accounts are stored locally in your Library.</p>
+        </div>
+        <span class="nmsg-n l5" aria-hidden="true">02</span>
+      </article>
+    </div>
+    <p class="l6 notice-foot" data-rv="up" data-rv-d="4">Both strings are quoted from the product's notification centre.</p>
+  </div>
+</section>
+<!-- ══════════════ 19 · CHAPTER OPENER — GENERATOR ══════════════ -->
+<section class="chap sec" id="c-generator" data-chapter data-prep="generator">
+  <div class="chap-in">
+    <div class="chap-top"><span class="l5">Chapter 05</span><span class="l8">Production</span></div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">05</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>Generator</span></span></h2>
+        <p class="l4 wide">Two modes, four inputs, one button. Single produces one email and password. Batch produces up to a hundred in a pass. Both write straight into the Library.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 20 · GENERATOR — 3D particle stream + process ══════════════ -->
+<section class="sec" style="background:var(--ink);position:relative;overflow:hidden">
+  <div style="position:relative;height:clamp(320px,44vw,520px)" data-scene3d="stream">
+    <canvas class="cv-bg" aria-hidden="true"></canvas>
+    <div style="position:absolute;inset:0;z-index:2;display:grid;place-items:center;text-align:center;padding:0 var(--gut)">
+      <div>
+        <span class="l5" data-rv="fade">Production stream</span>
+        <h2 class="l1" data-rv="up" data-rv-d="1" style="font-size:clamp(30px,6.4vw,96px);margin-top:12px">Input<span class="red"> → </span>Output</h2>
+        <p class="l6" data-rv="fade" data-rv-d="3" style="margin-top:14px">Particles converge through the aperture — the shape of a batch being produced</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pad" style="padding-top:clamp(50px,6vw,90px)">
+    <div class="wrap gen-grid" style="display:grid;gap:clamp(28px,4vw,64px)">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Stage 01 — Single</span><span class="bar"></span></div>
+        <h2 class="l2">One account,<br>immediately</h2>
+        <p class="l4 wide" style="margin-top:14px">“Generate a single email and password.” Set a name pattern of up to twenty characters, pick an email length and a password length, then generate. The result lands in Generated Output with a copy control on each field.</p>
+        <div class="spec" style="margin-top:26px">
+          <div class="spec-row"><dt>Name pattern</dt><dd>Up to 20 characters</dd></div>
+          <div class="spec-row"><dt>Email length</dt><dd><span class="chip">8</span><span class="chip">10</span><span class="chip">12</span><span class="chip">16</span><span class="chip">20</span></dd></div>
+          <div class="spec-row"><dt>Password length</dt><dd><span class="chip">8</span><span class="chip">12</span><span class="chip">16</span><span class="chip">20</span><span class="chip">24</span></dd></div>
+          <div class="spec-row"><dt>Output</dt><dd>Email + Password, each with Copy</dd></div>
+        </div>
+      </div>
+      <div data-rv="up" data-rv-d="2">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Stage 02 — Batch</span><span class="bar"></span></div>
+        <h2 class="l2">Or a hundred,<br>in one pass</h2>
+        <p class="l4 wide" style="margin-top:14px">Batch adds a quantity control on top of the same inputs. Pick five, ten, twenty, fifty or a hundred. The output panel reports the item count and offers Copy All for the whole set at once.</p>
+        <div class="spec" style="margin-top:26px">
+          <div class="spec-row"><dt>Quantity</dt><dd><span class="chip">5</span><span class="chip">10</span><span class="chip">20</span><span class="chip">50</span><span class="chip">100</span></dd></div>
+          <div class="spec-row"><dt>Action</dt><dd>Generate Batch</dd></div>
+          <div class="spec-row"><dt>Output</dt><dd>Item counter + Copy All</dd></div>
+          <div class="spec-row"><dt>Speed note</dt><dd>“Batch generation is faster for large lists.”</dd></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 21 · GENERATOR — process timeline ══════════════ -->
+<section class="proc sec pad" style="background:var(--ink-2)">
+  <div class="wrap-n">
+    <div style="margin-bottom:clamp(34px,4vw,60px)" data-rv="up">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">How to use — from the Help Centre</span><span class="bar"></span></div>
+      <h2 class="l2">Four steps, verbatim</h2>
+      <p class="l4 wide" style="margin-top:14px">These are the four steps the application's own Help Centre gives, reproduced in order.</p>
+    </div>
+    <div class="proc-wrap">
+      <div class="proc-line"><i></i></div>
+      <div class="proc-step">
+        <span class="proc-dot"></span>
+        <div class="ps-k">Step 01</div>
+        <h3>Go to Single or Batch Generator</h3>
+        <p class="l4">“Choose the generator you want to use. Find both modes from the Engine tab at the bottom of the app.”</p>
+        <div class="ps-meta"><span class="tag">Single</span><span class="tag">Batch</span></div>
+      </div>
+      <div class="proc-step">
+        <span class="proc-dot"></span>
+        <div class="ps-k">Step 02</div>
+        <h3>Enter your preferences</h3>
+        <p class="l4">“Fill in the required fields and set options. Set length, character types, or domain — whatever this generator needs.”</p>
+        <div class="ps-meta"><span class="tag">Name pattern</span><span class="tag">Lengths</span><span class="tag">Quantity</span></div>
+      </div>
+      <div class="proc-step">
+        <span class="proc-dot"></span>
+        <div class="ps-k">Step 03</div>
+        <h3>Generate</h3>
+        <p class="l4">“Tap the generate button to create results. Results appear instantly in the list below — no waiting, no network needed.”</p>
+        <div class="ps-meta"><span class="tag">Instant</span><span class="tag">Offline</span></div>
+      </div>
+      <div class="proc-step">
+        <span class="proc-dot"></span>
+        <div class="ps-k">Step 04</div>
+        <h3>Copy &amp; Use</h3>
+        <p class="l4">“Copy the results and use them anywhere. Tap one result to copy it, or use Copy All for the whole batch.”</p>
+        <div class="ps-meta"><span class="tag">Copy</span><span class="tag">Copy All</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 22 · GENERATOR — LIVE APP (wide interface) ══════════════ -->
+<section class="appstage sec pad" id="app-generator" data-app-chapter="generator" style="background:var(--ink)">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(24px,3vw,44px)">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Live · Generator screen</span><span class="bar"></span></div>
+        <h2 class="l2">Generate something now</h2>
+      </div>
+      <p class="l6" style="max-width:34ch" data-rv="up" data-rv-d="2">Switch between SINGLE and BATCH inside the frame, set your values and press generate. The results are real and they are yours.</p>
+    </div>
+    <div class="pres-console" data-rv="up" data-rv-d="3">
+      <div class="bar"><i></i><i></i><i></i><span>Mail Factory — Generator</span><em>1.7.9</em></div>
+      <div class="console-body">
+        <aside class="console-rail left" aria-hidden="true">
+          <div class="crail-h l5">Input fields</div>
+          <ol class="crail-list">
+            <li><b>01</b><span>Name pattern</span><i>0 / 20</i></li>
+            <li><b>02</b><span>Email length</span><i>8 · 10 · 12 · 16 · 20</i></li>
+            <li><b>03</b><span>Password length</span><i>8 · 12 · 16 · 20 · 24</i></li>
+            <li><b>04</b><span>Quantity</span><i>5 · 10 · 20 · 50 · 100</i></li>
+          </ol>
+          <div class="crail-note l6">Batch mode reveals Quantity. Single mode hides it.</div>
+        </aside>
+        <div class="scr app-shellbox">
+          <div class="app-slot"></div>
+          <div class="app-loading"><div class="lspin"></div></div>
+        </div>
+        <aside class="console-rail right" aria-hidden="true">
+          <div class="crail-h l5">Output</div>
+          <div class="crail-out">
+            <div class="cout-row"><span>Destination</span><b>Generated Output</b></div>
+            <div class="cout-row"><span>Per item</span><b>COPY</b></div>
+            <div class="cout-row"><span>Whole set</span><b>COPY ALL</b></div>
+            <div class="cout-row"><span>Storage</span><b>Library</b></div>
+          </div>
+          <div class="crail-bars"><i style="--v:.9"></i><i style="--v:.55"></i><i style="--v:.72"></i><i style="--v:.38"></i><i style="--v:.84"></i><i style="--v:.6"></i></div>
+          <div class="crail-note l6">Everything is produced on the device. Nothing is uploaded.</div>
+        </aside>
+      </div>
+    </div>
+    <div class="strip c3" style="margin-top:clamp(26px,3vw,46px);border:1px solid var(--line-2);border-radius:13px;overflow:hidden" data-rv="up" data-rv-d="4">
+      <div><b>Single</b><span>Mode one</span><p>One email and one password per press, each with its own Copy control.</p></div>
+      <div><b>Batch</b><span>Mode two</span><p>Five to one hundred per press, with an item counter and Copy All.</p></div>
+      <div><b>Local</b><span>Where it runs</span><p>“All results are generated locally on your device.”</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 23 · GRADIENT — INK DIFFUSION ══════════════ -->
+<section class="gfield sec" data-grad="ink" style="min-height:70svh">
+  <canvas aria-hidden="true"></canvas>
+  <div class="gf-in">
+    <span class="l5" data-rv="fade">Between chapters</span>
+    <h2 class="l2" data-rv="up" data-rv-d="1" style="margin-top:14px">Everything you generate<br>has to go somewhere</h2>
+    <p class="l4" style="max-width:52ch" data-rv="up" data-rv-d="2">In Mail Factory that somewhere is the Library — on the device, timestamped, and searchable.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 24 · CHAPTER OPENER — LIBRARY ══════════════ -->
+<section class="chap sec" id="c-library" data-chapter data-prep="library" style="background:var(--ink-2)">
+  <div class="chap-in">
+    <div class="chap-top"><span class="l5">Chapter 06</span><span class="l8">Archive</span></div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">06</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>Library</span></span></h2>
+        <p class="l4 wide">“All Generated Accounts.” Every single and every batch, kept in order, with the tools to find anything again: sort, search, star, verify, rename, delete.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 25 · LIBRARY — archive ledger (expandable) ══════════════ -->
+<section class="ledger sec pad">
+  <div class="wrap-n">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:22px;flex-wrap:wrap;margin-bottom:clamp(22px,3vw,40px)">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Record structure</span><span class="bar"></span></div>
+        <h2 class="l2">How a record is filed</h2>
+      </div>
+      <p class="l6" style="max-width:32ch" data-rv="up" data-rv-d="2">A schematic of the Library's record model. Expand a batch row to see how sub-items are indexed.</p>
+    </div>
+    <div class="led-table" data-rv="up" data-rv-d="3">
+      <div class="led-head"><span>Kind</span><span>Record</span><span>Filed</span><span>Flags</span></div>
+
+      <div class="led-row">
+        <button class="led-main" aria-expanded="false">
+          <span class="led-k s">SINGLE</span>
+          <span class="led-v">One account — email + password pair</span>
+          <span class="led-d">Date · Time</span>
+          <span class="led-act"><i class="on"></i><i></i>
+            <svg class="led-chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="led-exp"><div class="led-exp-in">
+          <div class="led-sub"><b>—</b><span>A single record holds one email and one password, each with its own Copy control.</span></div>
+          <div class="led-sub"><b>—</b><span>Filed with the day and the time it was generated.</span></div>
+          <div class="led-sub"><b>—</b><span>Can be starred, verified, renamed or deleted from the record's own menu.</span></div>
+        </div></div>
+      </div>
+
+      <div class="led-row">
+        <button class="led-main" aria-expanded="false">
+          <span class="led-k b">BATCH</span>
+          <span class="led-v">Batch — many accounts under one record</span>
+          <span class="led-d">Date · Time</span>
+          <span class="led-act"><i class="on"></i><i class="on"></i>
+            <svg class="led-chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="led-exp"><div class="led-exp-in">
+          <div class="led-sub"><b>#01</b><span>First account in the batch, indexed and individually copyable.</span></div>
+          <div class="led-sub"><b>#02</b><span>Second account — the same structure repeats for every item.</span></div>
+          <div class="led-sub"><b>#03</b><span>Third account. The list previews the first few items inline.</span></div>
+          <div class="led-sub"><b>+</b><span>The remainder collapse behind a “more accounts — tap to view all” control.</span></div>
+        </div></div>
+      </div>
+
+      <div class="led-row">
+        <button class="led-main" aria-expanded="false">
+          <span class="led-k s">TOTAL</span>
+          <span class="led-v">Running total across every record</span>
+          <span class="led-d">Live</span>
+          <span class="led-act"><i></i><i></i>
+            <svg class="led-chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="led-exp"><div class="led-exp-in">
+          <div class="led-sub"><b>—</b><span>The Library header carries a LIVE indicator and a TOTAL count of everything stored.</span></div>
+          <div class="led-sub"><b>—</b><span>The list terminates with “That's all for now.”</span></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 26 · LIBRARY — controls, drag ribbon ══════════════ -->
+<section class="ribbon sec">
+  <div class="wrap" style="margin-bottom:clamp(22px,3vw,40px);padding-inline:var(--gut)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Library controls — drag the row</span><span class="bar"></span></div>
+        <h2 class="l2">Finding it again</h2>
+      </div>
+      <span class="l8" data-drag>Drag · swipe · scroll sideways</span>
+    </div>
+  </div>
+  <div class="rib-track" data-drag>
+    <article class="rib-item"><div class="ri-k">Sort / 01</div>
+      <svg class="ri-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M7 4v16M7 20l-3-3M7 20l3-3M17 20V4M17 4l-3 3M17 4l3 3"/></svg>
+      <h4>Newest first</h4><p>The default order — most recent record at the top of the list.</p></article>
+    <article class="rib-item"><div class="ri-k">Sort / 02</div>
+      <svg class="ri-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <h4>Oldest first</h4><p>Reverses the timeline to start from your earliest generated record.</p></article>
+    <article class="rib-item"><div class="ri-k">Sort / 03</div>
+      <svg class="ri-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><rect x="4" y="5" width="16" height="5" rx="1.5"/><rect x="4" y="14" width="7" height="5" rx="1.5"/></svg>
+      <h4>Singles first</h4><p>Pulls every individual account above the grouped batches.</p></article>
+    <article class="rib-item"><div class="ri-k">Sort / 04</div>
+      <svg class="ri-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><rect x="3" y="4" width="18" height="4" rx="1.3"/><rect x="3" y="10" width="18" height="4" rx="1.3"/><rect x="3" y="16" width="18" height="4" rx="1.3"/></svg>
+      <h4>Batches first</h4><p>Inverts the grouping so large sets lead the list.</p></article>
+    <article class="rib-item"><div class="ri-k">Sort / 05</div>
+      <svg class="ri-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <h4>Starred first</h4><p>Anything you have added to Starred rises to the top of the archive.</p></article>
+    <article class="rib-item"><div class="ri-k">Sort / 06</div>
+      <svg class="ri-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      <h4>Verified first</h4><p>Records you have marked as verified lead the ordering.</p></article>
+    <article class="rib-item"><div class="ri-k">Action / 01</div>
+      <svg class="ri-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+      <h4>Search Library</h4><p>A dedicated search surface for locating a record inside the archive.</p></article>
+    <article class="rib-item"><div class="ri-k">Action / 02</div>
+      <svg class="ri-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+      <h4>Rename</h4><p>Give a record a name that means something to you later.</p></article>
+    <article class="rib-item"><div class="ri-k">Action / 03</div>
+      <svg class="ri-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>
+      <h4>Delete</h4><p>Remove a record from the device entirely.</p></article>
+  </div>
+</section>
+
+<!-- ══════════════ 27 · LIBRARY — LIVE APP (column + 3D vault) ══════════════ -->
+<section class="appstage sec pad" id="app-library" data-app-chapter="library" style="background:var(--ink);position:relative;overflow:hidden">
+  <div class="cv-bg" data-scene3d="vault" style="opacity:.6"><canvas aria-hidden="true"></canvas></div>
+  <div class="wrap cv-hold lib-grid" style="display:grid;gap:clamp(26px,4vw,58px);align-items:center">
+    <div class="stage-copy" data-rv="up">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">Live · Library screen</span><span class="bar"></span></div>
+      <h2 class="l2">The archive,<br>running</h2>
+      <p class="l4 wide">Scroll inside the column to move through the records. Expand a batch to reveal its numbered accounts, open the sort sheet, or search. Behind it, the slab field visualises a stored collection — abstract, not a fake UI.</p>
+      <div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:24px">
+        <span class="tag">Timestamped</span><span class="tag">Sortable</span>
+        <span class="tag">Searchable</span><span class="tag live">On device</span>
+      </div>
+      <p class="l6" style="margin-top:22px;max-width:52ch">Records shown inside the app are the application's own sample data, exactly as it ships.</p>
+    </div>
+    <div style="display:flex;justify-content:center" data-rv="scale" data-rv-d="2">
+      <div class="pres-col">
+        <div class="scr app-shellbox">
+          <div class="app-slot"></div>
+          <div class="app-loading"><div class="lspin"></div></div>
+          <div class="app-touchveil">Tap to interact</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============================================================
+     FAMILY: MARGINALIA (new) — an editorial two-column reading
+     spread. The app's Tips + FAQ, set as annotated body text
+     rather than cards. GRADIENT: caustic (quiet, behind glass).
+     ============================================================ -->
+<section class="marg sec pad" data-grad="caustic" aria-label="Tips and questions from the Help Centre">
+  <canvas aria-hidden="true"></canvas>
+  <div class="wrap marg-in">
+    <header class="marg-head" data-rv="up">
+      <span class="l5">Help Centre — tips &amp; questions</span>
+      <h2 class="l2">Read the<br>fine print</h2>
+    </header>
+
+    <div class="marg-cols">
+      <div class="marg-col" data-rv="up" data-rv-d="2">
+        <span class="marg-k l8">Tips</span>
+        <p class="marg-lead">Three notes the product offers about getting better results.</p>
+        <ol class="marg-list">
+          <li><em>01</em><p>Longer values are more secure — the length controls exist for exactly this reason.</p></li>
+          <li><em>02</em><p>Batch is faster when you need large lists, rather than pressing generate repeatedly.</p></li>
+          <li><em>03</em><p>All results are generated locally on your device.</p></li>
+        </ol>
+      </div>
+
+      <div class="marg-col" data-rv="up" data-rv-d="3">
+        <span class="marg-k l8">Questions</span>
+        <p class="marg-lead">Four answers, reproduced from the product's own FAQ.</p>
+        <dl class="marg-qa">
+          <dt>Is anything uploaded?</dt>
+          <dd>Nothing is uploaded. Generation happens on the device.</dd>
+          <dt>Are results unique?</dt>
+          <dd>Results are unique per run and not reused between runs.</dd>
+          <dt>What kind of addresses are produced?</dt>
+          <dd>Standard, valid address formats.</dd>
+          <dt>What does it cost?</dt>
+          <dd>The core features are free to use.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <aside class="marg-note" data-rv="up" data-rv-d="4">
+      <span class="l5">Annotation</span>
+      <p>Every line on this spread is quoted from the Help Centre inside the application. Where the product is uncertain about something, this site stays uncertain too.</p>
+    </aside>
+  </div>
+</section>
+<!-- ══════════════ 28 · CHAPTER OPENER — ONE TOUCH ══════════════ -->
+<section class="chap sec" id="c-onetouch" data-chapter data-prep="onetouch">
+  <div class="chap-in">
+    <div class="chap-top"><span class="l5">Chapter 07</span><span class="l8">Session</span></div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">07</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>One Touch</span></span></h2>
+        <p class="l4 wide">A different kind of screen. Not a form and not a list — a single control surrounded by live telemetry, with one decisive action and one emergency exit.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 29 · ONE TOUCH — radial composition + live app ══════════════ -->
+<section class="appstage sec pad" id="app-onetouch" data-app-chapter="onetouch"
+         style="background:radial-gradient(90% 70% at 50% 40%,#0d0407,#050506 70%);position:relative;overflow:hidden">
+  <div class="cv-bg" data-scene3d="pulse"><canvas aria-hidden="true"></canvas></div>
+  <div class="wrap cv-hold">
+    <div style="text-align:center;max-width:720px;margin:0 auto clamp(34px,4.5vw,64px)">
+      <div class="eyebrow" style="justify-content:center" data-rv="fade"><span class="dot"></span><span class="l5">Live · One Touch screen</span></div>
+      <h2 class="l2" data-rv="up" data-rv-d="1">One control,<br>total clarity</h2>
+      <p class="l4" data-rv="up" data-rv-d="2" style="margin-top:14px">The screen opens in a disconnected state and waits. Around the control sit four live readouts — ping, download, upload and session time — which stay at their resting values until a session begins.</p>
+    </div>
+    <div style="display:flex;justify-content:center;position:relative" data-rv="scale" data-rv-d="3">
+      <div class="pres-radial">
+        <span class="ring" style="width:118%;height:118%"></span>
+        <span class="ring" style="width:140%;height:140%;opacity:.6"></span>
+        <span class="ring" style="width:166%;height:166%;opacity:.35"></span>
+        <div class="scr app-shellbox">
+          <div class="app-slot"></div>
+          <div class="app-loading"><div class="lspin"></div></div>
+          <div class="app-touchveil">Tap to interact</div>
+        </div>
+      </div>
+      <div class="app-annots">
+        <div class="annot" style="left:-30px;top:14%;transform:translateX(-100%)"><div class="ln"></div><h5>Telemetry</h5><p>Ping, download, upload and session time, all rendered live by the app.</p></div>
+        <div class="annot r" style="right:-30px;top:44%;transform:translateX(100%)"><div class="ln"></div><h5>Country</h5><p>A selector backed by the app's demo server list.</p></div>
+        <div class="annot" style="left:-30px;bottom:16%;transform:translateX(-100%)"><div class="ln"></div><h5>Emergency stop</h5><p>An immediate exit that confirms before ending the session.</p></div>
+      </div>
+    </div>
+    <div class="strip c4" style="margin-top:clamp(34px,4vw,60px);border:1px solid var(--line-2);border-radius:14px;overflow:hidden" data-rv="up" data-rv-d="4">
+      <div><b>Ping</b><span>Latency readout</span><p>Rests at “--” until a session is running.</p></div>
+      <div><b>Down</b><span>Throughput</span><p>Reported in MB/s alongside the upload figure.</p></div>
+      <div><b>Up</b><span>Throughput</span><p>The matching upstream measurement.</p></div>
+      <div><b>Session</b><span>Elapsed</span><p>A running clock from the moment a session starts.</p></div>
+    </div>
+    <p class="l6" style="text-align:center;margin-top:20px;max-width:64ch;margin-inline:auto" data-rv="fade" data-rv-d="5">
+      The app labels the automation side of this screen honestly: Auto-launch is “saved only — no automation backend connected yet”, and Start Automation is marked “demo only”. We repeat those labels rather than claiming more than the product does.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════ 30 · SPOTLIGHT CAROUSEL — session states ══════════════ -->
+<section class="spot sec pad" id="spot1" tabindex="0" aria-label="Session state carousel">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:22px;flex-wrap:wrap;margin-bottom:clamp(20px,2.6vw,38px)">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Carousel — session states</span><span class="bar"></span></div>
+        <h2 class="l2">Four states</h2>
+      </div>
+      <p class="l6" style="max-width:30ch" data-rv="up" data-rv-d="2">Drag, use the arrows, or press the left and right arrow keys.</p>
+    </div>
+    <div class="spot-stage">
+      <article class="spot-item"><span class="si-n">STATE / 01</span>
+        <h3>Disconnected</h3><p>The resting state. The screen announces it plainly and every telemetry field shows its placeholder.</p>
+        <div class="si-tele st-idle"><div class="sit-row"><span>PING</span><b>—</b></div><div class="sit-row"><span>DOWN</span><b>—</b></div><div class="sit-row"><span>UP</span><b>—</b></div><div class="sit-row"><span>SESSION</span><b>—</b></div></div>
+        <div class="si-bar"><i></i></div></article>
+      <article class="spot-item"><span class="si-n">STATE / 02</span>
+        <h3>Connecting</h3><p>The transition state after the connect control is pressed, with the interface energy rising.</p>
+        <div class="si-tele st-wait"><div class="sit-row"><span>PING</span><b>···</b></div><div class="sit-row"><span>DOWN</span><b>···</b></div><div class="sit-row"><span>UP</span><b>···</b></div><div class="sit-row"><span>SESSION</span><b>00:00</b></div></div>
+        <div class="si-bar"><i></i></div></article>
+      <article class="spot-item"><span class="si-n">STATE / 03</span>
+        <h3>Connected</h3><p>The session is live: telemetry populates and the session clock begins counting.</p>
+        <div class="si-tele st-live"><div class="sit-row"><span>PING</span><b>live</b></div><div class="sit-row"><span>DOWN</span><b>live</b></div><div class="sit-row"><span>UP</span><b>live</b></div><div class="sit-row"><span>SESSION</span><b>running</b></div></div>
+        <div class="si-bar"><i></i></div></article>
+      <article class="spot-item"><span class="si-n">STATE / 04</span>
+        <h3>Emergency stop</h3><p>“Immediately end the simulated session?” — a confirmation step guards the hard exit.</p>
+        <div class="si-tele st-stop"><div class="sit-row"><span>PING</span><b>—</b></div><div class="sit-row"><span>DOWN</span><b>—</b></div><div class="sit-row"><span>UP</span><b>—</b></div><div class="sit-row"><span>SESSION</span><b>ended</b></div></div>
+        <div class="si-bar"><i></i></div></article>
+    </div>
+    <div class="spot-nav">
+      <div class="spot-dots"></div>
+      <div class="spot-arrows">
+        <button class="ibtn" data-spot="prev" aria-label="Previous state"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="ibtn" data-spot="next" aria-label="Next state"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 31 · CHAPTER OPENER — SETTINGS ══════════════ -->
+<section class="chap sec" id="c-settings" data-chapter data-prep="settings" style="background:var(--ink-2)">
+  <div class="chap-in">
+    <div class="chap-top"><span class="l5">Chapter 08</span><span class="l8">Control</span></div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">08</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>Settings</span></span></h2>
+        <p class="l4 wide">Three groups — App, Support and About — holding thirteen surfaces between them. This is where the product tells you what it is, what it is not yet, and how to reach the people building it.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 32 · SETTINGS — technical grid + live app ══════════════ -->
+<section class="appstage sec pad" id="app-settings" data-app-chapter="settings" style="background:var(--ink)">
+  <div class="wrap set-grid" style="display:grid;gap:clamp(28px,4vw,60px);align-items:start">
+    <div data-rv="up">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">Live · Settings screen</span><span class="bar"></span></div>
+      <h2 class="l2">Precise,<br>and honest</h2>
+      <p class="l4 wide" style="margin-top:14px">Settings is the most technical surface in the product, and the most candid. Locked themes are shown as locked. Language selection says translation is coming later. Backup destinations state plainly that they are a UI demo until a backend is wired. We present it the same way.</p>
+
+      <div class="spec" style="margin-top:28px">
+        <div class="spec-row"><dt>App group</dt><dd><span class="chip">Notification</span><span class="chip">Appearance</span><span class="chip">Language</span><span class="chip">Backup</span></dd></div>
+        <div class="spec-row"><dt>Support group</dt><dd><span class="chip">Help &amp; Support</span><span class="chip">Send Feedback</span><span class="chip">Report a Problem</span><span class="chip">Contact Us</span></dd></div>
+        <div class="spec-row"><dt>About group</dt><dd><span class="chip">Rate the App</span><span class="chip">Share the App</span><span class="chip">Privacy Policy</span><span class="chip">Terms of Service</span><span class="chip">About</span><span class="chip">Version</span></dd></div>
+        <div class="spec-row"><dt>Active theme</dt><dd>Dark Red</dd></div>
+        <div class="spec-row"><dt>Locked themes</dt><dd><span class="chip">Cyber Blue</span><span class="chip">Neon Purple</span><span class="chip">Matrix Green</span><span class="chip">Arctic White</span><span class="chip">Stealth Gray</span></dd></div>
+        <div class="spec-row"><dt>Version</dt><dd>1.7.9 — checked against the latest published release</dd></div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;position:relative" data-rv="scale" data-rv-d="2">
+      <div class="pres-tech">
+        <div class="scr app-shellbox">
+          <div class="app-slot"></div>
+          <div class="app-loading"><div class="lspin"></div></div>
+          <div class="app-touchveil">Tap to interact</div>
+        </div>
+        <div class="tech-marks" aria-hidden="true">
+          <span style="left:8px;top:8px">SET / LIVE</span>
+          <span style="right:8px;top:8px">01</span>
+          <span style="left:8px;bottom:8px">MF 1.7.9</span>
+          <span style="right:8px;bottom:8px">LOCAL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 33 · BACKUP — comparison split ══════════════ -->
+<section class="cmp sec pad">
+  <div class="wrap-n">
+    <div style="margin-bottom:clamp(24px,3vw,44px)" data-rv="up">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">Backup — what is and is not true today</span><span class="bar"></span></div>
+      <h2 class="l2">Six destinations,<br>one honest caveat</h2>
+    </div>
+    <div class="cmp-grid" data-rv="up" data-rv-d="2">
+      <div class="cmp-col hi">
+        <span class="l5">Present in the app</span>
+        <h3>The destinations</h3>
+        <div class="cmp-li y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><p>Google Drive</p></div>
+        <div class="cmp-li y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><p>Google Docs</p></div>
+        <div class="cmp-li y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><p>GitHub</p></div>
+        <div class="cmp-li y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><p>Dropbox</p></div>
+        <div class="cmp-li y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><p>OneDrive</p></div>
+        <div class="cmp-li y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><p>Phone Storage</p></div>
+      </div>
+      <div class="cmp-col">
+        <span class="l5">Stated by the app</span>
+        <h3>The caveat</h3>
+        <div class="cmp-li n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><p>“This is a UI demo — wire each provider's real OAuth flow on your backend to make connections live.”</p></div>
+        <div class="cmp-li n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><p>Until then, an off-device copy only exists if you make one yourself.</p></div>
+        <div class="cmp-li n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><p>Full app translation is described as coming in a future update; language selection currently sets your choice only.</p></div>
+        <div class="cmp-li n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><p>Five of the six themes are locked; Dark Red is the active one.</p></div>
+      </div>
+    </div>
+    <p class="l6" style="margin-top:20px;max-width:74ch" data-rv="fade" data-rv-d="3">Quoting a product's own limitations is unusual on a marketing page. It is here because the alternative — implying the backups already work — would be a fabrication.</p>
+  </div>
+</section>
+<!-- ============================================================
+     FAMILY: MARQUEE GALLERY (new) — a slow, continuously drifting
+     showcase of the six surfaces as numbered plates. Pointer
+     slows it; drag throws it. Not a card grid, not a slider UI.
+     ============================================================ -->
+<section class="gal sec" aria-label="The six surfaces, as plates">
+  <div class="gal-head wrap" data-rv="up">
+    <div class="eyebrow"><span class="dot"></span><span class="l5">Showcase — the six surfaces</span><span class="bar"></span></div>
+    <h2 class="l2">Six plates</h2>
+    <p class="l6" style="max-width:36ch">Drag the row, or let it drift. Each plate names one screen and the single thing it is for.</p>
+  </div>
+  <div class="gal-vp" data-drag="x">
+    <div class="gal-track">
+      <article class="plate"><span class="pl-n l7">01</span><div class="pl-b"><span class="l8">Surface</span><h3>Dashboard</h3><p>Status, two doors, four capability statements.</p></div></article>
+      <article class="plate"><span class="pl-n l7">02</span><div class="pl-b"><span class="l8">Surface</span><h3>Engine</h3><p>Six switchable engines and three diagnostic tools.</p></div></article>
+      <article class="plate"><span class="pl-n l7">03</span><div class="pl-b"><span class="l8">Surface</span><h3>Generator</h3><p>Single or batch. Four inputs, one button.</p></div></article>
+      <article class="plate"><span class="pl-n l7">04</span><div class="pl-b"><span class="l8">Surface</span><h3>Library</h3><p>Every record, sortable and searchable, held locally.</p></div></article>
+      <article class="plate"><span class="pl-n l7">05</span><div class="pl-b"><span class="l8">Surface</span><h3>One Touch</h3><p>A session panel in its own visual language.</p></div></article>
+      <article class="plate"><span class="pl-n l7">06</span><div class="pl-b"><span class="l8">Surface</span><h3>Settings</h3><p>Thirteen entries across App, Support and About.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAMILY: STEP SHOWCASE (new) — the Help Centre's four steps as
+     a click-through showcase with a progress spine. Different
+     interaction model from the drag gallery above it.
+     ============================================================ -->
+<section class="steps sec pad" id="steps" aria-label="Four steps from the Help Centre">
+  <div class="wrap">
+    <div class="steps-head" data-rv="up">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">Showcase — how to use, verbatim</span><span class="bar"></span></div>
+      <h2 class="l2">Four steps</h2>
+    </div>
+    <div class="steps-body">
+      <nav class="steps-rail" aria-label="Choose a step">
+        <button class="step-t is-on" data-step="0"><em>01</em><span>Open a generator</span></button>
+        <button class="step-t" data-step="1"><em>02</em><span>Enter preferences</span></button>
+        <button class="step-t" data-step="2"><em>03</em><span>Generate</span></button>
+        <button class="step-t" data-step="3"><em>04</em><span>Copy &amp; use</span></button>
+      </nav>
+      <div class="steps-stage">
+        <article class="step-p is-on" data-sp="0">
+          <span class="l8">Step one</span>
+          <h3>Go to Single or Batch Generator</h3>
+          <p>Choose the mode before anything else. Single produces one account. Batch produces a set in a single pass.</p>
+          <div class="step-tags"><span>SINGLE</span><span>BATCH</span></div>
+        </article>
+        <article class="step-p" data-sp="1">
+          <span class="l8">Step two</span>
+          <h3>Enter your preferences</h3>
+          <p>A name pattern of up to twenty characters, an email length, a password length — and a quantity when you are in batch mode.</p>
+          <div class="step-tags"><span>PATTERN</span><span>LENGTHS</span><span>QUANTITY</span></div>
+        </article>
+        <article class="step-p" data-sp="2">
+          <span class="l8">Step three</span>
+          <h3>Generate</h3>
+          <p>“Tap the generate button to create results. Results appear instantly in the list below — no waiting, no network needed.”</p>
+          <div class="step-tags"><span>INSTANT</span><span>OFFLINE</span></div>
+        </article>
+        <article class="step-p" data-sp="3">
+          <span class="l8">Step four</span>
+          <h3>Copy &amp; use</h3>
+          <p>“Copy the results and use them anywhere.” Tap one result to copy it, or use Copy All for the whole batch.</p>
+          <div class="step-tags"><span>COPY</span><span>COPY ALL</span></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ══════════════ 34 · CHAPTER OPENER — WORKFLOW ══════════════ -->
+<section class="chap sec" id="workflow" data-chapter>
+  <div class="chap-in">
+    <div class="chap-top"><span class="l5">Chapter 09</span><span class="l8">Topology</span></div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">09</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>Workflow</span></span></h2>
+        <p class="l4 wide">Input, process, generate, store, control. Five movements that describe how a value you type becomes a record you can find again a week later.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 35 · WORKFLOW — SVG topology, animated draw ══════════════ -->
+<section class="sec pad" style="background:var(--ink-2)" data-draw-root>
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:22px;flex-wrap:wrap;margin-bottom:clamp(24px,3vw,44px)">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Five movements</span><span class="bar"></span></div>
+        <h2 class="l2">The path a value takes</h2>
+      </div>
+      <p class="l6" style="max-width:32ch" data-rv="up" data-rv-d="2">Lines draw themselves as the section enters. Hover a stage to bring it forward.</p>
+    </div>
+
+    <div style="border:1px solid var(--line);border-radius:16px;background:#07080a;padding:clamp(18px,3vw,44px);overflow:hidden" data-rv="up" data-rv-d="3">
+      <svg viewBox="0 0 1200 320" style="width:100%;height:auto;overflow:visible" role="img" aria-label="Workflow diagram: input, process, generate, store, control">
+        <defs>
+          <linearGradient id="wfl" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#e8112d" stop-opacity="0.15"/>
+            <stop offset="50%" stop-color="#e8112d" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#e8112d" stop-opacity="0.15"/>
+          </linearGradient>
+          <filter id="wglow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+
+        <path data-draw d="M120 160 C 220 160, 220 160, 360 160" stroke="url(#wfl)" stroke-width="1.4" fill="none"/>
+        <path data-draw d="M360 160 C 470 160, 470 160, 600 160" stroke="url(#wfl)" stroke-width="1.4" fill="none"/>
+        <path data-draw d="M600 160 C 710 160, 710 160, 840 160" stroke="url(#wfl)" stroke-width="1.4" fill="none"/>
+        <path data-draw d="M840 160 C 950 160, 950 160, 1080 160" stroke="url(#wfl)" stroke-width="1.4" fill="none"/>
+        <path data-draw d="M600 160 C 600 60, 900 60, 1080 110" stroke="rgba(255,255,255,.14)" stroke-width="1" fill="none" stroke-dasharray="3 5"/>
+        <path data-draw d="M360 160 C 360 262, 760 262, 1080 210" stroke="rgba(255,255,255,.14)" stroke-width="1" fill="none" stroke-dasharray="3 5"/>
+
+        <g class="wf-stage" transform="translate(120,160)">
+          <circle r="27" fill="#0d0f13" stroke="rgba(255,255,255,.2)"/>
+          <circle r="6" fill="#e8112d" filter="url(#wglow)"/>
+          <text y="56" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#f6f6f8" letter-spacing="2">INPUT</text>
+          <text y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="10.5" fill="#83868f">pattern · lengths · qty</text>
+        </g>
+        <g class="wf-stage" transform="translate(360,160)">
+          <circle r="27" fill="#0d0f13" stroke="rgba(255,255,255,.2)"/>
+          <rect x="-7" y="-7" width="14" height="14" fill="none" stroke="#e8112d" stroke-width="1.6"/>
+          <text y="56" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#f6f6f8" letter-spacing="2">PROCESS</text>
+          <text y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="10.5" fill="#83868f">engines · local only</text>
+        </g>
+        <g class="wf-stage" transform="translate(600,160)">
+          <circle r="34" fill="#12060a" stroke="rgba(232,17,45,.6)"/>
+          <circle r="13" fill="none" stroke="#ff2438" stroke-width="1.6" filter="url(#wglow)"/>
+          <circle r="4" fill="#ff2438"/>
+          <text y="62" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#ff6a78" letter-spacing="2">GENERATE</text>
+          <text y="80" text-anchor="middle" font-family="Inter,sans-serif" font-size="10.5" fill="#83868f">single or batch</text>
+        </g>
+        <g class="wf-stage" transform="translate(840,160)">
+          <circle r="27" fill="#0d0f13" stroke="rgba(255,255,255,.2)"/>
+          <path d="M-8 -6h16M-8 0h16M-8 6h16" stroke="#e8112d" stroke-width="1.6" stroke-linecap="round"/>
+          <text y="56" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#f6f6f8" letter-spacing="2">STORE</text>
+          <text y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="10.5" fill="#83868f">library · timestamped</text>
+        </g>
+        <g class="wf-stage" transform="translate(1080,160)">
+          <circle r="27" fill="#0d0f13" stroke="rgba(255,255,255,.2)"/>
+          <circle r="8" fill="none" stroke="#e8112d" stroke-width="1.6"/>
+          <path d="M0 -14v5M0 9v5M-14 0h5M9 0h5" stroke="#e8112d" stroke-width="1.6" stroke-linecap="round"/>
+          <text y="56" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#f6f6f8" letter-spacing="2">CONTROL</text>
+          <text y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="10.5" fill="#83868f">sort · star · verify</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="strip c3" style="margin-top:clamp(26px,3vw,46px);border:1px solid var(--line-2);border-radius:13px;overflow:hidden" data-rv="up" data-rv-d="4">
+      <div><b>No network hop</b><span>Between input and output</span><p>“Results appear instantly in the list below — no waiting, no network needed.”</p></div>
+      <div><b>No reuse</b><span>Between runs</span><p>“Each result is freshly generated and not reused between runs.”</p></div>
+      <div><b>No upload</b><span>After storage</span><p>“Nothing is uploaded to a server.”</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 36 · CHAPTER OPENER — SYSTEM ══════════════ -->
+<section class="chap sec" id="system" data-chapter>
+  <div class="chap-in">
+    <div class="chap-top"><span class="l5">Chapter 10</span><span class="l8">Architecture map</span></div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">10</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>System</span></span></h2>
+        <p class="l4 wide">An interactive map of the whole application. Touch or hover any node to read what that layer actually does and see its connections light up.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 37 · SYSTEM — interactive node map ══════════════ -->
+<section class="dviz sec pad" style="background:var(--ink-2)">
+  <div class="wrap">
+    <div class="dviz-frame" data-rv="up">
+      <div class="dviz-bar">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span class="tag live">Interactive map</span>
+          <span class="l5">Mail Factory — system topology</span>
+        </div>
+        <span class="l8">Hover · tap · tab to explore</span>
+      </div>
+      <div style="display:grid;gap:0" class="nm-wrap">
+        <div id="nodeMap" class="nodemap" style="padding:clamp(16px,3vw,38px)">
+          <svg viewBox="0 0 900 470" role="img" aria-label="Interactive system map">
+            <g stroke-linecap="round">
+              <path class="nm-link" data-from="input" data-to="generator" d="M150 235 C 250 235, 280 235, 400 235"/>
+              <path class="nm-link" data-from="generator" data-to="library" d="M400 235 C 520 235, 560 235, 690 160"/>
+              <path class="nm-link" data-from="engine" data-to="generator" d="M400 90 C 400 150, 400 170, 400 235"/>
+              <path class="nm-link" data-from="onetouch" data-to="engine" d="M180 90 C 280 90, 300 90, 400 90"/>
+              <path class="nm-link" data-from="settings" data-to="library" d="M690 380 C 690 300, 690 260, 690 160"/>
+              <path class="nm-link" data-from="settings" data-to="engine" d="M690 380 C 500 420, 380 300, 400 90"/>
+              <path class="nm-link" data-from="library" data-to="device" d="M690 160 C 790 160, 820 230, 800 300"/>
+              <path class="nm-link" data-from="device" data-to="settings" d="M800 300 C 780 350, 740 375, 690 380"/>
+            </g>
+
+            <g class="nm-node" data-node="input" role="button" aria-label="Input layer">
+              <circle class="hit" cx="150" cy="235" r="34" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.18)"/>
+              <circle cx="150" cy="235" r="5" fill="#e8112d"/>
+              <text x="150" y="288" text-anchor="middle">Input</text>
+            </g>
+            <g class="nm-node" data-node="generator" role="button" aria-label="Generator layer">
+              <circle class="hit" cx="400" cy="235" r="44" fill="rgba(232,17,45,.09)" stroke="rgba(232,17,45,.5)"/>
+              <circle cx="400" cy="235" r="14" fill="none" stroke="#ff2438" stroke-width="1.5"/>
+              <circle cx="400" cy="235" r="4" fill="#ff2438"/>
+              <text x="400" y="300" text-anchor="middle">Generator</text>
+            </g>
+            <g class="nm-node" data-node="engine" role="button" aria-label="Engine layer">
+              <circle class="hit" cx="400" cy="90" r="36" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.18)"/>
+              <path d="M388 90h24M400 78v24" stroke="#e8112d" stroke-width="1.6" stroke-linecap="round"/>
+              <text x="400" y="145" text-anchor="middle">Engine ×6</text>
+            </g>
+            <g class="nm-node" data-node="onetouch" role="button" aria-label="One Touch layer">
+              <circle class="hit" cx="180" cy="90" r="32" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.18)"/>
+              <circle cx="180" cy="90" r="9" fill="none" stroke="#e8112d" stroke-width="1.5"/>
+              <text x="180" y="142" text-anchor="middle">One Touch</text>
+            </g>
+            <g class="nm-node" data-node="library" role="button" aria-label="Library layer">
+              <circle class="hit" cx="690" cy="160" r="38" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.18)"/>
+              <path d="M678 152h24M678 160h24M678 168h24" stroke="#e8112d" stroke-width="1.5" stroke-linecap="round"/>
+              <text x="690" y="216" text-anchor="middle">Library</text>
+            </g>
+            <g class="nm-node" data-node="settings" role="button" aria-label="Settings layer">
+              <circle class="hit" cx="690" cy="380" r="34" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.18)"/>
+              <circle cx="690" cy="380" r="8" fill="none" stroke="#e8112d" stroke-width="1.5"/>
+              <path d="M690 366v-6M690 400v-6M676 380h-6M710 380h-6" stroke="#e8112d" stroke-width="1.5" stroke-linecap="round"/>
+              <text x="690" y="432" text-anchor="middle">Settings</text>
+            </g>
+            <g class="nm-node" data-node="device" role="button" aria-label="Device boundary">
+              <circle class="hit" cx="800" cy="300" r="30" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)" stroke-dasharray="4 4"/>
+              <rect x="793" y="291" width="14" height="18" rx="3" fill="none" stroke="#83868f" stroke-width="1.4"/>
+              <text x="800" y="350" text-anchor="middle">Device</text>
+            </g>
+          </svg>
+        </div>
+        <div style="padding:0 clamp(16px,3vw,38px) clamp(18px,3vw,34px)">
+          <div class="nm-panel">
+            <div style="display:flex;justify-content:space-between;gap:16px;align-items:baseline;margin-bottom:6px">
+              <h4 id="nmTitle">GENERATOR</h4>
+              <span class="l5" id="nmKind">Production layer</span>
+            </div>
+            <p class="l4" id="nmBody">Single builds one account. Batch builds 5, 10, 20, 50 or 100 in a single pass.</p>
+          </div>
+        </div>
+      </div>
+      <div class="dviz-legend">
+        <div><i></i>Active path</div>
+        <div><i style="background:rgba(255,255,255,.3)"></i>Idle path</div>
+        <div><i style="background:transparent;border-top:1px dashed rgba(255,255,255,.4);height:0"></i>Device boundary</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 38 · 3D TERRAIN + METRIC READOUT ══════════════ -->
+<section class="sec" style="background:var(--ink);position:relative;overflow:hidden">
+  <div style="position:relative;height:clamp(340px,46vw,560px)" data-scene3d="mesh">
+    <canvas class="cv-bg" aria-hidden="true"></canvas>
+    <div style="position:absolute;inset:0;z-index:2;display:flex;align-items:flex-end;padding:var(--gut)">
+      <div class="wrap" style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+        <div>
+          <span class="l5" data-rv="fade">Surface / topology</span>
+          <h2 class="l2" data-rv="up" data-rv-d="1" style="margin-top:10px">One device,<br>one surface</h2>
+        </div>
+        <p class="l6" style="max-width:34ch" data-rv="fade" data-rv-d="2">The system has no remote tier to draw. Everything in the map above happens inside this one boundary.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 39 · PAPER INVERSION — the written record ══════════════ -->
+<section class="paper-sec tone-paper sec pad-lg">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;margin-bottom:clamp(30px,4vw,56px)">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Documentation — in the app</span><span class="bar" style="background:linear-gradient(90deg,rgba(0,0,0,.3),transparent)"></span></div>
+        <h2 class="paper-big">Read the<br><em>fine print</em></h2>
+      </div>
+      <p class="l4" style="max-width:36ch" data-rv="up" data-rv-d="2">Mail Factory ships its own Help Centre, FAQ, feedback routes and issue tracker. Everything below is drawn from it.</p>
+    </div>
+
+    <div class="ps-grid">
+      <div data-rv="up" data-rv-d="1">
+        <span class="l5">Features — as listed</span>
+        <div class="paper-rule"></div>
+        <div style="display:grid;gap:12px">
+          <div class="paper-card"><h4>Email Generator</h4><p>“Generate unlimited unique email addresses.”</p></div>
+          <div class="paper-card"><h4>Password Generator</h4><p>“Create strong and secure passwords.”</p></div>
+          <div class="paper-card"><h4>Batch Generation</h4><p>“Generate multiple results at once.”</p></div>
+          <div class="paper-card"><h4>One-Tap Copy</h4><p>“Copy single items and all results instantly.”</p></div>
+        </div>
+      </div>
+      <div data-rv="up" data-rv-d="2">
+        <span class="l5">Tips — as written</span>
+        <div class="paper-rule"></div>
+        <ul style="display:grid;gap:14px;margin-bottom:34px">
+          <li style="display:flex;gap:12px;align-items:flex-start">
+            <span style="font-family:var(--mono);font-size:11px;color:var(--crimson);padding-top:3px">01</span>
+            <span style="font-size:15px;color:#2c2e34;line-height:1.55">“Use longer lengths for more secure passwords.”</span></li>
+          <li style="display:flex;gap:12px;align-items:flex-start">
+            <span style="font-family:var(--mono);font-size:11px;color:var(--crimson);padding-top:3px">02</span>
+            <span style="font-size:15px;color:#2c2e34;line-height:1.55">“Batch generation is faster for large lists.”</span></li>
+          <li style="display:flex;gap:12px;align-items:flex-start">
+            <span style="font-family:var(--mono);font-size:11px;color:var(--crimson);padding-top:3px">03</span>
+            <span style="font-size:15px;color:#2c2e34;line-height:1.55">“All results are generated locally on your device.”</span></li>
+        </ul>
+
+        <span class="l5">FAQ — the four questions</span>
+        <div class="paper-rule"></div>
+        <div id="faqList">
+          <div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="fq-n">Q1</span>
+            <h4 style="color:#0a0a0c">Is my data stored anywhere?</h4><span class="faq-ic" style="border-color:rgba(0,0,0,.2);color:#0a0a0c"></span></button>
+            <div class="faq-a"><p class="l4" style="color:#4a4d55">“No — every email and password is generated and processed locally on your device. Nothing is uploaded to a server.”</p></div></div>
+          <div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="fq-n">Q2</span>
+            <h4 style="color:#0a0a0c">Are the results unique?</h4><span class="faq-ic" style="border-color:rgba(0,0,0,.2);color:#0a0a0c"></span></button>
+            <div class="faq-a"><p class="l4" style="color:#4a4d55">“Yes, each result is freshly generated and not reused between runs.”</p></div></div>
+          <div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="fq-n">Q3</span>
+            <h4 style="color:#0a0a0c">Can I use these emails anywhere?</h4><span class="faq-ic" style="border-color:rgba(0,0,0,.2);color:#0a0a0c"></span></button>
+            <div class="faq-a"><p class="l4" style="color:#4a4d55">“Yes, they're standard, valid addresses usable wherever an email is accepted.”</p></div></div>
+          <div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="fq-n">Q4</span>
+            <h4 style="color:#0a0a0c">Is this app free to use?</h4><span class="faq-ic" style="border-color:rgba(0,0,0,.2);color:#0a0a0c"></span></button>
+            <div class="faq-a"><p class="l4" style="color:#4a4d55">“Yes, all core features are free to use.”</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============================================================
+     FAMILY: SOFT FIELD (new) — the calm beat between the technical
+     system chapter and the deep dive. 3D: fluid (organic blobs),
+     the one scene family not yet used. Near-monochrome, no red.
+     ============================================================ -->
+<section class="soft sec" data-scene3d="fluid" aria-label="Local by default">
+  <canvas aria-hidden="true"></canvas>
+  <div class="soft-in">
+    <p class="l5 soft-k" data-rv="fade">Between the machinery</p>
+    <h2 class="l1 soft-h" data-rv="up" data-rv-d="2">
+      Nothing here<br><span class="soft-em">leaves the phone.</span>
+    </h2>
+    <p class="l4 soft-p" data-rv="up" data-rv-d="3">
+      Not a feature list — a consequence. Because generation, storage and search all run on the device, there is no account to make, no server to trust and no queue to wait behind.
+    </p>
+    <div class="soft-meta" data-rv="up" data-rv-d="4">
+      <span class="l8">Local generation</span>
+      <span class="l8">Local library</span>
+      <span class="l8">No sign-up</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAMILY: SPEC SHEET (new) — a dense, precise, typographic
+     table. Highest information density on the site; deliberately
+     placed right after the calmest section. GRADIENT: aurora.
+     ============================================================ -->
+<section class="sheet sec pad" data-grad="aurora" aria-label="Specification sheet">
+  <canvas aria-hidden="true"></canvas>
+  <div class="wrap sheet-in">
+    <div class="sheet-head" data-rv="up">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">Reference — every value in one place</span><span class="bar"></span></div>
+      <h2 class="l2">The sheet</h2>
+      <p class="l6" style="max-width:40ch">Every selectable value the product exposes, collected from the screens themselves.</p>
+    </div>
+
+    <div class="sheet-table" data-rv="up" data-rv-d="2">
+      <div class="sheet-row sheet-hd" aria-hidden="true">
+        <span class="l8">Surface</span><span class="l8">Control</span><span class="l8">Values</span>
+      </div>
+      <div class="sheet-row"><b>Generator</b><span>Name pattern</span><i>up to 20 characters</i></div>
+      <div class="sheet-row"><b>Generator</b><span>Email length</span><i>8 · 10 · 12 · 16 · 20</i></div>
+      <div class="sheet-row"><b>Generator</b><span>Password length</span><i>8 · 12 · 16 · 20 · 24</i></div>
+      <div class="sheet-row"><b>Generator</b><span>Quantity (batch)</span><i>5 · 10 · 20 · 50 · 100</i></div>
+      <div class="sheet-row"><b>Engine</b><span>Default ON</span><i>Identity Shift · Network Cycle · System Repo · DNS Tunnel</i></div>
+      <div class="sheet-row"><b>Engine</b><span>Default OFF</span><i>Core Boost · Memory Purge</i></div>
+      <div class="sheet-row"><b>Engine</b><span>Diagnostics</span><i>Check Route · Log Engine · System Settings</i></div>
+      <div class="sheet-row"><b>Library</b><span>Sort</span><i>Newest · Oldest · Singles · Batches · Starred · Verified</i></div>
+      <div class="sheet-row"><b>Library</b><span>Row actions</span><i>Star · Verify · Rename · Delete</i></div>
+      <div class="sheet-row"><b>Settings</b><span>Groups</span><i>App · Support · About</i></div>
+      <div class="sheet-row"><b>Settings</b><span>Active theme</span><i>Dark Red</i></div>
+      <div class="sheet-row"><b>Settings</b><span>Locked themes</span><i>Cyber Blue · Neon Purple · Matrix Green · Arctic White · Stealth Gray</i></div>
+      <div class="sheet-row"><b>One Touch</b><span>Telemetry</span><i>Ping · Down · Up · Session</i></div>
+      <div class="sheet-row"><b>Application</b><span>Version</span><i>1.7.9</i></div>
+    </div>
+    <p class="l6 sheet-foot" data-rv="up" data-rv-d="3">Where the application marks something as a demo or as unfinished, it is labelled that way here too.</p>
+  </div>
+</section>
+<!-- ============================================================
+     FAMILY: EMBER FIELD (new) — the 8th gradient moment. A slow,
+     warm, near-black field carrying a single pull-quote. Calm
+     beat placed just before the download payoff.
+     GRADIENT: ember
+     ============================================================ -->
+<section class="emberq sec" data-grad="ember" aria-label="Closing statement">
+  <canvas aria-hidden="true"></canvas>
+  <div class="emberq-in">
+    <blockquote data-rv="up">
+      <p class="l1">“All results are generated <span class="eq-hi">locally on your device.</span>”</p>
+      <cite class="l8">Mail Factory — Help Centre, Tips</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAMILY: SIGNAL CAROUSEL (new) — the 8th carousel. A vertical
+     drum of the six Settings "About" entries, advanced by wheel,
+     drag or keys. Different mechanic from every other carousel.
+     ============================================================ -->
+<section class="drum sec pad" aria-label="About entries">
+  <div class="wrap drum-wrap">
+    <div class="drum-head" data-rv="up">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">Carousel — the About group</span><span class="bar"></span></div>
+      <h2 class="l2">Six entries,<br>one column</h2>
+      <p class="l6" style="max-width:34ch">Drag vertically, scroll, or use the up and down keys. These are the entries the product lists under About.</p>
+    </div>
+    <div class="drum-stage" tabindex="0" role="listbox" aria-label="About entries">
+      <div class="drum-track">
+        <article class="drum-i" role="option" aria-selected="true"><em>01</em><h3>Rate the App</h3><p>Opens the rating flow inside the product.</p></article>
+        <article class="drum-i" role="option" aria-selected="false"><em>02</em><h3>Share the App</h3><p>Hands the app off to the system share sheet.</p></article>
+        <article class="drum-i" role="option" aria-selected="false"><em>03</em><h3>Privacy Policy</h3><p>The product's own statement about data.</p></article>
+        <article class="drum-i" role="option" aria-selected="false"><em>04</em><h3>Terms of Service</h3><p>The terms under which the build is offered.</p></article>
+        <article class="drum-i" role="option" aria-selected="false"><em>05</em><h3>About</h3><p>What the application says about itself.</p></article>
+        <article class="drum-i" role="option" aria-selected="false"><em>06</em><h3>Version</h3><p>1.7.9 — checked against the latest published release.</p></article>
+      </div>
+      <div class="drum-mask" aria-hidden="true"></div>
+      <div class="drum-line" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+<!-- ══════════════ 40 · CHAPTER OPENER — DEEP DIVE ══════════════ -->
+<section class="chap sec" id="deepdive" data-chapter style="background:var(--ink-2)">
+  <div class="chap-in">
+    <div class="chap-top"><span class="l5">Chapter 11</span><span class="l8">Detail</span></div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">11</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>Deep dive</span></span></h2>
+        <p class="l4 wide">Six feature stories, the roadmap as the product states it, and the routes into the community. The last stretch before the download.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 41 · LAYERED CAROUSEL — feature stories ══════════════ -->
+<section class="layered sec pad">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:22px;flex-wrap:wrap;margin-bottom:clamp(22px,3vw,40px)">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Feature stories — drag the stack</span><span class="bar"></span></div>
+        <h2 class="l2">Six things worth<br>knowing</h2>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px">
+        <span class="l8 mono" data-lay-count>01 / 06</span>
+        <div style="display:flex;gap:9px">
+          <button class="ibtn" data-lay="prev" aria-label="Previous story"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="ibtn" data-lay="next" aria-label="Next story"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div class="lay-stage" data-drag aria-label="Feature stories, draggable">
+      <article class="lay-card">
+        <div class="lc-top"><span class="l5">Story / 01</span><span class="tag">Generator</span></div>
+        <h3>Unlimited unique addresses</h3>
+        <p>The app states it plainly: “Generate unlimited unique email addresses.” No quota surface exists anywhere in the product, and no counter limits a session.</p>
+        <div class="lc-foot"><div><span>Mode</span><b>Single &amp; Batch</b></div><div><span>Reuse</span><b>None between runs</b></div></div>
+      </article>
+      <article class="lay-card">
+        <div class="lc-top"><span class="l5">Story / 02</span><span class="tag">Generator</span></div>
+        <h3>Passwords up to 24 characters</h3>
+        <p>Password length offers 8, 12, 16, 20 and 24. The Help Centre's own advice is the obvious one: “Use longer lengths for more secure passwords.”</p>
+        <div class="lc-foot"><div><span>Range</span><b>8 → 24</b></div><div><span>Guidance</span><b>Longer is stronger</b></div></div>
+      </article>
+      <article class="lay-card">
+        <div class="lc-top"><span class="l5">Story / 03</span><span class="tag">Library</span></div>
+        <h3>A hundred accounts stay one record</h3>
+        <p>A batch of a hundred does not flood the Library with a hundred rows. It files as a single batch record that previews its first items and expands on demand.</p>
+        <div class="lc-foot"><div><span>Preview</span><b>First items inline</b></div><div><span>Expand</span><b>Tap to view all</b></div></div>
+      </article>
+      <article class="lay-card">
+        <div class="lc-top"><span class="l5">Story / 04</span><span class="tag">Engine</span></div>
+        <h3>Off means off</h3>
+        <p>“Disabled engines are skipped by Optimize System and won't run in the background.” Switching an engine off removes it from the run, not just from the display.</p>
+        <div class="lc-foot"><div><span>Control</span><b>Per engine</b></div><div><span>Effect</span><b>Skipped entirely</b></div></div>
+      </article>
+      <article class="lay-card">
+        <div class="lc-top"><span class="l5">Story / 05</span><span class="tag">Privacy</span></div>
+        <h3>The notification says it too</h3>
+        <p>One of the app's own notifications is titled “Accounts stay on this device”, and repeats that nothing is uploaded to a server. The privacy position is stated where you will actually read it.</p>
+        <div class="lc-foot"><div><span>Storage</span><b>Local</b></div><div><span>Upload</span><b>None</b></div></div>
+      </article>
+      <article class="lay-card">
+        <div class="lc-top"><span class="l5">Story / 06</span><span class="tag">Settings</span></div>
+        <h3>The updater reads the real release</h3>
+        <p>“The update check reads the latest release published for the Mail Factory GitHub repository and compares it with the version installed on this device.”</p>
+        <div class="lc-foot"><div><span>Installed</span><b>1.7.9</b></div><div><span>Source</span><b>GitHub releases</b></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 42 · GRADIENT — CHROME (near-monochrome) ══════════════ -->
+<section class="gfield sec" data-grad="chrome" style="min-height:68svh">
+  <canvas aria-hidden="true"></canvas>
+  <div class="gf-in">
+    <span class="l5" data-rv="fade">Roadmap</span>
+    <h2 class="l2" data-rv="up" data-rv-d="1" style="margin-top:14px">What the product says<br>is still ahead</h2>
+    <p class="l4" style="max-width:54ch" data-rv="up" data-rv-d="2">Three commitments appear inside the app as future work. They are listed exactly as stated — no dates are promised, because none are given.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 43 · ROADMAP ══════════════ -->
+<section class="road sec pad">
+  <div class="wrap-n">
+    <div style="margin-bottom:clamp(24px,3vw,42px)" data-rv="up">
+      <div class="eyebrow"><span class="dot"></span><span class="l5">Stated in the application</span><span class="bar"></span></div>
+      <h2 class="l2">Now, next, later</h2>
+    </div>
+    <div class="road-grid" data-rv="up" data-rv-d="2">
+      <div class="road-cell"><span class="rc-s now"><i></i>Shipped</span>
+        <h4>Generation &amp; Library</h4>
+        <p>Single and batch generation, the full local library with sort, search, star, verify, rename and delete.</p></div>
+      <div class="road-cell"><span class="rc-s now"><i></i>Shipped</span>
+        <h4>Engine array</h4>
+        <p>Six switchable engines with Check Route, the Log Engine and per-engine System Settings.</p></div>
+      <div class="road-cell"><span class="rc-s now"><i></i>Shipped</span>
+        <h4>Version checking</h4>
+        <p>Settings → Version compares the installed build against the latest published release.</p></div>
+      <div class="road-cell"><span class="rc-s next"><i></i>Stated as coming</span>
+        <h4>Full app translation</h4>
+        <p>“Full app translation is coming in a future update — for now this sets your selection only.”</p></div>
+      <div class="road-cell"><span class="rc-s next"><i></i>Stated as pending</span>
+        <h4>Live backup destinations</h4>
+        <p>Six destinations are present in the UI; the app notes each provider's real OAuth flow still needs wiring on a backend.</p></div>
+      <div class="road-cell"><span class="rc-s lock"><i></i>Marked demo</span>
+        <h4>Automation backend</h4>
+        <p>One Touch labels auto-launch as “saved only” and Start Automation as “demo only — no automation backend connected”.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 44 · COMMUNITY ══════════════ -->
+<section class="sec pad" style="background:var(--ink)">
+  <div class="wrap-n">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:22px;flex-wrap:wrap;margin-bottom:clamp(22px,3vw,38px)">
+      <div data-rv="up">
+        <div class="eyebrow"><span class="dot"></span><span class="l5">Need more help?</span><span class="bar"></span></div>
+        <h2 class="l2">Where to reach<br>the project</h2>
+      </div>
+      <p class="l6" style="max-width:32ch" data-rv="up" data-rv-d="2">“Join our official communities for help, discussion and updates.”</p>
+    </div>
+    <div class="comm" data-rv="up" data-rv-d="3">
+      <a href="https://github.com/MailFactoryLabs/MailFactoryLabs.github.io/issues" target="_blank" rel="noopener" data-raw>
+        <svg class="ci" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+        <h4>Report a Problem</h4>
+        <p>“If something isn't working correctly, report it through the official GitHub Issue Tracker.”</p>
+        <span class="go">Open issue tracker <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
+      <a href="https://github.com/MailFactoryLabs/MailFactoryLabs.github.io" target="_blank" rel="noopener" data-raw>
+        <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+        <h4>The repository</h4>
+        <p>The project's GitHub repository — also the source the in-app version checker reads its releases from.</p>
+        <span class="go">View repository <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
+      <a href="#c-settings">
+        <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <h4>Telegram &amp; Facebook</h4>
+        <p>The app lists an official Telegram group and an official Facebook public group “for help, discussion and community support”. Both links live inside Settings → Help &amp; Support.</p>
+        <span class="go">Open in the live app <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+
+    <div style="margin-top:clamp(28px,3.4vw,50px);display:grid;gap:14px" class="fb-grid" data-rv="up" data-rv-d="4">
+      <div style="border:1px solid var(--line-2);border-radius:14px;padding:clamp(20px,2.4vw,32px)">
+        <span class="l5">Send Feedback — the four types</span>
+        <h3 class="l3" style="margin:10px 0 14px">“Have a suggestion, feature request, or idea to improve the app?”</h3>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span class="tag">Feature Suggestions</span><span class="tag">UI / UX Feedback</span>
+          <span class="tag">Improvement Ideas</span><span class="tag">General Feedback</span>
+        </div>
+      </div>
+      <div style="border:1px solid var(--line-2);border-radius:14px;padding:clamp(20px,2.4vw,32px)">
+        <span class="l5">Before reporting — the four questions</span>
+        <h3 class="l3" style="margin:10px 0 14px">The app asks you to answer these first</h3>
+        <div style="display:grid;gap:9px">
+          <p class="l6">1 — “What's the problem?”</p>
+          <p class="l6">2 — “What causes it to happen?”</p>
+          <p class="l6">3 — “What should happen instead?”</p>
+          <p class="l6">4 — “What actually happens?”</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 45 · QUIET BEFORE THE DOWNLOAD ══════════════ -->
+<section class="quiet sec" style="padding-block:clamp(80px,12vw,170px)">
+  <div class="q-in">
+    <span class="l5" data-rv="fade">One step left</span>
+    <h2 data-rv="up" data-rv-d="1" style="margin-top:18px">You have seen every surface.<br>The rest happens on your device.</h2>
+  </div>
+</section>
+
+<!-- ══════════════ 46 · CHAPTER OPENER — DOWNLOAD ══════════════ -->
+<section class="chap sec" id="download" data-chapter>
+  <div class="chap-in">
+    <div class="chap-top"><span class="l5">Chapter 12</span><span class="l8">Install</span></div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">12</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>Download</span></span></h2>
+        <p class="l4 wide">Version 1.7.9. A native Android application. No account, no sign-up, and no server holding anything of yours.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 47 · DOWNLOAD FINALE — 3D shards ══════════════ -->
+<section class="finale sec" data-scene3d="shards">
+  <canvas aria-hidden="true"></canvas>
+  <div class="finale-veil" aria-hidden="true"></div>
+  <div class="finale-in">
+    <img class="fl-mark" src="assets/logo-512.png" alt="" width="92" height="92" data-rv="scale">
+    <span class="l5" data-rv="fade">Mail Factory · 1.7.9</span>
+    <h2 class="l1" data-rv="up" data-rv-d="1" style="font-size:clamp(38px,8.4vw,132px);margin-top:14px">Take it<br>with you</h2>
+    <p class="l4" style="max-width:56ch;margin:20px auto 0" data-rv="up" data-rv-d="2">The download opens the project's release page, where the current build is published. The in-app version checker reads the same source, so the app will always tell you when a newer release exists.</p>
+    <div class="finale-act" data-rv="up" data-rv-d="3">
+      <button class="btn btn-p btn-lg" id="finalDl" data-mag="0.26">
+        <span class="sheen"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+        <span class="lb">Download Mail Factory</span>
+      </button>
+      <button class="btn btn-g btn-lg" id="finalShare" data-mag="0.26">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+        <span class="lb">Share</span>
+      </button>
+    </div>
+    <div class="dl-meta" data-rv="fade" data-rv-d="4">
+      <div><span>Version</span><b>1.7.9</b></div>
+      <div><span>Platform</span><b>Android — native</b></div>
+      <div><span>Account</span><b>Not required</b></div>
+      <div><span>Storage</span><b>On device</b></div>
+      <div><span>Core features</span><b>Free</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 48 · CHAPTER OPENER — FEEDBACK ══════════════ -->
+<section class="chap sec" id="feedback" data-chapter style="background:var(--carbon)">
+  <div class="chap-in">
+    <div class="chap-top"><span class="l5">Chapter 13</span><span class="l8">Your turn</span></div>
+    <div class="chap-body">
+      <div class="chap-num l7" data-rv="fade">13</div>
+      <div class="chap-t" data-rv="up" data-rv-d="1">
+        <h2><span class="split-line"><span>Feedback</span></span></h2>
+        <p class="l4 wide">This rating stays on your device, in the same spirit as the app itself. To reach the team directly, use the issue tracker or the community groups listed in Settings.</p>
+      </div>
+    </div>
+  </div>
+  <span class="chap-line" aria-hidden="true"></span>
+</section>
+
+<!-- ══════════════ 49 · RATING INSTRUMENT ══════════════ -->
+<section class="rate sec pad">
+  <div class="rate-in">
+    <span class="l5" data-rv="fade">Rate this experience</span>
+    <h2 class="l2" data-rv="up" data-rv-d="1" style="margin-top:12px">How was your<br>experience?</h2>
+    <div class="stars" id="stars" role="radiogroup" aria-label="Rate from 1 to 5 stars" data-rv="up" data-rv-d="2">
+      <button class="star" role="radio" aria-checked="false" aria-label="1 star" tabindex="0">
+        <svg viewBox="0 0 24 24" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2.6l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.67l-5.9 3.09 1.12-6.57L2.45 9.54l6.6-.96z"/></svg></button>
+      <button class="star" role="radio" aria-checked="false" aria-label="2 stars" tabindex="0">
+        <svg viewBox="0 0 24 24" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2.6l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.67l-5.9 3.09 1.12-6.57L2.45 9.54l6.6-.96z"/></svg></button>
+      <button class="star" role="radio" aria-checked="false" aria-label="3 stars" tabindex="0">
+        <svg viewBox="0 0 24 24" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2.6l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.67l-5.9 3.09 1.12-6.57L2.45 9.54l6.6-.96z"/></svg></button>
+      <button class="star" role="radio" aria-checked="false" aria-label="4 stars" tabindex="0">
+        <svg viewBox="0 0 24 24" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2.6l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.67l-5.9 3.09 1.12-6.57L2.45 9.54l6.6-.96z"/></svg></button>
+      <button class="star" role="radio" aria-checked="false" aria-label="5 stars" tabindex="0">
+        <svg viewBox="0 0 24 24" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2.6l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.67l-5.9 3.09 1.12-6.57L2.45 9.54l6.6-.96z"/></svg></button>
+    </div>
+    <div class="rate-label" id="rateLabel">Select a rating</div>
+    <div class="rate-form" data-rv="up" data-rv-d="3">
+      <textarea id="rateNote" placeholder="Optional — what stood out, or what would you change?" aria-label="Optional feedback"></textarea>
+      <div class="rate-row">
+        <button class="btn btn-p" id="rateSubmit" data-mag="0.2"><span class="sheen"></span><span class="lb">Submit feedback</span></button>
+        <a class="btn btn-g" href="https://github.com/MailFactoryLabs/MailFactoryLabs.github.io/issues/new" target="_blank" rel="noopener" data-raw>Open an issue instead</a>
+      </div>
+      <p class="l6" style="margin-top:6px">Saved to this browser's local storage only. Nothing is transmitted.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 50 · BRAND FINALE ══════════════ -->
+<section class="brandfin sec" id="brand" data-chapter>
+  <div class="brandfin-sticky" data-scene3d="brandfin">
+    <canvas aria-hidden="true"></canvas>
+    <div class="bf-in">
+      <img class="bf-logo" src="assets/logo-512.png" alt="Mail Factory" width="180" height="180" data-rv="scale">
+      <h2 class="bf-word" data-rv="up" data-rv-d="1">Mail<em>Factory</em></h2>
+      <p class="l3 bf-tag" data-rv="up" data-rv-d="2" style="color:var(--t3)">Generate. Automate. Keep it on your device.</p>
+      <div style="display:flex;gap:11px;justify-content:center;margin-top:30px;flex-wrap:wrap" data-rv="fade" data-rv-d="3">
+        <button class="btn btn-p" id="brandDl" data-mag="0.22"><span class="sheen"></span><span class="lb">Download 1.7.9</span></button>
+        <a class="btn btn-q" href="#top">Back to the top</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════ 51 · FOOTER ══════════════ -->
+<footer class="foot">
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">
+        <img src="assets/logo-256.png" alt="" width="38" height="38">
+        <span class="brand-txt" style="font-size:17px">Mail<i>Factory</i></span>
+      </div>
+      <p class="l6" style="max-width:38ch">A native Android application for generating accounts, running automation engines and keeping every record local to the device.</p>
+      <div style="display:flex;gap:9px;margin-top:18px;flex-wrap:wrap">
+        <span class="tag">v1.7.9</span><span class="tag">Android</span><span class="tag live">Local storage</span>
+      </div>
+    </div>
+    <div>
+      <h5>Chapters</h5>
+      <ul>
+        <li><a href="#discovery">Discovery</a></li>
+        <li><a href="#product">Product index</a></li>
+        <li><a href="#workflow">Workflow</a></li>
+        <li><a href="#system">System map</a></li>
+        <li><a href="#deepdive">Deep dive</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>The app</h5>
+      <ul>
+        <li><a href="#c-dashboard">Dashboard</a></li>
+        <li><a href="#c-engine">Engine</a></li>
+        <li><a href="#c-generator">Generator</a></li>
+        <li><a href="#c-library">Library</a></li>
+        <li><a href="#c-onetouch">One Touch</a></li>
+        <li><a href="#c-settings">Settings</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Project</h5>
+      <ul>
+        <li><a href="https://github.com/MailFactoryLabs/MailFactoryLabs.github.io" target="_blank" rel="noopener" data-raw>Repository ↗</a></li>
+        <li><a href="https://github.com/MailFactoryLabs/MailFactoryLabs.github.io/issues" target="_blank" rel="noopener" data-raw>Issue tracker ↗</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#feedback">Feedback</a></li>
+        <li><button class="btn-q" id="footShare" style="font-family:inherit;font-size:13.5px;letter-spacing:0;text-transform:none;color:var(--t2)">Share this page</button></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span class="l8">Mail Factory — presented locally. The application shown on this page is the real build.</span>
+    <span class="l8">Privacy Policy · Terms of Service — both inside the app</span>
+  </div>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
