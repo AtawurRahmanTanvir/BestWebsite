@@ -1,0 +1,66 @@
+{
+ "lazy": {
+  "threeStart": 623,
+  "domInteractive": 71
+ },
+ "idleMount": true,
+ "iframe": {
+  "title": "Mail Factory live application"
+ },
+ "reverse": {
+  "events": [
+   "library"
+  ],
+  "indexRowActive": true
+ },
+ "paperNav": {
+  "onPaper": "nav is-scrolled is-hidden theme-paper|rgba(242, 239, 233, 0.72)",
+  "onDark": "nav|rgba(0, 0, 0, 0)",
+  "adapts": true
+ },
+ "caveats": [
+  [
+   "UI demo — no live connection to any service",
+   true
+  ],
+  [
+   "CONNECT VPN",
+   true
+  ],
+  [
+   "AUTO-LAUNCH",
+   true
+  ],
+  [
+   "START AUTOMATION",
+   true
+  ],
+  [
+   "EMERGENCY STOP",
+   true
+  ]
+ ],
+ "cfgKeys": [
+  [
+   "downloadUrl",
+   true
+  ],
+  [
+   "repoUrl",
+   true
+  ],
+  [
+   "issuesUrl",
+   true
+  ],
+  [
+   "siteUrl",
+   true
+  ],
+  [
+   "feedbackEndpoint",
+   true
+  ]
+ ],
+ "pass": true
+}

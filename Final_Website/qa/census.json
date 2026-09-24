@@ -1,0 +1,148 @@
+{
+ "file": {
+  "sections": 57,
+  "chapters": 14,
+  "pins": 12,
+  "pinSum": 26.2,
+  "hscroll": 3,
+  "slots": 7,
+  "focusRegions": 13,
+  "sceneHosts": 9,
+  "gradHosts": 11,
+  "treeNodes": 14,
+  "engines": 6,
+  "indexRows": 6,
+  "versions": [
+   "v1.0.0"
+  ],
+  "footer": false,
+  "cursor": false,
+  "v179": false
+ },
+ "live": {
+  "headerH": 64,
+  "menu": {
+   "chapters": 14,
+   "surfaces": 6,
+   "credits": true,
+   "versions": [
+    "v1.0.0"
+   ]
+  },
+  "ringServers": 22,
+  "carousel": {
+   "cards": 4,
+   "dashes": 4,
+   "arrows": 2,
+   "autoAdvances": true,
+   "pausesOnHover": true
+  }
+ },
+ "checks": [
+  {
+   "label": "57 sections",
+   "ok": true
+  },
+  {
+   "label": "14 chapters",
+   "ok": true
+  },
+  {
+   "label": "12 pins",
+   "ok": true
+  },
+  {
+   "label": "pin sum 26.2",
+   "ok": true
+  },
+  {
+   "label": "3 hscroll",
+   "ok": true
+  },
+  {
+   "label": "7 slots",
+   "ok": true
+  },
+  {
+   "label": "13 focus regions",
+   "ok": true
+  },
+  {
+   "label": "9 scene hosts",
+   "ok": true
+  },
+  {
+   "label": "11 grad hosts",
+   "ok": true
+  },
+  {
+   "label": "14 tree destinations",
+   "ok": true
+  },
+  {
+   "label": "6 engines",
+   "ok": true
+  },
+  {
+   "label": "6 index rows",
+   "ok": true
+  },
+  {
+   "label": "22 ring servers",
+   "ok": true
+  },
+  {
+   "label": "version v1.0.0 only",
+   "ok": true
+  },
+  {
+   "label": "no standalone footer",
+   "ok": true
+  },
+  {
+   "label": "no cursor hooks",
+   "ok": true
+  },
+  {
+   "label": "no 1.7.9",
+   "ok": true
+  },
+  {
+   "label": "header ≤64px",
+   "ok": true
+  },
+  {
+   "label": "menu 14 chapters",
+   "ok": true
+  },
+  {
+   "label": "menu 6 surfaces",
+   "ok": true
+  },
+  {
+   "label": "menu credits + v1.0.0",
+   "ok": true
+  },
+  {
+   "label": "carousel 4 cards",
+   "ok": true
+  },
+  {
+   "label": "carousel 4 dashes",
+   "ok": true
+  },
+  {
+   "label": "carousel arrows",
+   "ok": true
+  },
+  {
+   "label": "carousel auto-advance",
+   "ok": true
+  },
+  {
+   "label": "carousel pause on hover",
+   "ok": true
+  }
+ ],
+ "pass": true
+}

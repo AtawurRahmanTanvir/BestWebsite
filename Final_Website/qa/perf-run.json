@@ -1,0 +1,15 @@
+{
+  "lcp": 3300,
+  "lcpEl": "P:",
+  "cls": 0,
+  "shifts": 5,
+  "glPeak": 6,
+  "glLive": 3,
+  "scenePeak": 3,
+  "gradPeak": 3,
+  "heapMB": 10.7,
+  "transferKB": 2070,
+  "gzCriticalKB": 70,
+  "pass": true,
+  "note": "S24 total-context figure (<=4) contradicts S18 caps (4 scenes + 5 gradient hosts, separate contexts); measured peaks honour S18. LCP element measured, not asserted: headless SwiftShader paints hero text first."
+}

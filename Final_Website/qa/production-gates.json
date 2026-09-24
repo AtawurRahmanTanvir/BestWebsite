@@ -1,0 +1,179 @@
+{
+  "gates": {
+    "G3-app-swap": {
+      "pass": true,
+      "detail": {
+        "bytes": 553575,
+        "hasPwrSub": false,
+        "cfCount": 0,
+        "decoded": true,
+        "atCount": 17,
+        "help": {
+          "screen": "settings",
+          "subOpen": true,
+          "subId": "page-helpcenter"
+        },
+        "version": true
+      }
+    },
+    "G8-honesty": {
+      "pass": true,
+      "detail": {
+        "has179": false,
+        "cursor": false,
+        "slotLive": true
+      }
+    },
+    "G5-keyboard": {
+      "pass": true,
+      "detail": {
+        "navDownload": true,
+        "indexRows": true,
+        "capCols": true,
+        "compareSlider": true,
+        "treeNodes": true,
+        "treeFocusRing": true,
+        "ratingStars": true,
+        "favOrArrows": true
+      }
+    },
+    "G4-crop-geometry": {
+      "pass": true,
+      "detail": {
+        "dashboard": {
+          "inView": true,
+          "cropped": true,
+          "btnVisible": true,
+          "liveTag": true,
+          "ratioW": 1.001,
+          "ratioH": 0.95,
+          "clip": "inset(70.2px 7.3px 594.8",
+          "expand": {
+            "full": true,
+            "backToCrop": true
+          }
+        },
+        "engine": {
+          "inView": true,
+          "cropped": true,
+          "btnVisible": true,
+          "liveTag": true,
+          "ratioW": 1.001,
+          "ratioH": 0.99,
+          "clip": "inset(121.5px 7.3px 418.",
+          "expand": {
+            "full": true,
+            "backToCrop": true
+          }
+        },
+        "generator": {
+          "inView": true,
+          "cropped": true,
+          "btnVisible": true,
+          "liveTag": true,
+          "ratioW": 1.001,
+          "ratioH": 1,
+          "clip": "inset(93.9px 7.3px 398.9",
+          "expand": {
+            "full": true,
+            "backToCrop": true
+          }
+        },
+        "library": {
+          "inView": true,
+          "cropped": true,
+          "btnVisible": true,
+          "liveTag": true,
+          "ratioW": 1.001,
+          "ratioH": 1,
+          "clip": "inset(120.7px 7.3px 386.",
+          "expand": {
+            "full": true,
+            "backToCrop": true
+          }
+        },
+        "onetouch": {
+          "inView": true,
+          "cropped": true,
+          "btnVisible": true,
+          "liveTag": true,
+          "ratioW": 1.001,
+          "ratioH": 1,
+          "clip": "inset(71.9px 23.9px 407.",
+          "expand": {
+            "full": true,
+            "backToCrop": true
+          }
+        },
+        "settings": {
+          "inView": true,
+          "cropped": true,
+          "btnVisible": true,
+          "liveTag": true,
+          "ratioW": 1.001,
+          "ratioH": 1,
+          "clip": "inset(72.2px 7.3px 306.7",
+          "expand": {
+            "full": true,
+            "backToCrop": true
+          }
+        },
+        "story": {
+          "inView": true,
+          "cropped": true,
+          "btnVisible": true,
+          "liveTag": true,
+          "ratioW": 1.001,
+          "ratioH": 0.95,
+          "clip": "inset(36.9px 7.3px 312.5",
+          "expand": {
+            "full": true,
+            "backToCrop": true
+          }
+        }
+      }
+    },
+    "G4-expand-toggle": {
+      "pass": true,
+      "detail": [
+        {
+          "full": true,
+          "backToCrop": true
+        },
+        {
+          "full": true,
+          "backToCrop": true
+        },
+        {
+          "full": true,
+          "backToCrop": true
+        },
+        {
+          "full": true,
+          "backToCrop": true
+        },
+        {
+          "full": true,
+          "backToCrop": true
+        },
+        {
+          "full": true,
+          "backToCrop": true
+        },
+        {
+          "full": true,
+          "backToCrop": true
+        }
+      ]
+    },
+    "G7-reduced": {
+      "pass": true,
+      "detail": {
+        "pinH": 1800,
+        "spacerH": null,
+        "statics": 8,
+        "vh": 900
+      }
+    }
+  }
+}

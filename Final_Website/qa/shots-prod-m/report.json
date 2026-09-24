@@ -1,0 +1,666 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "mobile": true,
+  "loadMs": 578,
+  "total": 113193,
+  "shots": 82,
+  "errors": [],
+  "perf": {
+    "resources": 48,
+    "transferKB": 2070,
+    "jsHeapMB": 10
+  },
+  "fps": 17,
+  "sync": [
+    {
+      "y": 1400,
+      "sec": "s-manifesto",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 2800,
+      "sec": "s-getbuild",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 4200,
+      "sec": "s-definitions",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 5600,
+      "sec": "s-index",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 7000,
+      "sec": "s-wiremark",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 8400,
+      "sec": "s-wiremark",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 9800,
+      "sec": "s-wiremark",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 11200,
+      "sec": "s-wiremark",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 12600,
+      "sec": "s-capability",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 14000,
+      "sec": "s-ledger",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 15400,
+      "sec": "s-workflow",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 16800,
+      "sec": "s-workflow",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 18200,
+      "sec": "s-dash-state",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 19600,
+      "sec": "s-aperture",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 21000,
+      "sec": "s-aperture",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 22400,
+      "sec": "s-aperture",
+      "slot": "phone",
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 23800,
+      "sec": "s-dash-live",
+      "slot": "phone",
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 25200,
+      "sec": "s-dash-live",
+      "slot": "phone",
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 26600,
+      "sec": "s-dash-live",
+      "slot": "phone",
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 28000,
+      "sec": "s-dash-live",
+      "slot": "phone",
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 29400,
+      "sec": "s-openfactory",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 30800,
+      "sec": "s-openfactory",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 32200,
+      "sec": "s-openfactory",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 33600,
+      "sec": "s-engine-open",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 35000,
+      "sec": "s-reactor",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 36400,
+      "sec": "s-reactor",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 37800,
+      "sec": "s-reactor",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 39200,
+      "sec": "s-reactor",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 40600,
+      "sec": "s-reactor",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 42000,
+      "sec": "s-engines",
+      "slot": null,
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 43400,
+      "sec": "s-utility",
+      "slot": "glass",
+      "expected": "engine",
+      "appScreen": "engine",
+      "loaded": true
+    },
+    {
+      "y": 44800,
+      "sec": "s-engine-live",
+      "slot": "glass",
+      "expected": "engine",
+      "appScreen": "engine",
+      "loaded": true
+    },
+    {
+      "y": 46200,
+      "sec": "s-switchboard",
+      "slot": "glass",
+      "expected": "engine",
+      "appScreen": "engine",
+      "loaded": true
+    },
+    {
+      "y": 47600,
+      "sec": "s-gen-open",
+      "slot": null,
+      "expected": "engine",
+      "appScreen": "engine",
+      "loaded": true
+    },
+    {
+      "y": 49000,
+      "sec": "s-prodline",
+      "slot": null,
+      "expected": "engine",
+      "appScreen": "engine",
+      "loaded": true
+    },
+    {
+      "y": 50400,
+      "sec": "s-prodline",
+      "slot": null,
+      "expected": "engine",
+      "appScreen": "engine",
+      "loaded": true
+    },
+    {
+      "y": 51800,
+      "sec": "s-prodline",
+      "slot": null,
+      "expected": "engine",
+      "appScreen": "engine",
+      "loaded": true
+    },
+    {
+      "y": 53200,
+      "sec": "s-prodline",
+      "slot": null,
+      "expected": "engine",
+      "appScreen": "engine",
+      "loaded": true
+    },
+    {
+      "y": 54600,
+      "sec": "s-steps",
+      "slot": null,
+      "expected": "engine",
+      "appScreen": "engine",
+      "loaded": true
+    },
+    {
+      "y": 56000,
+      "sec": "s-params",
+      "slot": "spot",
+      "expected": "generator",
+      "appScreen": "generator",
+      "loaded": true
+    },
+    {
+      "y": 57400,
+      "sec": "s-gen-live",
+      "slot": "spot",
+      "expected": "generator",
+      "appScreen": "generator",
+      "loaded": true
+    },
+    {
+      "y": 58800,
+      "sec": "s-lib-open",
+      "slot": null,
+      "expected": "generator",
+      "appScreen": "generator",
+      "loaded": true
+    },
+    {
+      "y": 60200,
+      "sec": "s-archive",
+      "slot": null,
+      "expected": "generator",
+      "appScreen": "generator",
+      "loaded": true
+    },
+    {
+      "y": 61600,
+      "sec": "s-sorting",
+      "slot": null,
+      "expected": "generator",
+      "appScreen": "generator",
+      "loaded": true
+    },
+    {
+      "y": 63000,
+      "sec": "s-deck",
+      "slot": null,
+      "expected": "generator",
+      "appScreen": "generator",
+      "loaded": true
+    },
+    {
+      "y": 64400,
+      "sec": "s-deck",
+      "slot": null,
+      "expected": "generator",
+      "appScreen": "generator",
+      "loaded": true
+    },
+    {
+      "y": 65800,
+      "sec": "s-deck",
+      "slot": null,
+      "expected": "generator",
+      "appScreen": "generator",
+      "loaded": true
+    },
+    {
+      "y": 67200,
+      "sec": "s-deck",
+      "slot": "paper",
+      "expected": "library",
+      "appScreen": "library",
+      "loaded": true
+    },
+    {
+      "y": 68600,
+      "sec": "s-lib-live",
+      "slot": "paper",
+      "expected": "library",
+      "appScreen": "library",
+      "loaded": true
+    },
+    {
+      "y": 70000,
+      "sec": "s-wipe",
+      "slot": null,
+      "expected": "library",
+      "appScreen": "library",
+      "loaded": true
+    },
+    {
+      "y": 71400,
+      "sec": "s-wipe",
+      "slot": null,
+      "expected": "library",
+      "appScreen": "library",
+      "loaded": true
+    },
+    {
+      "y": 72800,
+      "sec": "s-pulse",
+      "slot": null,
+      "expected": "library",
+      "appScreen": "library",
+      "loaded": true
+    },
+    {
+      "y": 74200,
+      "sec": "s-pulse",
+      "slot": null,
+      "expected": "library",
+      "appScreen": "library",
+      "loaded": true
+    },
+    {
+      "y": 75600,
+      "sec": "s-pulse",
+      "slot": null,
+      "expected": "library",
+      "appScreen": "library",
+      "loaded": true
+    },
+    {
+      "y": 77000,
+      "sec": "s-telemetry",
+      "slot": null,
+      "expected": "library",
+      "appScreen": "library",
+      "loaded": true
+    },
+    {
+      "y": 78400,
+      "sec": "s-ring",
+      "slot": "tilt",
+      "expected": "onetouch",
+      "appScreen": "onetouch",
+      "loaded": true
+    },
+    {
+      "y": 79800,
+      "sec": "s-tree",
+      "slot": "tilt",
+      "expected": "onetouch",
+      "appScreen": "onetouch",
+      "loaded": true
+    },
+    {
+      "y": 81200,
+      "sec": "s-themes",
+      "slot": null,
+      "expected": "onetouch",
+      "appScreen": "onetouch",
+      "loaded": true
+    },
+    {
+      "y": 82600,
+      "sec": "s-backup",
+      "slot": "wide",
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 84000,
+      "sec": "s-set-live",
+      "slot": "wide",
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 85400,
+      "sec": "s-topology",
+      "slot": null,
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 86800,
+      "sec": "s-story",
+      "slot": "story",
+      "expected": "dashboard",
+      "appScreen": "dashboard",
+      "loaded": true
+    },
+    {
+      "y": 88200,
+      "sec": "s-story",
+      "slot": "story",
+      "expected": "generator",
+      "appScreen": "generator",
+      "loaded": true
+    },
+    {
+      "y": 89600,
+      "sec": "s-story",
+      "slot": "story",
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 91000,
+      "sec": "s-terrain",
+      "slot": null,
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 92400,
+      "sec": "s-terrain",
+      "slot": null,
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 93800,
+      "sec": "s-terrain",
+      "slot": null,
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 95200,
+      "sec": "s-terrain",
+      "slot": null,
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 96600,
+      "sec": "s-legal",
+      "slot": null,
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 98000,
+      "sec": "s-legal",
+      "slot": null,
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 99400,
+      "sec": "s-maker",
+      "slot": null,
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 100800,
+      "sec": "s-version",
+      "slot": null,
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 102200,
+      "sec": "s-final-download",
+      "slot": null,
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 103600,
+      "sec": "s-final-download",
+      "slot": null,
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 105000,
+      "sec": "s-final-download",
+      "slot": null,
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 106400,
+      "sec": "s-emergence",
+      "slot": null,
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 107800,
+      "sec": "s-emergence",
+      "slot": null,
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 109200,
+      "sec": "s-emergence",
+      "slot": null,
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 110600,
+      "sec": "s-emergence",
+      "slot": null,
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 112000,
+      "sec": "s-brand",
+      "slot": null,
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    },
+    {
+      "y": 112349,
+      "sec": "s-brand",
+      "slot": null,
+      "expected": "settings",
+      "appScreen": "settings",
+      "loaded": true
+    }
+  ],
+  "probes": {},
+  "logsTail": []
+}

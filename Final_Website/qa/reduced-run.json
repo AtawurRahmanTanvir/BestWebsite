@@ -1,0 +1,14 @@
+{
+  "errors": [],
+  "pre": {
+    "statics": 8,
+    "pinSpacer": null,
+    "vh": 900
+  },
+  "center0": "Disconnected",
+  "post": {
+    "center": "Disconnected",
+    "lenis": false
+  },
+  "PASS": true
+}
